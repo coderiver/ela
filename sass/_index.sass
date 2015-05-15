@@ -1,0 +1,206 @@
+.index-page
+	.header
+		height: 660px
+		+r(1279)
+			height: 530px
+		+r(1023)
+			height: 475px
+		+r(768)
+			height: 268px
+.academy
+	position: absolute
+	left: 50%
+	right: 0
+	bottom: 98px
+	margin-left: -467px
+	width: 935px
+	text-align: center
+	+r(1279)
+		bottom: 60px
+		width: 765px
+		margin-left: -383px
+	+r(1023)
+		margin-left: -287px
+		width: 575px
+		bottom: 76px
+	+r(767)
+		margin-left: -125px
+		width: 250px
+		bottom: 43px
+	&:after
+		content: ""
+		position: absolute
+		top: 100%
+		left: 389px
+		margin-top: -6px
+		height: 0
+		width: 1px 
+		background: #fff 
+		+tr(height .3s)
+		+r(1279)
+			left: 267px
+		+r(1023)
+			left: 206px
+		+r(767)
+			display: none
+	&.is-animated
+		&:after
+			height: 110px
+		.academy__img
+			&:before
+				width: 90px
+				+r(1279)
+					width: 100px
+			&:after
+				width: 378px
+				+r(1279)
+					width: 314px
+				+r(1023)
+					width: 238px
+			span
+				&:first-child
+					&:before
+						width: 115px
+						+r(1279)
+							width: 105px
+						+r(1023)
+							width: 50px
+					&:after
+						width: 100px
+				&:last-child
+					&:before
+						width: 90px
+					&:after
+						width: 263px
+						+r(1023)
+							width: 180px
+		.academy__in
+			&:before
+				left: 0
+				top: 0
+				height: 100%
+			&:after
+				right: 0
+				bottom: 0
+				height: 100%
+	&__img
+		position: relative
+		display: inline-block
+		color: #fff 
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			height: 1px
+			background: #fff  
+			+tr(width .3s)
+			+r(767)
+				display: none
+		&:before
+			left: 0
+			bottom: 0
+			width: 0 
+		&:after
+			right: 0
+			top: 0
+			width: 0
+		span
+			position: absolute
+			line-height: 1
+			+it
+			font-size: 40px
+			+r(1279)
+				font-size: 28px
+			+r(1023)
+				font-size: 24px
+			+r(767)
+				font-size: 16px
+			&:before,
+			&:after
+				content: ""
+				position: absolute
+				height: 1px
+				background: #fff  
+				width: 0
+				+tr(width .3s)
+				+r(767)
+					display: none
+			&:before
+				right: 100% 
+			&:first-child
+				margin-bottom: -8px
+				left: 115px
+				bottom: 100%
+				+r(1279)
+					left: 105px
+					margin-bottom: -6px
+				+r(1023)
+					left: 50px
+					margin-bottom: -5px
+				+r(767)
+					left: 20px
+				&:before
+					bottom: 7px
+					+r(1279)
+						bottom: 5px
+					+r(1023)
+						bottom: 4px
+					+r(767)
+						display: none
+				&:after
+					bottom: 7px
+					margin-left: 37px
+					left: 100%
+					+r(1279)
+						margin-left: 13px
+					+r(1023)
+						display: none
+			&:last-child
+				right: 300px
+				bottom: -7px
+				+r(1279)
+					bottom: -5px
+				+r(1023)
+					bottom: -4px
+					right: 187px
+				+r(767)
+					right: 27px
+				&:before
+					bottom: 7px
+					+r(1279)
+						bottom: 5px
+					+r(1023)
+						bottom: 4px
+					+r(767)
+						display: none
+				&:after
+					bottom: 7px
+					margin-left: 37px
+					left: 100%
+					+r(1023)
+						bottom: 4px
+						margin-left: 6px
+					+r(767)
+						display: none
+	&__in
+		position: relative
+		padding: 0 88px 
+		+r(1279)
+			padding: 0 95px 
+		+r(1023)
+			padding: 0 53px
+		+r(767)
+			padding: 0 18px  
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			width: 1px
+			background: #fff
+			height: 0
+			+tr(height .3s)  
+			+r(767)
+				display: none
+		img
+			display: block
+			width: 100%

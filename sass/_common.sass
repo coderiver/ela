@@ -47,96 +47,583 @@
 // p
 // 	+jpg(bla)
 
++font(Didot, Didot)  
+=reg
+	font-family: "Didot", Arial, sans-serif 
+	
++font(DidotBold, DidotBold)  
+=bold
+	font-family: "DidotBold", Arial, sans-serif 
+	
++font(DidotItalic, DidotItalic)  
+=it
+	font-family: "DidotItalic", Arial, sans-serif 
+	
++font(DidotLTStdItalic, DidotLTStdItalic)  
+=it2
+	font-family: "DidotLTStdItalic", Arial, sans-serif 
+	
++font(museosanscyrl-300, museosanscyrl-300)  
+=museo_300
+	font-family: "museosanscyrl-300", Arial, sans-serif 
 
++font(museosanscyrl-700, museosanscyrl-700)  
+=museo_700
+	font-family: "museosanscyrl-700", Arial, sans-serif 
+	
+$light: #eef1f6
+$red: #da3e3e
+$blue: #122e5c
+$violet: #dbe6f9
+$dark: #152033
+=tr_o
+	+tr(opacity .3s)
+=tr_c
+	+tr(color .3s)
+=tr_bg
+	+tr(background .3s)
+=tr_bgc
+	+transition(background, color, .3s)
+=tr_border
+	+tr(border .3s)
+html
+	+selection
+		background: rgba($red, .2) 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
-	line-height: 1.4
-
-
+	min-width: 320px
+	font-size: 14px 
+	line-height: 1.3
+	+museo_300
+	color: $dark 
+	background: $light 
+a
+	text-decoration: none
+.link
+	display: inline-block
+	line-height: 1.2
+	border-bottom: 1px solid $red
+	+transition(border, color, .3s)
+	color: $blue 
+	&:hover
+		border-color: transparent 
+		color: $red 
 // common blocks      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.out
+	overflow: hidden
+.l-center
+	margin: 0 auto 
+	padding: 0 50px 
+	max-width: 1600px
+	+r(1599)
+		max-width: 1280px
+		padding: 0 23px
+	+r(1279)
+		max-width: 1024px
+	+r(1023)
+		max-width: 768px
+		padding: 0 15px
+	+r(767)
+		max-width: 320px
+.l-inner
+	margin: 0 170px 
+	+clr
+	+r(1599)
+		margin: 0 20px 
+	+r(1023)
+		margin: 0 50px 
+	+r(767)
+		margin: 0 20px
+			
+[class*="icon-"]
+	display: inline-block
+	vertical-align: middle
+.header
+	position: relative
+	z-index: 5
+	margin-top: 50px
+	height: 555px
+	+cover
+	overflow: hidden
+	+r(1599)
+		margin-top: 23px
+	+r(1023)
+		margin-top: 15px
+		height: 475px
+		overflow: visible
+	+r(768)
+		height: 268px
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: -1
+		background: rgba(#08275b,.9) 
+	&__left
+		float: left
+		width: 49.2%
+		+r(1023)
+			float: none
+			width: 100%
+	&__right
+		float: right
+		width: 49.2%
+		+r(1023)
+			display: none
+
+	a
+		color: #fff 
+
+.logo
+	display: inline-block
+	vertical-align: middle
+	width: 195px
+	font-size: 16px
+	+reg
+	line-height: 1.4
+	letter-spacing: 0.5px 
+	+r(1279)
+		width: 155px
+	+r(1023)
+		width: 170px
+		font-size: 14px
+	+r(767)
+		width: 120px
+		margin-top: 13px
+		font-size: 11px
+	img
+		display: block
+		margin-bottom: 20px
+		+r(767)
+			margin-bottom: 15px
+.nav
+	position: relative
+	z-index: 5
+	display: inline-block
+	vertical-align: middle
+	padding: 18px 0 33px
+	width: 198px
+	background: $red
+	font-size: 20px
+	+it
+	+r(1023)
+		font-size: 18px
+		width: 170px
+	+r(767)
+		display: none
+	a
+		display: block
+		+tr_bgc
+	> li
+		&.is-active
+			> a
+				position: relative
+				&:before
+					width: 275px
+					+r(1599)
+						width: 292px
+					+r(1279)
+						width: 215px
+				span
+					&:before
+						+r(1023)
+							display: block
+		&.has-nav-drop
+			> a
+				> span
+					&:after
+						content: ""
+						position: absolute
+						right: 0
+						bottom: 6px
+						opacity: 0
+						+arr(6,6,#1f3b6b,r)
+						+tr_o
+			&:hover
+				> a
+					> span
+						&:after
+							opacity: 1
+		&:first-child
+			&.is-active
+				> a
+					&:after
+						height: 293px
+						+r(1279)
+							height: 251px
+		&:nth-child(2)
+			&.is-active
+				> a
+					&:after
+						height: 134px
+		&:nth-child(3)
+			&.is-active
+				> a
+					&:after
+						height: 134px
+		&:nth-child(4)
+			&.is-active
+				> a
+					&:after
+						height: 134px
+		&:hover
+			> a
+				background: #fff 
+				color: #1f3b6b 
+		> a
+			padding: 11px 10px 10px 30px
+			&:before
+				content: ""
+				position: absolute
+				left: 20px
+				top: 26px
+				width: 0
+				height: 1px
+				background: #fff 
+				+tr(width .3s)
+				+r(1023)
+					display: none
+			&:after
+				content: ""
+				position: absolute
+				left: 294px
+				top: 26px
+				width: 1px
+				height: 0
+				background: #fff 
+				+tr(height .3s)
+				+r(1599)
+					left: 311px
+				+r(1279)
+					left: 234px
+				+r(1023)
+					display: none
+			> span
+				padding: 0 26px 0 0 
+				position: relative
+				+r(1023)
+					padding-right: 13px
+				&:before
+					+r(1023)
+						content: ""
+						display: none
+						position: absolute
+						top: 50%
+						left: -12px
+						right: -12px
+						height: 1px
+						background: #fff
+	li
+		&:hover
+			> ul
+				+transform(translateX(0))	
+				opacity: 1
+				visibility: visible 
+	ul
+		position: absolute
+		left: 100%
+		top: 0
+		padding: 20px 0 20px 20px 
+		width: 256px
+		background: #fff 
+		opacity: 0
+		visibility: hidden
+		+transform(translateX(-5px))
+		+transition(opacity, transform, .3s)
+		+r(1023)
+			font-size: 14px
+			width: 188px
+		> li
+			&:hover
+				a
+					background: $blue
+					color: #fff 
+					span
+						&:after
+							border-color: transparent transparent transparent #fff
+
+			> a
+				color: $red
+				padding: 10px 20px 10px 15px
+				+r(1023)
+					padding-right: 10px
+				span
+					position: relative
+					padding-right: 17px
+					&:after
+						content: ""
+						position: absolute
+						bottom: 7px
+						right: 0
+						+tr_border
+						+arr(6,6,$red,r) 
+		a
+			font-size: 18px
+			line-height: 1.3
+			+r(1023)
+				font-size: 14px
+				line-height: 1
+		ul
+			background: $blue
+			padding-left: 0
+			+r(1023)
+				width: 170px
+			a
+				color: #fff
+				padding-right: 45px
+				+r(1023)
+					padding-left: 20px
+					padding-right: 10px
+				&:hover
+					color: $red 
+	
+.doc
+	+it
+	letter-spacing: 0.5px 
+	font-size: 14px
+	span
+		display: inline-block
+		vertical-align: middle
+		margin-left: 12px
+
+.menu-wrap
+	position: relative
+	margin: 35px 0 20px -15px
+	+r(1279)
+		margin-left: -12px
+.menu
+	+museo_300
+	text-transform: uppercase
+	letter-spacing: 1.5px
+	font-size: 0
+	a
+		display: inline-block
+		position: relative
+		vertical-align: middle
+		font-size: 13px
+		padding: 15px 15px 
+		+r(1279)
+			font-size: 11px
+			padding: 15px 12px
+		&.is-active
+			&:before
+				content: ""
+				position: absolute
+				top: 50%
+				left: 4px
+				right: 4px
+				margin-top: -2px
+				height: 1px
+				background: #fff
+		
+.btn-search
+	position: absolute
+	right: 0
+	top: 10px
+	+s(glass)
+
+.soc
+	margin-left: -20px
+	a
+		display: inline-block
+		vertical-align: middle
+		padding: 20px 
+		opacity: 0.7
+		+tr_o
+		&:hover
+			opacity: 1
+
+.page-title
+	position: relative
+	top: -4px
+	text-align: center
+	color: #fff 
+	span
+		display: block
+		margin-bottom: -25px
+		font-size: 34px
+		+it
+	strong
+		font-weight: normal
+		+bold
+		text-transform: uppercase
+		font-size: 100px
+		letter-spacing: 5px 
+
+.breadcrumbs
+	margin: -16px 0 0 
+	text-align: center
+	font-size: 0
+	+it
+	color: #fff 
+	a
+		position: relative
+		display: inline-block
+		padding: 10px 15px
+		vertical-align: middle
+		font-size: 14px
+		opacity: 0.5
+		+tr_o
+		&:hover
+			opacity: 1 
+		&:before
+			content: "—" 
+			position: absolute
+			top: 9px
+			left: -7px
+		&:first-child
+			&:before
+				display: none
+.courses-nav
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	+clr
+	text-align: center
+	+it
+	&__title
+		float: left
+		height: 104px
+		line-height: 104px
+		width: 305px
+		font-size: 18px
+		color: #fff 
+	&__main
+		overflow: hidden
+		background: #fff 
+	&__list
+		display: table
+		width: 100%
+		table-layout: fixed
+		font-size: 18px
+		li
+			display: table-cell
+			vertical-align: middle
+			height: 104px
+			line-height: 104px
+		a
+			color: #122e5d 
+			display: block
+			&:hover
+				span
+					border-color: transparent 
+		span
+			display: inline-block
+			line-height: 1.2
+			border-bottom: 1px solid $red
+			+tr_border 
+
+.btn-menu
+	display: none
+	position: absolute
+	right: 0
+	top: 0
+	z-index: 2
+	width: 55px
+	height: 55px
+	background: $red
+	line-height: 1
+	+r(1023)
+		display: block
+	i
+		display: inline-block
+		position: relative
+		vertical-align: middle
+		height: 3px
+		width: 32px
+		background: #fff
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			right: 0
+			height: 3px
+			background: #fff
+		&:before
+			top: -9px
+		&:after
+			bottom: -9px
+
+.title-h1
+	font-size: 36px
+	+bold
+	color: #000 
+
+.title-h2
+	font-size: 24px
+	+it
+	color: #000 
+
+
+
+.footer
+	padding: 90px 0 0 
+	background: #fff
+	text-align: center 
+	+r(1279)
+		padding-top: 72dpx
+	+r(1023)
+		padding-top: 62px
+	+r(767)
+		padding-top: 20px
+	&__logo
+		margin: 61px 0 84px
+		font-size: 0
+		+r(1279)
+			margin-bottom: 42px
+		+r(1023)
+			margin: 40px 0 22px
+		+r(767)
+			margin: 12px 0 18px
+		a
+			display: inline-block
+			vertical-align: middle
+			padding: 0 30px 
+			+r(1279)
+				padding: 0 13px 
+				margin: 0 0 35px 
+			+r(767)
+				margin-bottom: 12px
+		img
+			display: block
+			+r(1279)
+				width: 90%
+				margin: 0 auto 
+	&__bottom
+		display: table
+		table-layout: fixed
+		width: 100%
+		font-size: 16px
+		color: #fff
+		+it
+		+r(1279)
+			font-size: 14px
+		+r(1023)
+			font-size: 12px
+	&__item
+		display: table-cell
+		vertical-align: middle
+		padding: 45px 35px 
+		text-align: center
+		background: $blue
+		letter-spacing: .6px 
+		&:first-child
+			text-align: left
+		&:last-child
+			text-align: right
+		img
+			display: block
+			margin: 0 auto 
+			opacity: 0.3
+		.link
+			color: #fff 
+			&:hover
+				color: #fff 
+		 
 
 
 
