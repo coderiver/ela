@@ -146,9 +146,14 @@ a
 .l-col-left
 	float: left
 	width: 588px
+	+r(1279)
+		width: 478px
+
 .l-col-right
 	float: right
 	width: 570px
+	+r(1279)
+		width: 457px
 [class*="icon-"]
 	display: inline-block
 	vertical-align: middle
@@ -850,6 +855,8 @@ a
 		right: 0 
 		z-index: -1
 		background: $violet 
+		+r(1279)
+			right: -300px
 	.title-group
 		padding-right: 100px
 		float: right
@@ -862,6 +869,8 @@ a
 		bottom: 0
 		right: 366px
 		background: #fff 
+		+r(1279)
+			left: -300px
 .items-wrap
 	font-size: 0
 	text-align: right
@@ -880,6 +889,11 @@ a
 	line-height: 1.3
 	text-align: left
 	+gpu
+	+r(1279)
+		width: 142px
+		height: 148px
+		padding: 20px 10px 20px 15px
+		margin: 0 0 15px 15px
 	&:first-child
 		margin-left: 0
 	&:hover
@@ -891,6 +905,9 @@ a
 		left: 30px
 		bottom: 30px
 		+tr(transform .3s)
+		+r(1279)
+			bottom: 20px
+			left: 15px
 	&__title
 		display: inline-block
 		position: relative
@@ -917,7 +934,13 @@ a
 	&_big
 		width: 374px
 		height: 146px
-
+		+r(1279)
+			width: 298px
+			height: 116px
+			font-size: 16px
+		.item__title
+			+r(1279)
+				font-size: 20px
 .banner
 	display: block
 	padding: 48px 0 63px 
