@@ -73,7 +73,11 @@
 	
 $light: #eef1f6
 $red: #da3e3e
+$red_h: darken($red, 7%)
+$red_a: darken($red, 10%)
 $blue: #122e5c
+$blue_h: darken($blue, 7%)
+$blue_a: darken($blue, 10%)
 $violet: #dbe6f9
 $dark: #152033
 =tr_o
@@ -99,14 +103,18 @@ body
 a
 	text-decoration: none
 .link
-	display: inline-block
-	line-height: 1.2
+	font-size: 24px
 	border-bottom: 1px solid $red
 	+transition(border, color, .3s)
 	color: $blue 
+	+it
 	&:hover
 		border-color: transparent 
 		color: $red 
+.wrap
+	+clr
+.wrapper
+	overflow: hidden
 // common blocks      
 .out
 	overflow: hidden
@@ -133,7 +141,14 @@ a
 		margin: 0 50px 
 	+r(767)
 		margin: 0 20px
-			
+.l-cols
+	+clr
+.l-col-left
+	float: left
+	width: 588px
+.l-col-right
+	float: right
+	width: 570px
 [class*="icon-"]
 	display: inline-block
 	vertical-align: middle
@@ -150,7 +165,7 @@ a
 		margin-top: 15px
 		height: 475px
 		overflow: visible
-	+r(768)
+	+r(767)
 		height: 268px
 	&:before
 		content: ""
@@ -190,7 +205,7 @@ a
 		width: 170px
 		font-size: 14px
 	+r(767)
-		width: 120px
+		width: 100px
 		margin-top: 13px
 		font-size: 11px
 	img
@@ -198,6 +213,7 @@ a
 		margin-bottom: 20px
 		+r(767)
 			margin-bottom: 15px
+			width: 100%
 .nav
 	position: relative
 	z-index: 5
@@ -346,9 +362,10 @@ a
 
 			> a
 				color: $red
-				padding: 10px 20px 10px 15px
+				padding: 10px 20px 10px 40px
 				+r(1023)
 					padding-right: 10px
+					padding-left: 15px
 				span
 					position: relative
 					padding-right: 17px
@@ -359,6 +376,8 @@ a
 						right: 0
 						+tr_border
 						+arr(6,6,$red,r) 
+						+r(1023)
+							bottom: 4px
 		a
 			font-size: 18px
 			line-height: 1.3
@@ -526,6 +545,7 @@ a
 	height: 55px
 	background: $red
 	line-height: 1
+	+tr(background .3s)
 	+r(1023)
 		display: block
 	i
@@ -543,29 +563,165 @@ a
 			right: 0
 			height: 3px
 			background: #fff
+			+tr(transform .3s)
 		&:before
 			top: -9px
 		&:after
 			bottom: -9px
+	&.is-active
+		background: none
+		z-index: 11
+		i
+			background: none
+			&:before
+				+transform(rotate(45deg) translate3d(6px, 6px, 0))
+			&:after
+				+transform(rotate(-45deg) translate3d(6px, -6px, 0))
+.menu-tablet
+	display: none
+	position: fixed
+	top: 15px
+	bottom: 0
+	left: 50%
+	width: 369px
+	z-index: 10 
+	+tr(transform .3s)
+	+transform(translateX(200%))
+	opacity: 0
+	visibility: hidden
+	+r(1023)
+		display: block
+	+r(767)
+		width: 320px
+		margin-left: -160px
+		+tr(opacity .3s)
+		+transform(translateX(0))
+	&.is-active
+		+transform(translateX(0))
+		+r(767)
+			opacity: 1
+			visibility: visible
+	&:before
+		content: ""
+		position: absolute
+		z-index: -1
+		top: 20px
+		bottom: 0
+		left: 0
+		width: 1px
+		box-shadow: 0 0 50px 5px #000
+		+r(767)
+			display: none
+	&__in
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 13px 20px 13px 50px 
+		z-index: 2
+		background: $blue
+		max-height: 100%
+		overflow-y: auto
+		+r(767)
+			padding: 12px 20px
+			left: 15px
+			right: 15px
+	.logo
+		margin-bottom: 47px
+		width: 100px
+		display: block
+		font-size: 11px
+		+r(767)
+			margin-top: 0
+		img
+			width: 100%
+	.doc
+		display: inline-block
+		margin-left: -50px
+		+r(767)
+			margin-left: -20px
+	.menu-wrap
+		margin: 38px 0 8px -15px 
+	.menu
+		a
+			display: block
+			padding: 7px 12px 
+	.btn-search
+		right: 60px
+		top: 14px
+.touch-nav
+	display: none
+	margin: 0 0 24px 
+	+it2
+	font-size: 18px
+	a
+		display: inline-block
+		position: relative
+		padding: 12px 0
+		&[data-nav]
+			&:after
+				content: ""
+				position: absolute
+				right: 0
+				bottom: 20px
+				+arr(6,6,#fff,r)
+	&_main
+		font-size: 20px
+		a
+			padding-right: 25px
+		+r(767)
+			display: block
+	&__back
+		background: none
+		position: relative
+		padding: 10px 22px 
+		font-size: 18px
+		+it2
+		color: #fff
+		span
+			border-bottom: 1px solid rgba(#fff,.5)
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			top: 50%
+			margin-top: -3px
+			+arr(6,6,#fff,l)
 
+.subtitle
+	margin-bottom: 28px
+	font-size: 13px
+	+museo_300
+	text-transform: uppercase
+	opacity: 0.7
+	letter-spacing: 1.5px 
+	&_dark
+		opacity: 1
 .title-h1
+	margin-bottom: 20px
 	font-size: 36px
 	+bold
+	line-height: 1.16
 	color: #000 
-
+	letter-spacing: .6px 
+	text-transform: uppercase
 .title-h2
 	font-size: 24px
 	+it
+	letter-spacing: .6px 
 	color: #000 
 
 
 
 .footer
+	margin: 0 0 60px 
 	padding: 90px 0 0 
 	background: #fff
 	text-align: center 
 	+r(1279)
-		padding-top: 72dpx
+		padding-top: 72px
+		margin-bottom: 0
 	+r(1023)
 		padding-top: 62px
 	+r(767)
@@ -586,13 +742,15 @@ a
 			+r(1279)
 				padding: 0 13px 
 				margin: 0 0 35px 
+			+r(1023)
+				width: 20%
 			+r(767)
+				width: 33.3%
 				margin-bottom: 12px
 		img
 			display: block
-			+r(1279)
-				width: 90%
-				margin: 0 auto 
+			max-width: 100%
+			margin: 0 auto 
 	&__bottom
 		display: table
 		table-layout: fixed
@@ -604,6 +762,12 @@ a
 			font-size: 14px
 		+r(1023)
 			font-size: 12px
+		+r(767)
+			+display-flex
+			+flex-direction(column)
+			padding: 20px 10px 
+			background: $blue
+			text-align: center
 	&__item
 		display: table-cell
 		vertical-align: middle
@@ -611,43 +775,275 @@ a
 		text-align: center
 		background: $blue
 		letter-spacing: .6px 
+		+r(1023)
+			padding: 45px 10px  
+		+r(767)
+			order: 1
+			display: block
+			padding: 0
 		&:first-child
 			text-align: left
+			+r(1023)
+				padding-left: 30px
+			+r(767)
+				order: 2
+				padding: 0
+				text-align: center
 		&:last-child
 			text-align: right
+			+r(1023)
+				padding-right: 30px
+			+r(767)
+				order: 3
+				margin-top: 5px
+				padding: 0
+				text-align: center
 		img
 			display: block
 			margin: 0 auto 
 			opacity: 0.3
+			+r(1023)
+				max-width: 165px
+			+r(767)
+				margin-bottom: 17px
 		.link
 			color: #fff 
+			font-size: 16px
 			&:hover
 				color: #fff 
-		 
 
+.btn
+	display: inline-block
+	padding: 32px 20px 31px
+	line-height: 1 
+	min-width: 457px
+	color: #fff
+	font-size: 13px
+	+museo_300
+	background: $red
+	text-align: center
+	text-transform: uppercase
+	+tr(background .3s)
+	letter-spacing: 1.5px 
+	&:hover
+		background: $red_h
+		.icon-arr
+			+transform(translateX(10px))
+	&:active
+		background: $red_a
+	strong
+		+museo_700
+	.icon-arr
+		vertical-align: middle
+		margin-left: 13px
+		+tr(transform .3s)
 
+.section
+	position: relative
+	padding: 64px 0 67px
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		bottom: -77px
+		left: 366px
+		right: 0 
+		z-index: -1
+		background: $violet 
+	.title-group
+		padding-right: 100px
+		float: right
+		width: 90%
+		text-align: right
+.section_white
+	padding: 80px 0 50px
+	&:before
+		left: 0
+		bottom: 0
+		right: 366px
+		background: #fff 
+.items-wrap
+	font-size: 0
+	text-align: right
+.item
+	position: relative
+	display: inline-block
+	vertical-align: top
+	margin: 0 0 18px 18px 
+	padding: 33px 10px 20px 30px
+	width: 178px
+	height: 186px
+	background: #fff 
+	font-size: 18px
+	+it2
+	color: #fff 
+	line-height: 1.3
+	text-align: left
+	+gpu
+	&:first-child
+		margin-left: 0
+	&:hover
+		.icon-arr,
+		.icon-arr-red
+			+transform(translateX(10px))
+	.icon-arr
+		position: absolute
+		left: 30px
+		bottom: 30px
+		+tr(transform .3s)
+	&__title
+		display: inline-block
+		position: relative
+		font-size: 24px
+		line-height: 1.25
+		.icon-arr
+			left: auto
+			right: -40px
+			bottom: auto
+			top: 10px
+	&__text	
+		display: block
+		margin-top: 11px
+		opacity: 0.7
+	&_red
+		background: $red
+	&_blue
+		background: $blue
+	&_border
+		box-shadow: inset 0 0 0 5px $red 
+		color: $red 
+		.icon-arr
+			+svg(arr-red,20,13)
+	&_big
+		width: 374px
+		height: 146px
 
+.banner
+	display: block
+	padding: 48px 0 63px 
+	background: $blue 
+	text-align: center
+	color: #fff 
+	&__text
+		display: block
+		font-size: 40px
+		+reg
+	&__title	
+		display: block
+		padding-bottom: 55px
+		position: relative
+		font-size: 50px
+		text-transform: uppercase
+		+bold
+		&:after
+			content: ""
+			position: absolute
+			left: 50%
+			margin-left: -18px
+			bottom: 0
+			width: 36px
+			height: 3px
+			background: #fff
+	img
+		margin-bottom: 36px
+	.line-title
+		margin: 0 20px 
+.line-title
+	overflow: hidden
+	text-align: center
+	font-size: 28px
+	+it
+	color: #fff 
+	span
+		display: inline-block
+		padding: 0 17px 
+		position: relative
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			height: 1px
+			top: 50%
+			width: 1000px 
+			background: #fff
+		&:before
+			left: -1000px
+		&:after
+			right: -1000px
 
+.news-cols
+	padding: 70px 0 140px 
+	&__left
+		float: left
+		padding-top: 45px
+		width: 196px
+	&__right
+		overflow: hidden
+		padding-left: 100px
+	.post
+		float: left
+		margin-right: 43px
 
+.post
+	position: relative
+	max-width: 446px
+	padding: 0 20px 32px 0
+	&:hover
+		.img
+			&:before
+				background: #103373
+	&:before
+		content: ""
+		position: absolute
+		top: 20px
+		left: 20px
+		right: 0
+		bottom: 0
+		z-index: -1
+		background: #fff  
+	&__main
+		overflow: hidden
+	.date
+		float: left
+		padding: 0 6px 
+		width: 83px
+		+text-overflow
+.img
+	position: relative
+	overflow: hidden
+	margin-bottom: 27px
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0 
+		left: 0
+		background: #c90000
+		+tr(background .3s)
+	img
+		display: block
+		width: 100%
+		
+		+filter(grayscale(1) opacity(0.5) brightness(1.5) contrast(1.5))
+.date
+	font-size: 14px
+	line-height: 1.2
+	letter-spacing: .6px 
+	+it
+	span
+		display: block
+		+reg
+		font-size: 48px
+		&:first-letter
+			font-size: 30px
+			
+.meta
+	font-size: 14px
+	color: #666
+	+it
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.post-link
+	margin-bottom: 33px
+	.meta
+		margin-top: 10px
