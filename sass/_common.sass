@@ -100,7 +100,7 @@ body
 	+museo_300
 	color: $dark 
 	background: $light 
-	&.has-open-menu
+	&.no-scroll
 		overflow: hidden
 a
 	text-decoration: none
@@ -489,7 +489,7 @@ a
 	position: absolute
 	right: 0
 	top: 10px
-	+s(glass)
+	+svg(glass,24,25)
 
 .soc
 	margin-left: -20px
@@ -660,6 +660,8 @@ a
 		box-shadow: 0 0 50px 5px #000
 		+r(767)
 			display: none
+	a
+		color: #fff 
 	&__in
 		position: absolute
 		top: 0
@@ -780,6 +782,11 @@ a
 		font-size: 16px
 	+r(767)
 		font-size: 12px
+	a
+		color: #fff
+		+tr(color .3s)
+		&:hover
+			color: $red 
 .footer
 	margin: 0 0 60px 
 	padding: 90px 0 0 
@@ -1301,3 +1308,172 @@ a
 	margin-bottom: 33px
 	.meta
 		margin-top: 10px
+		
+.popup
+	opacity: 0
+	visibility: hidden
+	position: fixed
+	padding: 82px 0
+	top: 50px
+	left: 50%
+	bottom: 0
+	z-index: 15
+	margin-left: -750px
+	width: 1500px
+	background: $blue 
+	+tr(opacity .3s)
+	&.is-visible
+		opacity: 1
+		visibility: visible
+	+r(1599)
+		top: 23px
+		margin-left: -617px
+		max-width: 1234px
+	+r(1279)
+		margin-left: -489px
+		padding: 40px 0 
+		max-width: 978px
+	+r(1023)	
+		top: 15px
+		margin-left: -369px
+		max-width: 738px
+	+r(767)
+		margin-left: -145px
+		max-width: 290px
+	.desktop &
+		.popup__in
+			+scrollbar
+				width: 4px
+				height: 4px
+			+scrollbar-thumb
+				background: rgba(#fff, .5)
+	&__in
+		margin: 0 auto  
+		padding: 0 30px 
+		width: 775px
+		max-height: 100%
+		overflow-y: auto
+		+r(1279)
+			width: 100%
+			padding: 0 50px 
+		+r(767)
+			padding: 0 30px 
+.close
+	position: absolute
+	width: 27px
+	height: 27px
+	background: none
+	overflow: hidden
+	&:hover
+		&:before
+			+transform(rotate(-45deg) translate3d(-120%,0,0))
+			opacity: 0
+		&:after
+			+transform(rotate(-45deg) translate3d(0,0,0))
+			opacity: 1
+		i
+			&:before
+				opacity: 0
+				+transform(rotate(45deg) translate3d(120%,0,0))
+			&:after
+				opacity: 1
+				+transform(rotate(45deg) translate3d(0,0,0))
+			
+	&:before,
+	&:after
+		content: "" 
+		position: absolute
+		left: 50%
+		top: 50%
+		margin: -1px 0 0 -13px
+		width: 27px
+		height: 2px
+		+transition(transform .6s cubic-bezier(.19,1,.22,1),opacity .2s cubic-bezier(.19,1,.22,1))
+	&:before
+		background: rgba(#d6dbe5, .5)
+		+transform(rotate(-45deg) translate3d(0,0,0))
+	&:after
+		opacity: 0
+		background: #fff 
+		+transform(rotate(-45deg) translate3d(120%,0,0))
+	i
+		position: absolute
+		top: 0
+		left: 0
+		width: 27px
+		height: 27px
+		&:before,
+		&:after
+			content: "" 
+			position: absolute
+			left: 50%
+			top: 50%
+			margin: -1px 0 0 -13px 
+			width: 27px
+			height: 2px
+			+transition(transform .6s cubic-bezier(.19,1,.22,1) .2s,opacity .2s cubic-bezier(.19,1,.22,1) .18s)
+		&:before
+			background: rgba(#d6dbe5, .5)
+			+transform(rotate(45deg) translate3d(0%,0,0))
+		&:after
+			opacity: 0
+			background: #fff
+			+transform(rotate(45deg) translate3d(120%,0,0))
+.search
+	position: relative
+	margin-bottom: 100px
+	+r(1279)
+		margin-bottom: 50px
+	+r(767)
+		margin-bottom: 30px
+	.close
+		left: -27px
+		bottom: 31px
+		display: none
+		+r(1279)
+			bottom: 14px
+	&__input
+		display: block
+		width: 100%
+		padding: 0 77px 0 20px
+		background: none
+		border-bottom: 2px solid
+		height: 97px
+		font-size: 48px
+		+it
+		color: #fff 
+		+r(767)
+			padding: 0 45px 0 20px
+		+r(1279)
+			height: 50px
+			font-size: 30px
+		+r(767)
+			font-size: 20px
+			height: 40px
+		+placeholder
+			opacity: 0.3
+	&__btn
+		position: absolute
+		right: 12px
+		top: 36px
+		+svg(glass,34,35)
+		+r(1279)
+			top: 5px
+		+r(767)
+			+svg(glass,17,18)
+.result
+	margin-bottom: 45px
+	color: rgba(#fff,.7)
+	+it
+	font-size: 18px 
+	+r(1279)
+		margin-bottom: 20px
+		font-size: 16px
+	+r(1024)
+		font-size: 14px
+	.title-h2
+		margin-bottom: 10px
+		color: #fff
+	span
+		color: $red 
+		 
