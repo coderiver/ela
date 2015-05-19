@@ -111,6 +111,10 @@
 	left: 0
 	right: 0
 	font-size: 0
+	+r(1023)
+		bottom: -50px
+	+r(767)
+		bottom: -35px
 	li
 		position: relative
 		display: inline-block
@@ -126,7 +130,7 @@
 		display: block
 		width: 12px
 		height: 12px
-		background: #fff
+		background: none
 		box-shadow: inset 0 0 0 1px $blue
 		cursor: pointer
 		+hide-text

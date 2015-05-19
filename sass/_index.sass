@@ -41,12 +41,15 @@
 			left: 306px
 			margin-top: -4px
 		+r(1023)
-			left: 206px
+			left: 216px
+			margin-top: -6px
 		+r(767)
 			display: none
 	&.is-animated
 		&:after
 			height: 110px
+			+r(1023)
+				height: 82px
 		.academy__img
 			&:before
 				width: 90px
@@ -217,6 +220,18 @@
 .about
 	.title-h2
 		margin-bottom: 55px	
+		+r(1279)
+			margin-bottom: 37px
+		+r(1023)
+			margin-bottom: 15px
 .slider
 	max-width: 548px
 	padding-bottom: 55px
+	+r(1279)
+		max-width: 438px
+	+r(1023)
+		max-width: 325px
+		padding-bottom: 50px
+	+r(767)
+		padding-bottom: 35px
+		margin-top: 24px

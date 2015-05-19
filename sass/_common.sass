@@ -100,6 +100,8 @@ body
 	+museo_300
 	color: $dark 
 	background: $light 
+	&.has-open-menu
+		overflow: hidden
 a
 	text-decoration: none
 .link
@@ -108,6 +110,10 @@ a
 	+transition(border, color, .3s)
 	color: $blue 
 	+it
+	+r(1279)
+		font-size: 20px
+	+r(767)
+		font-size: 17px
 	&:hover
 		border-color: transparent 
 		color: $red 
@@ -138,22 +144,44 @@ a
 	+r(1599)
 		margin: 0 20px 
 	+r(1023)
-		margin: 0 50px 
+		margin: 0 15px 
 	+r(767)
-		margin: 0 20px
+		margin: 0 28px
+.l-inner_width
+	+r(767)
+		margin: 0
 .l-cols
 	+clr
+.l-cols_flex
+	+r(767)
+		+display-flex
+		+flex-direction(column)
+	.l-col-right
+		+r(767)
+			padding: 0 30px
 .l-col-left
 	float: left
 	width: 588px
 	+r(1279)
 		width: 478px
-
+	+r(1023)
+		width: 360px
+	+r(767)
+		float: none
+		width: 100%
+		order: 2
 .l-col-right
 	float: right
 	width: 570px
 	+r(1279)
 		width: 457px
+	+r(1023)
+		width: 348px
+	+r(767)
+		float: none
+		width: 100%	
+		order: 1
+		
 [class*="icon-"]
 	display: inline-block
 	vertical-align: middle
@@ -195,7 +223,11 @@ a
 
 	a
 		color: #fff 
-
+	.l-inner
+		+r(1023)
+			margin: 0 50px 
+		+r(767)
+			margin: 0 20px
 .logo
 	display: inline-block
 	vertical-align: middle
@@ -592,11 +624,11 @@ a
 	z-index: 10 
 	+tr(transform .3s)
 	+transform(translateX(200%))
-	opacity: 0
-	visibility: hidden
 	+r(1023)
 		display: block
-	+r(767)
+	+r(767)	
+		opacity: 0
+		visibility: hidden
 		width: 320px
 		margin-left: -160px
 		+tr(opacity .3s)
@@ -701,24 +733,42 @@ a
 	text-transform: uppercase
 	opacity: 0.7
 	letter-spacing: 1.5px 
+	+r(1279)
+		margin-bottom: 18px
+	+r(767)
+		font-size: 10px
+		margin-bottom: 10px
 	&_dark
 		opacity: 1
 .title-h1
 	margin-bottom: 20px
 	font-size: 36px
 	+bold
-	line-height: 1.16
+	line-height: 42px
 	color: #000 
 	letter-spacing: .6px 
 	text-transform: uppercase
+	+r(1279)
+		font-size: 30px
+	+r(1023)
+		margin-bottom: 5px
+		font-size: 26px
+		line-height: 36px
+	+r(767)
+		margin-bottom: 20px
+		font-size: 16px
+		line-height: 20px
 .title-h2
 	font-size: 24px
 	+it
 	letter-spacing: .6px 
 	color: #000 
-
-
-
+	+r(1279)
+		font-size: 20px
+	+r(1023)
+		font-size: 16px
+	+r(767)
+		font-size: 12px
 .footer
 	margin: 0 0 60px 
 	padding: 90px 0 0 
@@ -814,6 +864,8 @@ a
 		.link
 			color: #fff 
 			font-size: 16px
+			+r(767)
+				font-size: 12px
 			&:hover
 				color: #fff 
 
@@ -829,7 +881,15 @@ a
 	text-align: center
 	text-transform: uppercase
 	+tr(background .3s)
-	letter-spacing: 1.5px 
+	letter-spacing: 1.5px
+	+r(1279)
+		padding: 28px 20px 27px  
+		min-width: 415px
+	+r(1023)
+		padding: 21px 20px 20px 
+		min-width: 330px
+	+r(767)
+		min-width: 100%
 	&:hover
 		background: $red_h
 		.icon-arr
@@ -846,6 +906,12 @@ a
 .section
 	position: relative
 	padding: 64px 0 67px
+	+r(1279)
+		padding: 64px 0 62px
+	+r(1023)
+		padding: 55px 0 45px
+	+r(767)
+		padding: 25px 0
 	&:before
 		content: ""
 		position: absolute
@@ -857,13 +923,29 @@ a
 		background: $violet 
 		+r(1279)
 			right: -300px
+			left: 200px
+		+r(1023)
+			left: 103px
+		+r(767)
+			left: 78px
 	.title-group
 		padding-right: 100px
 		float: right
 		width: 90%
-		text-align: right
+		text-align: center
+		+r(1279)
+			padding-right: 65px
+		+r(1023)
+			padding-right: 35px
+		+r(767)
+			padding-right: 0
+			margin-bottom: 18px
 .section_white
 	padding: 80px 0 50px
+	+r(1279)
+		padding-top: 75px
+	+r(767)
+		padding: 25px 0
 	&:before
 		left: 0
 		bottom: 0
@@ -871,9 +953,13 @@ a
 		background: #fff 
 		+r(1279)
 			left: -300px
+		+r(1023)
+			right: 43px
 .items-wrap
 	font-size: 0
 	text-align: right
+	+r(767)
+		text-align: left
 .item
 	position: relative
 	display: inline-block
@@ -889,16 +975,28 @@ a
 	line-height: 1.3
 	text-align: left
 	+gpu
+	+tr(transform .3s)
 	+r(1279)
 		width: 142px
 		height: 148px
 		padding: 20px 10px 20px 15px
 		margin: 0 0 15px 15px
+	+r(1023)
+		width: 108px
+		height: 113px
+		padding: 6px 7px
+		margin: 0 0 12px 12px
+		font-size: 14px
+	+r(767)
+		margin: 0 0 18px 18px
 	&:first-child
 		margin-left: 0
+	&:nth-child(2n+1)
+		+r(767)
+			margin-left: 0
 	&:hover
-		.icon-arr,
-		.icon-arr-red
+		+scale(1.1)
+		.icon-arr
 			+transform(translateX(10px))
 	.icon-arr
 		position: absolute
@@ -908,20 +1006,31 @@ a
 		+r(1279)
 			bottom: 20px
 			left: 15px
+		+r(1023)
+			bottom: 10px
+			left: 7px
 	&__title
 		display: inline-block
 		position: relative
 		font-size: 24px
 		line-height: 1.25
+		+r(1023)
+			font-size: 18px
 		.icon-arr
 			left: auto
 			right: -40px
 			bottom: auto
 			top: 10px
+			+r(1023)
+				right: -35px
+				left: auto !important
+				top: 7px
 	&__text	
 		display: block
 		margin-top: 11px
 		opacity: 0.7
+		+r(1023)
+			margin-top: 0
 	&_red
 		background: $red
 	&_blue
@@ -929,8 +1038,12 @@ a
 	&_border
 		box-shadow: inset 0 0 0 5px $red 
 		color: $red 
+		+r(1023)
+			padding: 10px
 		.icon-arr
 			+svg(arr-red,20,13)
+			+r(1023)
+				left: 10px
 	&_big
 		width: 374px
 		height: 146px
@@ -938,9 +1051,20 @@ a
 			width: 298px
 			height: 116px
 			font-size: 16px
+		+r(1023)
+			padding: 6px 15px
+			width: 228px
+			height: 90px
+			font-size: 14px
+		+r(767)
+			width: 100%
+			margin-left: 0
 		.item__title
 			+r(1279)
 				font-size: 20px
+		&.item_border
+			+r(767)
+				padding-top: 10px
 .banner
 	display: block
 	padding: 48px 0 63px 
@@ -996,21 +1120,47 @@ a
 
 .news-cols
 	padding: 70px 0 140px 
+	+clr
+	+r(1279)
+		padding: 35px 0 90px 
+	+r(1023)
+		padding-bottom: 75px
+	+r(767)
+		padding: 25px 0 30px
 	&__left
 		float: left
 		padding-top: 45px
 		width: 196px
+		+r(767)
+			float: none
+			margin: 0 auto 35px
+			padding: 0
 	&__right
 		overflow: hidden
 		padding-left: 100px
+		+r(1279)
+			padding-left: 37px
+		+r(767)
+			padding: 0
 	.post
 		float: left
 		margin-right: 43px
-
+		+r(1279)
+			margin-left: 0
+		+r(1023)
+			margin-top: 30px
+		+r(767)
+			margin: 0
+			float: none
+		+ .wrapper
+			+r(1023)
+				display: none
 .post
 	position: relative
 	max-width: 446px
-	padding: 0 20px 32px 0
+	padding: 0 20px 30px 0
+	+r(1279)
+		max-width: 395px
 	&:hover
 		.img
 			&:before
@@ -1024,17 +1174,22 @@ a
 		bottom: 0
 		z-index: -1
 		background: #fff  
+	&__body
+		padding-top: 30px
+		+clr
+		+r(1279)
+			padding-top: 20px
 	&__main
 		overflow: hidden
 	.date
 		float: left
+		margin-top: -5px
 		padding: 0 6px 
 		width: 83px
 		+text-overflow
 .img
 	position: relative
 	overflow: hidden
-	margin-bottom: 27px
 	&:before
 		content: ""
 		position: absolute

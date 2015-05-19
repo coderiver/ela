@@ -18,6 +18,7 @@ head.ready(function() {
 	$(".js-toggle-menu").on("click", function(){
 		$(this).toggleClass("is-active");
 		$(".js-menu").toggleClass("is-active");
+		$("body").toggleClass("has-open-menu");
 		return false;
 	});
 	$(".js-nav-main a[data-nav]").on("click", function(){
