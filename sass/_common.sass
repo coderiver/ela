@@ -170,6 +170,12 @@ a
 		float: none
 		width: 100%
 		order: 2
+	.text
+		padding-right: 40px
+		+r(1023)
+			padding-right: 20px
+		+r(767)
+			padding-right: 0
 .l-col-right
 	float: right
 	width: 570px
@@ -181,7 +187,12 @@ a
 		float: none
 		width: 100%	
 		order: 1
-		
+	.text
+		padding-left: 40px
+		+r(1023)
+			padding-left: 20px
+		+r(767)
+			padding-left: 0
 [class*="icon-"]
 	display: inline-block
 	vertical-align: middle
@@ -876,6 +887,8 @@ a
 .section
 	position: relative
 	padding: 64px 0 67px
+	+ .section
+		margin-top: 30px
 	+r(1279)
 		padding: 64px 0 62px
 	+r(1023)
@@ -912,6 +925,8 @@ a
 			margin-bottom: 18px
 .section_white
 	padding: 80px 0 50px
+	+ .footer
+		margin-top: 142px
 	+r(1279)
 		padding-top: 75px
 	+r(767)
@@ -925,6 +940,12 @@ a
 			left: -300px
 		+r(1023)
 			right: 43px
+.section_pb
+	padding-bottom: 105px
+	+r(1279)
+		padding-bottom: 90px
+	+r(767)
+		padding: 25px 0 
 .items-wrap
 	font-size: 0
 	text-align: right
@@ -1199,7 +1220,7 @@ a
 	&:hover
 		.img
 			&:before
-				background: #103373
+				background: rgba(16, 0, 255, 0.66)
 	&:before
 		content: ""
 		position: absolute
@@ -1237,8 +1258,10 @@ a
 	img
 		display: block
 		width: 100%
-		
 		+filter(grayscale(1) opacity(0.5) brightness(1.5) contrast(1.5))
+.img_blue
+	&:before
+		background: rgba(16, 0, 255, 0.66)
 .date
 	font-size: 14px
 	line-height: 1.2

@@ -122,3 +122,22 @@
 		&:first-child
 			&:before
 				display: none
+				
+.contacts
+	margin: 25px 0 
+	+museo_300
+	font-size: 14px
+	+r(767)
+		margin: 15px 0 
+	span
+		+museo_700
+	a
+		color: $red
+		+tr_c
+		&:hover
+			color: #000 
+		&[href^="tel"]
+			color: #000
+			&:hover
+				color: $red
+			
