@@ -152,6 +152,7 @@ a
 		margin: 0
 .l-cols
 	+clr
+	
 .l-cols_flex
 	+r(767)
 		+display-flex
@@ -170,12 +171,22 @@ a
 		float: none
 		width: 100%
 		order: 2
+	.l-cols__inner
+		padding-right: 10px
+		+r(767)
+			padding: 0
 	.text
 		padding-right: 40px
 		+r(1023)
 			padding-right: 20px
 		+r(767)
 			padding-right: 0
+	.post-link
+		padding: 0 150px 0 110px 
+		+r(1279)
+			padding: 0 50px 0 50px 
+		+r(767)
+			padding: 0
 .l-col-right
 	float: right
 	width: 570px
@@ -187,6 +198,10 @@ a
 		float: none
 		width: 100%	
 		order: 1
+	.l-cols__inner
+		padding-left: 10px
+		+r(767)
+			padding: 0
 	.text
 		padding-left: 40px
 		+r(1023)
@@ -1230,6 +1245,12 @@ a
 		bottom: 0
 		z-index: -1
 		background: #fff  
+	&_single
+		margin: 50px 0 70px
+		+r(1279)
+			margin: 20px 0 30px
+		+r(1023)
+			margin: 20px 0 30px
 	&__body
 		padding-top: 30px
 		+clr

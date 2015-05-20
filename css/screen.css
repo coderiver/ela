@@ -76,14 +76,21 @@ a { text-decoration: none; }
 @media only screen and (max-width: 1279px) { .l-col-left { width: 478px; } }
 @media only screen and (max-width: 1023px) { .l-col-left { width: 360px; } }
 @media only screen and (max-width: 767px) { .l-col-left { float: none; width: 100%; order: 2; } }
+.l-col-left .l-cols__inner { padding-right: 10px; }
+@media only screen and (max-width: 767px) { .l-col-left .l-cols__inner { padding: 0; } }
 .l-col-left .text { padding-right: 40px; }
 @media only screen and (max-width: 1023px) { .l-col-left .text { padding-right: 20px; } }
 @media only screen and (max-width: 767px) { .l-col-left .text { padding-right: 0; } }
+.l-col-left .post-link { padding: 0 150px 0 110px; }
+@media only screen and (max-width: 1279px) { .l-col-left .post-link { padding: 0 50px 0 50px; } }
+@media only screen and (max-width: 767px) { .l-col-left .post-link { padding: 0; } }
 
 .l-col-right { float: right; width: 570px; }
 @media only screen and (max-width: 1279px) { .l-col-right { width: 457px; } }
 @media only screen and (max-width: 1023px) { .l-col-right { width: 348px; } }
 @media only screen and (max-width: 767px) { .l-col-right { float: none; width: 100%; order: 1; } }
+.l-col-right .l-cols__inner { padding-left: 10px; }
+@media only screen and (max-width: 767px) { .l-col-right .l-cols__inner { padding: 0; } }
 .l-col-right .text { padding-left: 40px; }
 @media only screen and (max-width: 1023px) { .l-col-right .text { padding-left: 20px; } }
 @media only screen and (max-width: 767px) { .l-col-right .text { padding-left: 0; } }
@@ -389,6 +396,9 @@ a { text-decoration: none; }
 @media only screen and (max-width: 1279px) { .post { max-width: 395px; } }
 .post:hover .img:before { background: rgba(16, 0, 255, 0.66); }
 .post:before { content: ""; position: absolute; top: 20px; left: 20px; right: 0; bottom: 0; z-index: -1; background: #fff; }
+.post_single { margin: 50px 0 70px; }
+@media only screen and (max-width: 1279px) { .post_single { margin: 20px 0 30px; } }
+@media only screen and (max-width: 1023px) { .post_single { margin: 20px 0 30px; } }
 .post__body { padding-top: 30px; *zoom: 1; }
 .post__body:after { content: " "; display: table; clear: both; }
 @media only screen and (max-width: 1279px) { .post__body { padding-top: 20px; } }
