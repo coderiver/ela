@@ -105,6 +105,7 @@ body
 a
 	text-decoration: none
 .link
+	display: inline
 	font-size: 24px
 	border-bottom: 1px solid $red
 	+transition(border, color, .3s)
@@ -222,7 +223,7 @@ a
 		margin-top: 15px
 		overflow: visible
 	&__in
-		height: 450px
+		height: 555px
 		position: relative
 		z-index: 2
 		+cover
@@ -1068,52 +1069,21 @@ a
 				left: 10px
 		&:hover
 			box-shadow: none 
-			.item__left
+			.part-left
 				&:before
 					height: 100%
-					+tr(height .15s linear .1s)
+					
 				&:after
 					width: 100%
-					+tr(width .15s linear .1s)
-			.item__right
+					
+			.part-right
 				&:before
 					width: 100%
-					+tr(width .15s linear .25s)
+					
 				&:after
 					height: 100%
-					+tr(height .15s linear .25s)
-		.item__left,
-		.item__right
-			&:before,
-			&:after
-				content: ""
-				position: absolute 
-				background: $red
-		.item__left
-			&:before
-				top: 0
-				left: 0
-				width: 5px
-				height: 0
-				
-			&:after
-				left: 0
-				top: 0
-				height: 5px
-				width: 0
-				
-		.item__right
-			&:before
-				bottom: 0
-				left: 0
-				height: 5px
-				width: 0
-				
-			&:after
-				right: 0
-				top: 0
-				width: 5px
-				height: 0
+					
+		
 				
 	&_big
 		width: 374px
@@ -1136,6 +1106,39 @@ a
 		&.item_border
 			+r(767)
 				padding-top: 10px
+.part-left,
+.part-right
+	&:before,
+	&:after
+		content: ""
+		position: absolute 
+		background: $red
+.part-left
+	&:before
+		top: 0
+		left: 0
+		width: 5px
+		height: 0
+		+tr(height .15s linear .1s)
+	&:after
+		left: 0
+		top: 0
+		height: 5px
+		width: 0
+		+tr(width .15s linear .1s)
+.part-right
+	&:before
+		bottom: 0
+		left: 0
+		height: 5px
+		width: 0
+		+tr(width .15s linear .25s)
+	&:after
+		right: 0
+		top: 0
+		width: 5px
+		height: 0
+		+tr(height .15s linear .25s)
 .banner
 	display: block
 	padding: 48px 0 63px 
@@ -1506,3 +1509,4 @@ a
 	+r(767)
 		padding-bottom: 35px
 		margin-top: 24px
+		

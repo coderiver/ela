@@ -1,18 +1,28 @@
 .courses-nav
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: 2
 	+clr
 	text-align: center
 	+it
 	font-size: 18px
 	+r(1279)	
 		font-size: 16px
+	+r(1023)
+		position: static
 	&__title
 		float: left
 		height: 104px
 		line-height: 104px
 		width: 305px
 		color: #fff 
+		+r(1279)
+			height: 80px
+			line-height: 80px
 		+r(1023)
-			float: none
+			display: none
 	&__main
 		overflow: hidden
 		background: #fff 
@@ -30,7 +40,7 @@
 			vertical-align: middle
 			height: 104px
 			line-height: 104px
-			+r(1023)
+			+r(1279)
 				height: 80px
 				line-height: 80px
 			+r(767)
@@ -58,17 +68,35 @@
 	line-height: 1.7
 	+museo_300
 	letter-spacing: .6px 
+	color: $dark 
 	+r(767)
 		font-size: 12px
 	p
 		margin: 25px 0
 		+r(767)
 			margin: 15px 0 
+	ul
+		li
+			position: relative
+			padding-left: 47px
+			margin: 25px 0 
+			+r(767)
+				margin: 15px 0 
+			&:before
+				content: ""
+				position: absolute
+				left: 0
+				top: 10px
+				height: 1px
+				width: 26px 
+				background: $red 
 .page-title
 	position: relative
 	top: 0
 	text-align: center
 	color: #fff 
+	+r(1279)
+		margin-top: 20px
 	+r(1023)
 		margin-top: 10px
 	+r(767)
@@ -112,6 +140,8 @@
 		font-size: 14px
 		opacity: 0.5
 		+tr_o
+		+r(767)
+			padding: 5px 10px 
 		&:hover
 			opacity: 1 
 		&:before
@@ -119,6 +149,8 @@
 			position: absolute
 			top: 9px
 			left: -7px
+			+r(767)
+				top: 4px
 		&:first-child
 			&:before
 				display: none
@@ -141,3 +173,92 @@
 			&:hover
 				color: $red
 			
+.box
+	display: block
+	position: relative
+	margin-bottom: 18px
+	color: $blue
+	background: #fff 
+	+clr
+	&:hover
+		.part-left
+			&:before
+				height: 100%
+				
+			&:after
+				width: 100%
+				
+		.part-right
+			&:before
+				width: 100%
+				
+			&:after
+				height: 100%
+		.box__title
+			color: $red
+			&:before
+				opacity: 0
+			&:after
+				opacity: 1
+		.link
+			color: $red
+	&__left
+		float: left
+		width: 393px
+		padding: 16px 55px 16px 35px 
+	&__middle
+		overflow: hidden
+		padding: 16px 10px 16px 0 
+	&__right
+		float: right
+		width: 276px
+		padding: 16px 28px 16px 0 
+		text-align: right
+	&__title
+		position: relative
+		font-size: 24px
+		+bold
+		line-height: 1.25
+		+tr_c
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			right: -38px
+			bottom: 7px
+			+tr_o
+		&:before
+			+svg(arr-blue,20,13)
+		&:after
+			+svg(arr-red,20,13)
+			opacity: 0
+	&__subtitle
+		margin-top: 12px 
+		opacity: 0.7
+		+it
+		font-size: 18px
+	.link
+		position: absolute
+		right: 28px
+		bottom: 40px
+.list
+	li
+		position: relative
+		margin: 18px 0
+		padding-left: 20px
+		color: #152033
+		font-size: 14px
+		+museo_300
+		line-height: 1.3
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			top: 4px
+			+svg(romb,9,9)
+
+.price
+	color: $red
+	color: rgba($red, .5)
+	font-size: 18px
+	+it
