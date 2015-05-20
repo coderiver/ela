@@ -492,7 +492,7 @@ a
 	+svg(glass,24,25)
 
 .soc
-	margin-left: -20px
+	margin-left: -26px
 	a
 		display: inline-block
 		vertical-align: middle
@@ -662,6 +662,20 @@ a
 			display: none
 	a
 		color: #fff 
+	.close
+		right: 14px
+		top: 14px
+		&:before,
+		&:after
+			height: 3px
+		&:before
+			background: #fff 
+		i
+			&:before,
+			&:after
+				height: 3px
+			&:before
+				background: #fff 
 	&__in
 		position: absolute
 		top: 0
@@ -670,7 +684,7 @@ a
 		bottom: 0
 		padding: 13px 20px 13px 50px 
 		z-index: 2
-		background: $blue
+		background: rgba($blue, .98)
 		max-height: 100%
 		overflow-y: auto
 		+r(767)
@@ -1308,7 +1322,8 @@ a
 	margin-bottom: 33px
 	.meta
 		margin-top: 10px
-		
+
+
 .popup
 	opacity: 0
 	visibility: hidden
@@ -1321,10 +1336,17 @@ a
 	margin-left: -750px
 	width: 1500px
 	background: $blue 
-	+tr(opacity .3s)
-	&.is-visible
+	+transition(opacity .4s, transform .4s cubic-bezier(0.7,0,0.3,1))
+	+transform(translate3d(0,-100%,0))
+	&.is-visible-in
 		opacity: 1
 		visibility: visible
+		+transform(translate3d(0,0,0))
+		.popup__in
+			+transform(translate3d(0,0,0))
+	&.is-visible-out
+		opacity: 0
+		+transform(translate3d(0,50%,0))
 	+r(1599)
 		top: 23px
 		margin-left: -617px
@@ -1333,7 +1355,7 @@ a
 		margin-left: -489px
 		padding: 40px 0 
 		max-width: 978px
-	+r(1023)	
+	+r(1023)
 		top: 15px
 		margin-left: -369px
 		max-width: 738px
@@ -1353,6 +1375,8 @@ a
 		width: 775px
 		max-height: 100%
 		overflow-y: auto
+		+transform(translate3d(0,-200px,0))
+		+transition(transform .4s cubic-bezier(0.7,0,0.3,1) .2s)
 		+r(1279)
 			width: 100%
 			padding: 0 50px 
@@ -1432,6 +1456,14 @@ a
 		display: none
 		+r(1279)
 			bottom: 14px
+	label
+		&.has-error
+			position: absolute
+			top: 100%
+			left: 0
+			color: $red
+			font-size: 20px
+			+it 
 	&__input
 		display: block
 		width: 100%
@@ -1452,6 +1484,8 @@ a
 			height: 40px
 		+placeholder
 			opacity: 0.3
+		&.has-error
+			border-color: $red 
 	&__btn
 		position: absolute
 		right: 12px
