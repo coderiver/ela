@@ -70,7 +70,7 @@ a { text-decoration: none; }
 .l-cols:after { content: " "; display: table; clear: both; }
 
 @media only screen and (max-width: 767px) { .l-cols_flex { display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; } }
-@media only screen and (max-width: 767px) { .l-cols_flex .l-col-right { padding: 0 30px; } }
+@media only screen and (max-width: 767px) { .l-cols_flex .l-col-right__in { padding: 0 30px; } }
 
 .l-col-left { float: left; width: 588px; }
 @media only screen and (max-width: 1279px) { .l-col-left { width: 478px; } }
@@ -84,11 +84,13 @@ a { text-decoration: none; }
 
 [class*="icon-"] { display: inline-block; vertical-align: middle; }
 
-.header { position: relative; z-index: 5; margin-top: 50px; height: 555px; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; overflow: hidden; }
+.header { position: relative; z-index: 5; margin-top: 50px; overflow: hidden; }
 @media only screen and (max-width: 1599px) { .header { margin-top: 23px; } }
-@media only screen and (max-width: 1023px) { .header { margin-top: 15px; height: 475px; overflow: visible; } }
-@media only screen and (max-width: 767px) { .header { height: 268px; } }
-.header:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; background: rgba(8, 39, 91, 0.9); }
+@media only screen and (max-width: 1023px) { .header { margin-top: 15px; overflow: visible; } }
+.header__in { height: 450px; position: relative; z-index: 2; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+@media only screen and (max-width: 1023px) { .header__in { height: 400px; } }
+@media only screen and (max-width: 767px) { .header__in { height: 268px; } }
+.header__in:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; background: rgba(8, 39, 91, 0.9); }
 .header__left { float: left; width: 49.2%; }
 @media only screen and (max-width: 1023px) { .header__left { float: none; width: 100%; } }
 .header__right { float: right; width: 49.2%; }
@@ -168,26 +170,6 @@ a { text-decoration: none; }
 .soc a { display: inline-block; vertical-align: middle; padding: 20px; opacity: 0.7; -moz-transition: opacity 0.3s; -o-transition: opacity 0.3s; -webkit-transition: opacity 0.3s; transition: opacity 0.3s; }
 .soc a:hover { opacity: 1; }
 
-.page-title { position: relative; top: -4px; text-align: center; color: #fff; }
-.page-title span { display: block; margin-bottom: -25px; font-size: 34px; font-family: "DidotItalic", Arial, sans-serif; }
-.page-title strong { font-weight: normal; font-family: "DidotBold", Arial, sans-serif; text-transform: uppercase; font-size: 100px; letter-spacing: 5px; }
-
-.breadcrumbs { margin: -16px 0 0; text-align: center; font-size: 0; font-family: "DidotItalic", Arial, sans-serif; color: #fff; }
-.breadcrumbs a { position: relative; display: inline-block; padding: 10px 15px; vertical-align: middle; font-size: 14px; opacity: 0.5; -moz-transition: opacity 0.3s; -o-transition: opacity 0.3s; -webkit-transition: opacity 0.3s; transition: opacity 0.3s; }
-.breadcrumbs a:hover { opacity: 1; }
-.breadcrumbs a:before { content: "—"; position: absolute; top: 9px; left: -7px; }
-.breadcrumbs a:first-child:before { display: none; }
-
-.courses-nav { position: absolute; left: 0; right: 0; bottom: 0; *zoom: 1; text-align: center; font-family: "DidotItalic", Arial, sans-serif; }
-.courses-nav:after { content: " "; display: table; clear: both; }
-.courses-nav__title { float: left; height: 104px; line-height: 104px; width: 305px; font-size: 18px; color: #fff; }
-.courses-nav__main { overflow: hidden; background: #fff; }
-.courses-nav__list { display: table; width: 100%; table-layout: fixed; font-size: 18px; }
-.courses-nav__list li { display: table-cell; vertical-align: middle; height: 104px; line-height: 104px; }
-.courses-nav__list a { color: #122e5d; display: block; }
-.courses-nav__list a:hover span { border-color: transparent; }
-.courses-nav__list span { display: inline-block; line-height: 1.2; border-bottom: 1px solid #da3e3e; -moz-transition: border 0.3s; -o-transition: border 0.3s; -webkit-transition: border 0.3s; transition: border 0.3s; }
-
 .btn-menu { display: none; position: absolute; right: 0; top: 0; z-index: 2; width: 55px; height: 55px; background: #da3e3e; line-height: 1; -moz-transition: background 0.3s; -o-transition: background 0.3s; -webkit-transition: background 0.3s; transition: background 0.3s; }
 @media only screen and (max-width: 1023px) { .btn-menu { display: block; } }
 .btn-menu i { display: inline-block; position: relative; vertical-align: middle; height: 3px; width: 32px; background: #fff; }
@@ -250,7 +232,10 @@ a { text-decoration: none; }
 .title-h2 a { color: #fff; -moz-transition: color 0.3s; -o-transition: color 0.3s; -webkit-transition: color 0.3s; transition: color 0.3s; }
 .title-h2 a:hover { color: #da3e3e; }
 
-.footer { margin: 0 0 60px; padding: 90px 0 0; background: #fff; text-align: center; }
+.footer { position: relative; margin: 0 0 60px; padding: 90px 0 0; background: #fff; text-align: center; }
+.footer:before { content: ""; position: absolute; top: -50px; left: 50%; width: 1px; height: 92px; background: #122e5c; }
+@media only screen and (max-width: 1279px) { .footer:before { top: -55px; } }
+@media only screen and (max-width: 767px) { .footer:before { display: none; } }
 @media only screen and (max-width: 1279px) { .footer { padding-top: 72px; margin-bottom: 0; } }
 @media only screen and (max-width: 1023px) { .footer { padding-top: 62px; } }
 @media only screen and (max-width: 767px) { .footer { padding-top: 20px; } }
@@ -464,10 +449,16 @@ a { text-decoration: none; }
 .result .title-h2 { margin-bottom: 10px; color: #fff; }
 .result span { color: #da3e3e; }
 
-.index-page .header { height: 660px; }
-@media only screen and (max-width: 1279px) { .index-page .header { height: 530px; } }
-@media only screen and (max-width: 1023px) { .index-page .header { height: 475px; } }
-@media only screen and (max-width: 767px) { .index-page .header { height: 268px; } }
+.slider { max-width: 548px; padding-bottom: 55px; }
+.slider_mb { margin-bottom: 40px; }
+@media only screen and (max-width: 1279px) { .slider { max-width: 438px; } }
+@media only screen and (max-width: 1023px) { .slider { max-width: 325px; padding-bottom: 50px; } }
+@media only screen and (max-width: 767px) { .slider { padding-bottom: 35px; margin-top: 24px; } }
+
+.index-page .header__in { height: 660px; }
+@media only screen and (max-width: 1279px) { .index-page .header__in { height: 530px; } }
+@media only screen and (max-width: 1023px) { .index-page .header__in { height: 475px; } }
+@media only screen and (max-width: 767px) { .index-page .header__in { height: 268px; } }
 
 .academy { position: absolute; left: 50%; right: 0; bottom: 98px; margin-left: -467px; width: 935px; text-align: center; }
 @media only screen and (max-width: 1279px) { .academy { bottom: 60px; width: 765px; margin-left: -383px; } }
@@ -542,10 +533,46 @@ a { text-decoration: none; }
 @media only screen and (max-width: 1279px) { .about .title-h2 { margin-bottom: 37px; } }
 @media only screen and (max-width: 1023px) { .about .title-h2 { margin-bottom: 15px; } }
 
-.slider { max-width: 548px; padding-bottom: 55px; }
-@media only screen and (max-width: 1279px) { .slider { max-width: 438px; } }
-@media only screen and (max-width: 1023px) { .slider { max-width: 325px; padding-bottom: 50px; } }
-@media only screen and (max-width: 767px) { .slider { padding-bottom: 35px; margin-top: 24px; } }
+.courses-nav { *zoom: 1; text-align: center; font-family: "DidotItalic", Arial, sans-serif; font-size: 18px; }
+.courses-nav:after { content: " "; display: table; clear: both; }
+@media only screen and (max-width: 1279px) { .courses-nav { font-size: 16px; } }
+.courses-nav__title { float: left; height: 104px; line-height: 104px; width: 305px; color: #fff; }
+@media only screen and (max-width: 1023px) { .courses-nav__title { float: none; } }
+.courses-nav__main { overflow: hidden; background: #fff; }
+.courses-nav__list { display: table; width: 100%; table-layout: fixed; }
+@media only screen and (max-width: 1279px) { .courses-nav__list { table-layout: auto; } }
+@media only screen and (max-width: 767px) { .courses-nav__list { display: block; padding: 10px 0; } }
+.courses-nav__list li { display: table-cell; vertical-align: middle; height: 104px; line-height: 104px; }
+@media only screen and (max-width: 1023px) { .courses-nav__list li { height: 80px; line-height: 80px; } }
+@media only screen and (max-width: 767px) { .courses-nav__list li { display: block; height: auto; line-height: 1.2; } }
+.courses-nav__list a { color: #122e5d; display: inline-block; vertical-align: middle; line-height: 1.2; -moz-transition: color 0.3s; -o-transition: color 0.3s; -webkit-transition: color 0.3s; transition: color 0.3s; }
+@media only screen and (max-width: 767px) { .courses-nav__list a { padding: 10px; } }
+.courses-nav__list a:hover { color: #da3e3e; }
+.courses-nav__list a:hover span { border-color: transparent; }
+.courses-nav__list span { border-bottom: 1px solid #da3e3e; -moz-transition: border 0.3s; -o-transition: border 0.3s; -webkit-transition: border 0.3s; transition: border 0.3s; }
+
+.text { font-size: 14px; line-height: 1.7; font-family: "museosanscyrl-300", Arial, sans-serif; letter-spacing: 0.6px; }
+@media only screen and (max-width: 767px) { .text { font-size: 12px; } }
+.text p { margin: 25px 0; }
+@media only screen and (max-width: 767px) { .text p { margin: 15px 0; } }
+
+.page-title { position: relative; top: 0; text-align: center; color: #fff; }
+@media only screen and (max-width: 1023px) { .page-title { margin-top: 10px; } }
+@media only screen and (max-width: 767px) { .page-title { margin-top: 30px; } }
+.page-title span { display: block; margin-bottom: -25px; font-size: 34px; font-family: "DidotItalic", Arial, sans-serif; }
+@media only screen and (max-width: 1279px) { .page-title span { font-size: 30px; margin-bottom: -10px; } }
+@media only screen and (max-width: 1023px) { .page-title span { margin-bottom: 0; font-size: 20px; } }
+.page-title strong { font-weight: normal; font-family: "DidotBold", Arial, sans-serif; text-transform: uppercase; font-size: 100px; letter-spacing: 5px; }
+@media only screen and (max-width: 1279px) { .page-title strong { font-size: 80px; } }
+@media only screen and (max-width: 1023px) { .page-title strong { font-size: 50px; } }
+@media only screen and (max-width: 767px) { .page-title strong { font-size: 20px; } }
+
+.breadcrumbs { margin: -16px 0 0; text-align: center; font-size: 0; font-family: "DidotItalic", Arial, sans-serif; color: #fff; }
+@media only screen and (max-width: 1023px) { .breadcrumbs { margin-top: 0; } }
+.breadcrumbs a { position: relative; display: inline-block; padding: 10px 15px; vertical-align: middle; font-size: 14px; opacity: 0.5; -moz-transition: opacity 0.3s; -o-transition: opacity 0.3s; -webkit-transition: opacity 0.3s; transition: opacity 0.3s; }
+.breadcrumbs a:hover { opacity: 1; }
+.breadcrumbs a:before { content: "—"; position: absolute; top: 9px; left: -7px; }
+.breadcrumbs a:first-child:before { display: none; }
 
 .icon-fb { background: url('../img/icons-s05fbe7750a.png') 0 -114px no-repeat; background-position: 0 -57px; width: 22px; height: 22px; -moz-background-size: 25px 160px; -webkit-background-size: 25px 160px; background-size: 25px 160px; }
 

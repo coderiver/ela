@@ -1,1 +1,124 @@
-// Normally mainpage styles
+.courses-nav
+	+clr
+	text-align: center
+	+it
+	font-size: 18px
+	+r(1279)	
+		font-size: 16px
+	&__title
+		float: left
+		height: 104px
+		line-height: 104px
+		width: 305px
+		color: #fff 
+		+r(1023)
+			float: none
+	&__main
+		overflow: hidden
+		background: #fff 
+	&__list
+		display: table
+		width: 100%
+		table-layout: fixed
+		+r(1279)	
+			table-layout: auto
+		+r(767)
+			display: block
+			padding: 10px 0 
+		li
+			display: table-cell
+			vertical-align: middle
+			height: 104px
+			line-height: 104px
+			+r(1023)
+				height: 80px
+				line-height: 80px
+			+r(767)
+				display: block
+				height: auto
+				line-height: 1.2
+		a
+			color: #122e5d 
+			display: inline-block
+			vertical-align: middle
+			line-height: 1.2
+			+tr_c
+			+r(767)
+				padding: 10px 
+			&:hover
+				color: $red 
+				span
+					border-color: transparent 
+		span
+			border-bottom: 1px solid $red
+			+tr_border 
+
+.text
+	font-size: 14px
+	line-height: 1.7
+	+museo_300
+	letter-spacing: .6px 
+	+r(767)
+		font-size: 12px
+	p
+		margin: 25px 0
+		+r(767)
+			margin: 15px 0 
+.page-title
+	position: relative
+	top: 0
+	text-align: center
+	color: #fff 
+	+r(1023)
+		margin-top: 10px
+	+r(767)
+		margin-top: 30px
+	span
+		display: block
+		margin-bottom: -25px
+		font-size: 34px
+		+it
+		+r(1279)
+			font-size: 30px
+			margin-bottom: -10px
+		+r(1023)
+			margin-bottom: 0
+			font-size: 20px
+	strong
+		font-weight: normal
+		+bold
+		text-transform: uppercase
+		font-size: 100px
+		letter-spacing: 5px 
+		+r(1279)
+			font-size: 80px
+		+r(1023)
+			font-size: 50px
+		+r(767)
+			font-size: 20px
+.breadcrumbs
+	margin: -16px 0 0 
+	text-align: center
+	font-size: 0
+	+it
+	color: #fff 
+	+r(1023)
+		margin-top: 0
+	a
+		position: relative
+		display: inline-block
+		padding: 10px 15px
+		vertical-align: middle
+		font-size: 14px
+		opacity: 0.5
+		+tr_o
+		&:hover
+			opacity: 1 
+		&:before
+			content: "—" 
+			position: absolute
+			top: 9px
+			left: -7px
+		&:first-child
+			&:before
+				display: none

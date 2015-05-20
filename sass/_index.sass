@@ -1,12 +1,13 @@
 .index-page
 	.header
-		height: 660px
-		+r(1279)
-			height: 530px
-		+r(1023)
-			height: 475px
-		+r(767)
-			height: 268px
+		&__in
+			height: 660px
+			+r(1279)
+				height: 530px
+			+r(1023)
+				height: 475px
+			+r(767)
+				height: 268px
 .academy
 	position: absolute
 	left: 50%
@@ -224,14 +225,3 @@
 			margin-bottom: 37px
 		+r(1023)
 			margin-bottom: 15px
-.slider
-	max-width: 548px
-	padding-bottom: 55px
-	+r(1279)
-		max-width: 438px
-	+r(1023)
-		max-width: 325px
-		padding-bottom: 50px
-	+r(767)
-		padding-bottom: 35px
-		margin-top: 24px

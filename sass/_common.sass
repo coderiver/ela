@@ -156,7 +156,7 @@ a
 	+r(767)
 		+display-flex
 		+flex-direction(column)
-	.l-col-right
+	.l-col-right__in
 		+r(767)
 			padding: 0 30px
 .l-col-left
@@ -189,26 +189,30 @@ a
 	position: relative
 	z-index: 5
 	margin-top: 50px
-	height: 555px
-	+cover
 	overflow: hidden
 	+r(1599)
 		margin-top: 23px
 	+r(1023)
 		margin-top: 15px
-		height: 475px
 		overflow: visible
-	+r(767)
-		height: 268px
-	&:before
-		content: ""
-		position: absolute
-		top: 0
-		right: 0
-		bottom: 0
-		left: 0
-		z-index: -1
-		background: rgba(#08275b,.9) 
+	&__in
+		height: 450px
+		position: relative
+		z-index: 2
+		+cover
+		+r(1023)
+			height: 400px
+		+r(767)
+			height: 268px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			z-index: -1
+			background: rgba(#08275b,.9) 
 	&__left
 		float: left
 		width: 49.2%
@@ -502,86 +506,7 @@ a
 		&:hover
 			opacity: 1
 
-.page-title
-	position: relative
-	top: -4px
-	text-align: center
-	color: #fff 
-	span
-		display: block
-		margin-bottom: -25px
-		font-size: 34px
-		+it
-	strong
-		font-weight: normal
-		+bold
-		text-transform: uppercase
-		font-size: 100px
-		letter-spacing: 5px 
 
-.breadcrumbs
-	margin: -16px 0 0 
-	text-align: center
-	font-size: 0
-	+it
-	color: #fff 
-	a
-		position: relative
-		display: inline-block
-		padding: 10px 15px
-		vertical-align: middle
-		font-size: 14px
-		opacity: 0.5
-		+tr_o
-		&:hover
-			opacity: 1 
-		&:before
-			content: "—" 
-			position: absolute
-			top: 9px
-			left: -7px
-		&:first-child
-			&:before
-				display: none
-.courses-nav
-	position: absolute
-	left: 0
-	right: 0
-	bottom: 0
-	+clr
-	text-align: center
-	+it
-	&__title
-		float: left
-		height: 104px
-		line-height: 104px
-		width: 305px
-		font-size: 18px
-		color: #fff 
-	&__main
-		overflow: hidden
-		background: #fff 
-	&__list
-		display: table
-		width: 100%
-		table-layout: fixed
-		font-size: 18px
-		li
-			display: table-cell
-			vertical-align: middle
-			height: 104px
-			line-height: 104px
-		a
-			color: #122e5d 
-			display: block
-			&:hover
-				span
-					border-color: transparent 
-		span
-			display: inline-block
-			line-height: 1.2
-			border-bottom: 1px solid $red
-			+tr_border 
 
 .btn-menu
 	display: none
@@ -802,10 +727,23 @@ a
 		&:hover
 			color: $red 
 .footer
+	position: relative
 	margin: 0 0 60px 
 	padding: 90px 0 0 
 	background: #fff
 	text-align: center 
+	&:before
+		content: ""
+		position: absolute
+		top: -50px
+		left: 50% 
+		width: 1px
+		height: 92px
+		background: $blue 
+		+r(1279)
+			top: -55px
+		+r(767)
+			display: none
 	+r(1279)
 		padding-top: 72px
 		margin-bottom: 0
@@ -1511,3 +1449,16 @@ a
 	span
 		color: $red 
 		 
+.slider
+	max-width: 548px
+	padding-bottom: 55px
+	&_mb
+		margin-bottom: 40px
+	+r(1279)
+		max-width: 438px
+	+r(1023)
+		max-width: 325px
+		padding-bottom: 50px
+	+r(767)
+		padding-bottom: 35px
+		margin-top: 24px
