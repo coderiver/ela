@@ -1,42 +1,42 @@
 // # SHORT HOWTO
 // ## Sprites
-//     .whatever
-//          +sized-sprite($icons, coderiver) //or
+//		 .whatever
+//					+sized-sprite($icons, coderiver) //or
 // 			+s(codedby) //gets default value for spritemap as $icons
 // ### animation example
-//     +include keyframes(rotate)
-//        from
-//           +rotate(0)
-//        to
-//           +rotate(360)
+//		 +include keyframes(rotate)
+//				from
+//					 +rotate(0)
+//				to
+//					 +rotate(360)
 // ## animation usage
-//     body:hover
-// 	    +animation(rotate 200s linear infinite)
+//		 body:hover
+// 			+animation(rotate 200s linear infinite)
 // ## animations easing, see easings.net for full list and examples, tnx @ai
-//     transition: all 1.2s ceaser($ease-in)
+//		 transition: all 1.2s ceaser($ease-in)
 // ## gradient example
-//     +background-image(linear-gradient(#232323, #5c5c5c));
-//     +g(#232323, #5c5c5c);
-//	   horizontal
-//     +gh(#232323, #5c5c5c);
+//		 +background-image(linear-gradient(#232323, #5c5c5c));
+//		 +g(#232323, #5c5c5c);
+//		 horizontal
+//		 +gh(#232323, #5c5c5c);
 // ## making bw-images
-//     img
+//		 img
 //			@extend %gray
 // ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
-//     +min-screen(320)
+//		 +min-screen(320)
 //			display: none
 // +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
 //
 // ## use cycles
-//     @for $i from 1 through 3
-//       .item-#{$i}
+//		 @for $i from 1 through 3
+//			 .item-#{$i}
 //			width: 2em * $i;
-//     @each $s in a,b,c
-// 	    	#{$s}
+//		 @each $s in a,b,c
+// 				#{$s}
 //				display: none
 // ## fonts 
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
+// +font(book, cytiapro-black-webfont)	
 // =book
 // 	font-family: "book", Arial, sans-serif 
 // insert pics into css
@@ -47,27 +47,27 @@
 // p
 // 	+jpg(bla)
 
-+font(Didot, Didot)  
++font(Didot, Didot)	
 =reg
 	font-family: "Didot", Arial, sans-serif 
 	
-+font(DidotBold, DidotBold)  
++font(DidotBold, DidotBold)	
 =bold
 	font-family: "DidotBold", Arial, sans-serif 
 	
-+font(DidotItalic, DidotItalic)  
++font(DidotItalic, DidotItalic)	
 =it
 	font-family: "DidotItalic", Arial, sans-serif 
 	
-+font(DidotLTStdItalic, DidotLTStdItalic)  
++font(DidotLTStdItalic, DidotLTStdItalic)	
 =it2
 	font-family: "DidotLTStdItalic", Arial, sans-serif 
 	
-+font(museosanscyrl-300, museosanscyrl-300)  
++font(museosanscyrl-300, museosanscyrl-300)	
 =museo_300
 	font-family: "museosanscyrl-300", Arial, sans-serif 
 
-+font(museosanscyrl-700, museosanscyrl-700)  
++font(museosanscyrl-700, museosanscyrl-700)	
 =museo_700
 	font-family: "museosanscyrl-700", Arial, sans-serif 
 	
@@ -104,6 +104,8 @@ body
 		overflow: hidden
 a
 	text-decoration: none
+.to-center
+	text-align: center
 .link
 	display: inline
 	font-size: 24px
@@ -122,7 +124,7 @@ a
 	+clr
 .wrapper
 	overflow: hidden
-// common blocks      
+// common blocks			
 .out
 	overflow: hidden
 .l-center
@@ -161,6 +163,21 @@ a
 	.l-col-right__in
 		+r(767)
 			padding: 0 30px
+.l-sidebar
+	position: relative
+	float: left
+	width: 317px
+	min-height: 1px
+	+r(1023)
+		float: none
+		width: 100%
+.l-main
+	overflow: hidden
+	padding: 0 65px 0 75px
+	+r(1279)
+		padding: 0 20px 
+	+r(1023)
+		padding: 0
 .l-col-left
 	float: left
 	width: 588px
@@ -217,29 +234,32 @@ a
 	z-index: 5
 	margin-top: 50px
 	overflow: hidden
+	+cover
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: -1
+		background: rgba(#08275b,.9) 
 	+r(1599)
 		margin-top: 23px
 	+r(1023)
 		margin-top: 15px
 		overflow: visible
 	&__in
-		height: 555px
+		height: 450px
 		position: relative
 		z-index: 2
-		+cover
+		
 		+r(1023)
 			height: 400px
 		+r(767)
 			height: 268px
-		&:before
-			content: ""
-			position: absolute
-			top: 0
-			right: 0
-			bottom: 0
-			left: 0
-			z-index: -1
-			background: rgba(#08275b,.9) 
+
+		
 	&__left
 		float: left
 		width: 49.2%
@@ -828,7 +848,7 @@ a
 		background: $blue
 		letter-spacing: .6px 
 		+r(1023)
-			padding: 45px 10px  
+			padding: 45px 10px	
 		+r(767)
 			order: 1
 			display: block
@@ -880,7 +900,7 @@ a
 	+tr(background .3s)
 	letter-spacing: 1.5px
 	+r(1279)
-		padding: 28px 20px 27px  
+		padding: 28px 20px 27px	
 		min-width: 415px
 	+r(1023)
 		padding: 21px 20px 20px 
@@ -891,6 +911,8 @@ a
 		background: $red_h
 		.icon-arr
 			+transform(translateX(10px))
+		.icon-arr-l
+			+transform(translateX(-10px))
 	&:active
 		background: $red_a
 	strong
@@ -899,7 +921,10 @@ a
 		vertical-align: middle
 		margin-left: 13px
 		+tr(transform .3s)
-
+	.icon-arr-l
+		vertical-align: middle
+		margin-right: 13px
+		+tr(transform .3s)
 .section
 	position: relative
 	padding: 64px 0 67px
@@ -939,6 +964,8 @@ a
 		+r(767)
 			padding-right: 0
 			margin-bottom: 18px
+.section_mod
+	padding-bottom: 0
 .section_white
 	padding: 80px 0 50px
 	+ .footer
@@ -962,6 +989,11 @@ a
 		padding-bottom: 90px
 	+r(767)
 		padding: 25px 0 
+.section_article
+	&:before
+		right: 172px
+		+r(1023)
+			right: 43px
 .items-wrap
 	font-size: 0
 	text-align: right
@@ -1247,7 +1279,7 @@ a
 		right: 0
 		bottom: 0
 		z-index: -1
-		background: #fff  
+		background: #fff	
 	&_single
 		margin: 50px 0 70px
 		+r(1279)
@@ -1323,6 +1355,8 @@ a
 	background: $blue 
 	+transition(opacity .4s, transform .4s cubic-bezier(0.7,0,0.3,1))
 	+transform(translate3d(0,-100%,0))
+	&_vertical
+		+vertical
 	&.is-visible-in
 		opacity: 1
 		visibility: visible
@@ -1354,8 +1388,12 @@ a
 				height: 4px
 			+scrollbar-thumb
 				background: rgba(#fff, .5)
+	&__vertical
+		display: inline-block
+		vertical-align: middle
+		width: 528px
 	&__in
-		margin: 0 auto  
+		margin: 0 auto	
 		padding: 0 30px 
 		width: 775px
 		max-height: 100%
@@ -1499,8 +1537,6 @@ a
 .slider
 	max-width: 548px
 	padding-bottom: 55px
-	&_mb
-		margin-bottom: 40px
 	+r(1279)
 		max-width: 438px
 	+r(1023)
@@ -1509,4 +1545,192 @@ a
 	+r(767)
 		padding-bottom: 35px
 		margin-top: 24px
+	&_mb
+		margin-bottom: 40px
+		+r(767)
+			float: none
+	&_big
+		max-width: 1092px
+		+r(1599)	
+			max-width: 100%
 		
+	&_auto
+		max-width: 100%
+
+.field
+	margin-bottom: 27px
+	&__title
+		margin-bottom: 12px
+		font-size: 12px
+		+museo_300
+		color: $blue 
+		color: rgba($blue, .5) 
+	&__body
+		position: relative
+		+clr
+		font-size: 0
+	&__col
+		display: inline-block
+		vertical-align: middle	
+		width: 50%
+		&:last-child
+			padding-left: 23px
+	&__text
+		font-size: 18px
+		line-height: 1.2
+		+it
+		+r(767)
+			font-size: 16px
+		span
+			color: $red 
+.select
+	position: relative
+	+museo_300 
+	font-size: 14px
+	color: $blue
+	&:before
+		content: ""
+		position: absolute
+		top: 100%
+		left: 2px
+		right: -2px
+		height: 2px
+		background: #d6dbe5  
+	&:after
+		content: ""
+		position: absolute
+		top: 2px
+		bottom: -2px
+		right: -2px
+		width: 2px
+		background: #d6dbe5 
+	&:hover
+		.select__main
+			background: darken(#eef1f6, 5%)
+	&__main
+		position: relative
+		padding: 0 30px 0 16px 
+		+text-overflow	
+		height: 43px
+		line-height: 43px
+		background: #eef1f6 
+		+tr(background .3s)
+		&:before
+			content: ""
+			position: absolute
+			top: 13px
+			right: 15px
+			+arr(5,4,$blue,t)
+		&:after
+			content: ""
+			position: absolute
+			bottom: 13px
+			right: 15px
+			+arr(5,4,$blue,b)
+	select
+		position: absolute
+		opacity: 0
+		z-index: 2
+		left: 0
+		top: 0
+		height: 45px
+		width: 100%
+.number
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	width: 117px
+	.input
+		text-align: center
+	&__plus,
+	&__minus
+		position: absolute
+		top: -2px
+		width: 25px
+		height: 38px
+		background: #eef1f6
+		+museo_300
+		font-size: 20px
+		color: $blue 
+		+tr(background .3s)
+		&:hover
+			background: darken(#eef1f6, 5%)
+		
+	&__minus
+		left: 0
+	&__plus
+		right: 0
+
+.has-shadow	
+	&:before
+		content: ""
+		position: absolute
+		top: 100%
+		left: 2px
+		right: -2px
+		height: 2px
+		background: #d6dbe5  
+	&:after
+		content: ""
+		position: absolute
+		top: 2px
+		bottom: -2px
+		right: -2px
+		width: 2px
+		background: #d6dbe5 
+.input
+	display: block
+	border: 1px solid #d6dbe5
+	padding: 0 16px 
+	height: 38px
+	width: 100%
+	font-size: 28px
+	+museo_300
+	color: $blue 
+	
+.btn-action
+	display: block
+	background: $blue 
+	height: 43px
+	line-height: 43px
+	font-size: 13px
+	color: #fff
+	+museo_300
+	text-align: center
+	text-transform: uppercase 
+	+tr_bg
+	&:hover
+		background: $blue_h
+	.icon-cart
+		margin-right: 9px
+		vertical-align: baseline
+	&.has-shadow
+		position: relative
+		&:before,
+		&:after
+			background: #c4c7cc 
+.info-text
+	margin: 15px 0 0
+	font-size: 12px
+	color: $blue
+	color: rgba($blue, .5) 
+	text-align: center
+	
+.btn-info
+	display: inline-block
+	padding: 0 17px 
+	height: 41px
+	line-height: 41px
+	color: $blue
+	font-size: 13px
+	+museo_300
+	border-radius: 41px 
+	background: #e3e7f0
+	+tr_bg
+	text-align: center
+	&:hover
+		background: darken(#e3e7f0, 5%) 
+	&:active
+		background: darken(#e3e7f0, 10%) 
+	.icon-wtf
+		margin-right: 5px

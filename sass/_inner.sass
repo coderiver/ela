@@ -1,8 +1,5 @@
 .courses-nav
-	position: absolute
-	bottom: 0
-	left: 0
-	right: 0
+	position: relative
 	z-index: 2
 	+clr
 	text-align: center
@@ -14,8 +11,8 @@
 		position: static
 	&__title
 		float: left
-		height: 104px
-		line-height: 104px
+		height: 105px
+		line-height: 105px
 		width: 305px
 		color: #fff 
 		+r(1279)
@@ -38,8 +35,8 @@
 		li
 			display: table-cell
 			vertical-align: middle
-			height: 104px
-			line-height: 104px
+			height: 105px
+			line-height: 105px
 			+r(1279)
 				height: 80px
 				line-height: 80px
@@ -202,6 +199,9 @@
 				opacity: 1
 		.link
 			color: $red
+	
+	&__in
+		padding: 35px 33px 
 	&__left
 		float: left
 		width: 393px
@@ -241,6 +241,38 @@
 		position: absolute
 		right: 28px
 		bottom: 40px
+.box-wrap
+	position: absolute
+	top: 0
+	left: 0
+	+r(1023)
+		position: static
+		width: 317px
+		margin: 0 auto 20px
+		+r(767)
+			width: 100%
+	&.is-fixed
+		position: fixed
+		top: 0
+		width: 317px
+		z-index: 5
+		+r(1023)
+			position: static
+		+r(767)
+			width: 100%
+
+
+.box_border
+	box-shadow: inset 0 0 0 5px $red 
+	.box__subtitle
+		margin-bottom: 30px
+	.box__title
+		&:after,
+		&:before
+			display: none
+	&:hover
+		.box__title
+			color: $blue 
 .list
 	li
 		position: relative
@@ -262,3 +294,232 @@
 	color: rgba($red, .5)
 	font-size: 18px
 	+it
+
+.article
+	margin: 0 auto 
+	max-width: 895px
+	font-size: 14px
+	line-height: 1.7
+	+museo_300
+	letter-spacing: .6px 
+	color: $dark 
+	+clr
+	+r(767)
+		font-size: 12px
+	+ .btn
+		margin: 100px 0 60px
+		+r(1279)
+			margin: 60px 0 30px
+		+r(1023)
+			margin: 30px 0 15px
+	> h2
+		&:first-child
+			margin-top: 0
+	> a
+		display: inline
+		border-bottom: 1px solid $red
+		+transition(border, color, .3s)
+		color: $blue 
+		+it
+		&:hover
+			border-color: transparent 
+			color: $red 
+	h2
+		margin: 65px 0 35px 
+		color: $blue
+		+bold
+		font-size: 24px 
+		+r(1279)
+			margin: 45px 0 15px 
+			font-size: 20px
+		+r(1023)
+			margin: 25px 0 15px 
+			font-size: 18px
+		+r(767)
+			font-size: 16px
+	> p
+		margin: 25px 0
+		+r(767)
+			margin: 15px 0 
+	> ul
+		margin: 25px 0 80px
+		+r(767)
+			margin: 15px 0 40px
+		li
+			position: relative
+			margin: 18px 0
+			padding-left: 20px
+			color: #152033
+			font-size: 14px
+			+museo_300
+			line-height: 1.3
+			&:before
+				content: ""
+				position: absolute
+				left: 0
+				top: 4px
+				+svg(romb,9,9)
+	blockquote
+		margin-bottom: 70px
+		clear: both
+		padding: 50px 80px
+		background: $red 
+		font-size: 24px
+		color: #fff
+		+it
+		line-height: 1.3 
+		+r(1279)
+			margin-bottom: 50px
+			padding: 20px 40px
+			font-size: 20px
+		+r(1023)
+			margin-bottom: 30px
+			padding: 10px 20px
+			font-size: 18px
+		+r(767)
+			font-size: 16px
+	> .img
+		float: right
+		max-width: 450px
+		margin: 0 40px 85px 0
+		+r(1279)
+			margin: 0 20px 40px 0
+		+r(1023)
+			float: none
+		+r(767)
+			float: none
+			margin: 0 0 40px 
+	> .img_blue
+		float: left
+		margin-left: -196px
+		+r(1599)	
+			margin-left: -100px
+		+r(1279)
+			margin-left: 0
+		+r(1023)
+			float: none
+		+r(767)
+			float: none
+	.slider_big
+		margin-left: -196px
+		margin-bottom: 25px
+		.slick-dots
+			left: 196px
+			text-align: left
+			+r(1599)
+				left: 0
+				text-align: center
+		+r(1599)	
+			margin-left: -100px
+			
+		+r(1279)
+			margin-left: 0
+.reviews-slider
+	margin-bottom: 55px
+	float: right
+	margin-right: 47px
+	width: 816px
+	+r(1023)
+		width: 100%
+		margin: 0 auto 50px
+	&_small
+		margin: 0 24px 0 0
+		width: 617px
+		+r(1279)
+			width: 100%
+			padding-left: 35px
+		+r(1023)
+			margin-bottom: 50px
+	h2
+		margin-left: 90px
+	.slick-dots
+		display: none !important
+		+r(1023)
+			display: block !important
+	.slick-next,
+	.slick-prev
+		+r(1023)
+			display: none !important
+		
+.review
+	padding: 15px 20px 10px 80px
+	position: relative
+	z-index: 2
+	font-size: 18px
+	+it
+	color: $blue 
+	+r(1023)
+		font-size: 16px
+	+r(767)
+		padding: 15px 0px 10px 50px
+	&_small
+		.review__bg
+			width: 510px
+			height: 150px
+			+r(1279)
+				display: none
+			&:before
+				+arr(32,537,#eef1f6,bl) 
+			&:after
+				+arr(30,140,#eef1f6,tl)
+	&:before
+		content: "“" 
+		position: absolute
+		top: 12px
+		left: 20px
+		font-size: 90px
+		+bold
+		line-height: 1
+		color: $red 
+		+r(767)
+			font-size: 40px
+	&__bg
+		position: absolute
+		z-index: -1
+		left: 53px
+		top: 0
+		width: 670px
+		height: 150px
+		background: #eef1f6
+		+rotate(-3)
+		+r(1023)
+			display: none
+		&:before
+			content: ""
+			position: absolute
+			top: -32px
+			left: 0
+			+arr(32,702,#eef1f6,bl) 
+			+gpu
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			right: -30px
+			+arr(30,150,#eef1f6,tl) 
+			+gpu
+	.user
+		margin-top: 10px
+.user
+	font-size: 18px
+	+bold
+	line-height: 1.6
+	p
+		margin-bottom: 18px
+	&__img	
+		display: inline-block
+		margin-right: 13px
+		vertical-align: middle
+		width: 45px
+		height: 45px
+		overflow: hidden
+		border-radius: 50%
+		img
+			display: block
+			width: 100%
+			border-radius: 50%
+			
+.infobox
+	padding: 40px 40px 40px 60px 
+	background: #fff
+	box-shadow: inset 0 0 0 5px $red  

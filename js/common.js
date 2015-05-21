@@ -51,7 +51,7 @@ head.ready(function() {
 		return false;
 	});
 
-	var slickSet = {
+	var slider = {
 		slideToShow: 1,
 		slideToScroll: 1,
 		arrows: false,
@@ -59,7 +59,16 @@ head.ready(function() {
 		adaptiveHeight: true,
 		mobileFirst: true
 	};
-	$(".js-slider").slick(slickSet);
+	$(".js-slider").slick(slider);
+
+	var sliderArrows = {
+		slideToShow: 1,
+		slideToScroll: 1,
+		arrows: true,
+		dots: true,
+		adaptiveHeight: true
+	};
+	$(".js-slider-arrows").slick(sliderArrows);
 
 	$(".js-popup").on("click", function(event){
 		event.stopPropagation();
@@ -182,4 +191,68 @@ head.ready(function() {
 		}
 			
 		validate();
+
+		function number() { 
+	        var number = $(".js-number");
+	        number.each(function(){
+	            var max_number = +($(this).attr("data-max-number"));
+	            var input = $(this).find("input");
+	            var plus = $(this).find(".js-plus-number");
+	            var minus = $(this).find(".js-minus-number");
+	            plus.on("click", function(){
+	                var val = +(input.val());
+	                if (val >= max_number) {
+	                    return false
+	                }
+	                else {
+	                    val += 1;
+	                    input.val(val);
+	                }
+	            });
+	            minus.on("click", function(){
+	                var val = +(input.val());
+	                if (val > 1) {
+	                    val -= 1;
+	                    input.val(val);
+	                }
+	                return false;
+	            });
+	            input.on("change", function(){
+	                var val = +$(this).val();
+	                if (val > max_number) {
+	                    val = max_number;
+	                    $(this).val(val);
+	                }
+	                if (val == '') {
+	                    val = 1;
+	                    $(this).val(val);
+	                }
+	            });
+	        });
+	    }
+	    number();
+
+
+	    function fixBox() {
+	    	var top = $(".js-fixed-box").offset().top;
+	    	var left = $(".js-fixed-box").offset().left;
+	    	var scroll = $(document).scrollTop();
+	    	if (scroll >= top) {
+	    		$(".js-fixed-box .box-wrap").addClass("is-fixed").css({
+	    			left: left
+	    		});
+	    	}
+	    	else {
+	    		$(".js-fixed-box .box-wrap").removeClass("is-fixed").css({
+	    			left: 0
+	    		});
+	    	}
+	    }
+	    fixBox();
+	    $(window).scroll(function(){
+	    	fixBox();
+	    });
+	    $(window).resize(function(){
+	    	fixBox();
+	    });
 });
