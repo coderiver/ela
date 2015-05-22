@@ -104,6 +104,9 @@ body
 		overflow: hidden
 a
 	text-decoration: none
+[data-sr]
+	visibility: hidden
+
 .to-center
 	text-align: center
 .link
@@ -939,8 +942,8 @@ a
 .section
 	position: relative
 	padding: 64px 0 67px
-	+ .section
-		margin-top: 30px
+	// + .section
+	// 	margin-top: 30px
 	+r(1279)
 		padding: 64px 0 62px
 	+r(1023)
@@ -975,6 +978,45 @@ a
 		+r(767)
 			padding-right: 0
 			margin-bottom: 18px
+	.line-v
+		top: -85px
+		left: 650px
+		height: 0
+		+r(1599)
+			left: 550px
+		+r(1279)
+			left: 400px
+			top: -77px
+		&.is-animated
+			height: 583px
+			+r(1279)
+				height: 575px 
+	.line-h
+		left: 650px
+		top: 498px
+		width: 0
+		+r(1599)
+			left: 550px
+		+r(1279)
+			left: 400px
+		&.is-animated
+			width: 583px
+			+r(1599)
+				width: 550px
+.line-v
+	position: absolute
+	width: 1px
+	background: $blue 
+	+tr(height .6s)
+	+r(1023)
+		display: none
+.line-h
+	position: absolute
+	height: 1px
+	background: $blue 
+	+tr(width .6s)
+	+r(1023)
+		display: none
 .section_mod
 	padding-bottom: 0
 .section_white
@@ -1237,6 +1279,7 @@ a
 
 .news-cols
 	padding: 70px 0 140px 
+	position: relative
 	+clr
 	+r(1279)
 		padding: 35px 0 90px 
@@ -1272,6 +1315,38 @@ a
 		+ .wrapper
 			+r(1023)
 				display: none
+	.post-link
+		max-width: 72%
+	.line-h
+		left: 750px
+		top: 588px
+		width: 0
+		+r(1599)
+			left: 618px
+		+r(1279)
+			left: 950px
+		&.is-animated
+			width: 483px
+			+r(1599)
+				width: 515px
+			+r(1279)
+				left: 490px
+				width: 463px
+				top: 498px
+	.line-v
+		top: -55px
+		left: 1232px
+		height: 0
+		+r(1599)
+			left: 1132px
+		+r(1279)
+			left: 950px
+			top: 24px
+		&.is-animated
+			height: 644px
+			+r(1279)
+				height: 475px
+		
 .post
 	position: relative
 	max-width: 446px

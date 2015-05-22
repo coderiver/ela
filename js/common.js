@@ -13,6 +13,23 @@ head.ready(function() {
 		},400);
 	});
 
+	var config = {
+	    easing: 'hustle',
+	    reset:  false,
+	    delay:  'onload',
+	    vFactor: 0.60,
+	    //enter:    'bottom',
+	    move:     '0',
+	    //over:     '0.6s',
+	    //wait:     '0s',
+	    //easing:   'ease',
+	    //scale:    { direction: 'up', power: '0' }
+	    complete: function( el ){
+	    	var elClass = el.getAttribute('class');
+	    	el.setAttribute('class', elClass+" is-animated");
+	    }
+	  }
+	window.sr = new scrollReveal(config);
 	// function scrollFixedElements() {
 	//     var scroll_left = $(this).scrollLeft();
 	//     $(".fixed-element").css({
@@ -293,8 +310,11 @@ head.ready(function() {
 
 
 	    function fixBox() {
-	    	var top = $(".js-fixed-box").offset().top;
-	    	var left = $(".js-fixed-box").offset().left;
+	    	if ($(".js-fixed-box").length) {
+	    		var top = $(".js-fixed-box").offset().top;
+	    		var left = $(".js-fixed-box").offset().left;
+	    	}
+	    	
 	    	var scroll = $(document).scrollTop();
 	    	if (scroll >= top) {
 	    		$(".js-fixed-box .box-wrap").addClass("is-fixed").css({
