@@ -1355,8 +1355,6 @@ a
 	background: $blue 
 	+transition(opacity .4s, transform .4s cubic-bezier(0.7,0,0.3,1))
 	+transform(translate3d(0,-100%,0))
-	&_vertical
-		+vertical
 	&.is-visible-in
 		opacity: 1
 		visibility: visible
@@ -1381,6 +1379,11 @@ a
 	+r(767)
 		margin-left: -145px
 		max-width: 290px
+	&_vertical
+		+vertical
+		overflow-y: auto
+		+r(767)
+			padding: 15px 0 
 	.desktop &
 		.popup__in
 			+scrollbar
@@ -1392,6 +1395,10 @@ a
 		display: inline-block
 		vertical-align: middle
 		width: 528px
+		text-align: left
+		+r(767)
+			width: 260px
+			margin: 0 auto 
 	&__in
 		margin: 0 auto	
 		padding: 0 30px 
@@ -1466,6 +1473,12 @@ a
 			opacity: 0
 			background: #fff
 			+transform(rotate(45deg) translate3d(120%,0,0))
+.close_dark
+	&:after
+		background: #000
+	i
+		&:after
+			background: #000 
 .search
 	position: relative
 	margin-bottom: 100px

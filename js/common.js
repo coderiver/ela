@@ -104,6 +104,19 @@ head.ready(function() {
         event.stopPropagation();
     });
 
+    $(".js-close-popup").on("click", function(event){
+		$("body").removeClass("no-scroll");
+		$(".desktop body").css({
+			marginRight: scrollWidth
+		});
+		$(".js-popup").addClass("is-visible-out");
+		setTimeout(function() {
+			$(".js-popup").removeClass("is-visible-out is-visible-in");
+		},400);
+		event.stopPropagation();
+		return false;
+	});
+
 
 	$(".js-clear-input").on("click", function(){
 		$(this).parents(".js-form").find(".js-input").val("");
