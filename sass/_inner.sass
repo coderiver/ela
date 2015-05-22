@@ -245,6 +245,7 @@
 	position: absolute
 	top: 0
 	left: 0
+	z-index: 2
 	+r(1023)
 		position: static
 		width: 317px
@@ -572,3 +573,285 @@
 		+r(767)
 			top: 10px
 			right: 10px
+			
+
+.btn_cart
+	position: fixed
+	right: 0
+	bottom: 0
+	z-index: 5
+	text-transform: none
+	width: 540px
+	box-shadow: 0 -5px 5px rgba($blue, .1)
+	+r(1279)
+		width: 300px
+	+r(1023)
+		width: 200px
+	+r(767)
+		width: 290px
+		left: 50%
+		margin-left: -145px
+		right: auto 
+		height: 40px
+		padding: 0
+		min-width: 290px
+		line-height: 40px
+	&:hover
+		box-shadow: none 
+	.icon-cart
+		vertical-align: baseline
+		margin-right: 20px
+		
+.cart
+	position: fixed
+	right: 0
+	top: 0
+	bottom: 0
+	z-index: 10
+	width: 540px
+	background: #fff 
+	+tr(transform .3s)
+	+transform(translateY(100%))
+	+r(767)
+		width: 290px
+		left: 50%
+		margin-left: -145px
+	&.is-visible-in
+		+transform(translateY(0))
+	&.is-visible-out	
+		+transform(translateY(100%))
+	&:before
+		content: ""
+		position: absolute
+		z-index: -1
+		top: 20px
+		bottom: 0
+		left: 0
+		width: 1px
+		box-shadow: 0 0 50px 5px #000
+		+r(767)
+			display: none
+	&__in
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		z-index: 2
+		background: #fff 
+		height: 100%
+	&__scroll
+		padding: 50px 50px 100px 80px 
+		max-height: 100%
+		overflow-y: auto
+		overflow-x: hidden
+		+r(1279)
+			padding: 30px 30px 60px 30px
+		+r(767)
+			padding: 20px 20px 60px 20px
+		+scrollbar
+			width: 4px
+			height: 4px
+		+scrollbar-thumb
+			background: #d8dde7
+	.close
+		position: absolute
+		right: 50px
+		top: 50px
+		+r(1279)
+			top: 30px
+			right: 30px
+		+r(767)
+			top: 10px
+			right: 10px
+	&__title
+		margin-bottom: 40px
+		font-size: 24px
+		+bold
+		color: $blue 
+	.field
+		padding-right: 70px
+	.btn
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		+r(767)
+			height: 40px
+			line-height: 40px
+			padding: 0
+.cart_vertical
+	.cart__in
+		+vertical
+	.success
+		display: inline-block
+		vertical-align: middle
+		padding: 0 70px 100px
+		font-size: 31px
+		+it
+		color: #000
+		&__title
+			font-size: 46px
+			+bold
+.steps
+	+museo_300
+	margin-bottom: 50px
+	li
+		display: inline-block
+		position: relative
+		vertical-align: top
+		width: 114px
+		padding-left: 80px
+		+r(767)
+			padding-left: 35px
+			width: 69px
+		&:first-child
+			padding-left: 0
+			width: 33px
+			&:before
+				display: none
+		&:before
+			content: ""
+			position: absolute
+			top: 17px
+			left: -4px
+			width: 85px 
+			height: 1px
+			background: #dfdfdf
+			+r(767)
+				width: 39px
+		&.is-active
+			color: $red
+			&:before
+				background: $red 
+			i
+				background: $red
+				color: #fff
+				border-color: $red 
+			span
+				color: $red 
+		i
+			display: block
+			margin-bottom: 7px
+			width: 33px
+			height: 33px
+			text-align: center
+			line-height: 33px
+			font-size: 18px
+			color: #fff
+			border: 1px solid #dfdfdf
+			border-radius: 50% 
+			font-style: normal
+			color: #dfdfdf 
+		span
+			display: block
+			font-size: 12px
+
+.form-info
+	position: relative
+	margin: 46px 0 0 
+	border-top: 1px solid #eef1f6
+	padding: 22px 0 0 
+	color: $dark
+	font-size: 14px
+	+museo_300 
+	+r(767)
+		margin-top: 20px
+		padding-top: 10px
+	&__in
+		position: relative
+		sup
+			position: absolute
+			left: -7px
+			top: 0 
+			font-size: 14px
+			
+.cart-item
+	+clr
+	margin-bottom: 40px
+	border-bottom: 1px solid #eef1f6 
+	padding-bottom: 45px
+	font-size: 14px
+	color: $dark
+	+museo_300
+	line-height: 1.7 
+	+r(1279)
+		padding-bottom: 20px
+		margin-bottom: 20px
+	+r(767)
+		font-size: 12px
+	&__left
+		float: left
+		width: 233px
+	&__right
+		float: right
+	.title
+		margin-bottom: 14px
+	+ .total-price
+		margin-top: -40px
+		+r(1279)
+			margin-top: -20px
+.total-price
+	border-top: 3px solid 
+	padding: 32px 0 0
+	font-size: 62px
+	color: $dark
+	+bold
+	line-height: 1
+	+r(1279)
+		font-size: 40px
+		padding-top: 10px
+	+r(1023)
+		font-size: 24px
+.btn-remove
+	font-size: 14px
+	+museo_300
+	color: $red
+	background: none
+	&:hover
+		color: $red_h 
+		
+.payment
+	position: relative
+	margin-bottom: 3px
+	padding-left: 50px
+	height: 60px
+	background: #eef1f6
+	line-height: 60px
+	cursor: pointer
+	&:before
+		content: "" 
+		position: absolute
+		top: 50%
+		left: 22px
+		margin-top: -5px
+		width: 10px
+		height: 10px
+		border: 1px solid $blue
+		border-radius: 50% 
+	&.is-active
+		&:before
+			background: $red
+			border-color: $red  
+	&__main
+		display: inline-block
+		vertical-align: middle
+		img
+			display: block
+			
+.cart-info
+	padding: 40px
+	margin: 50px 0 0 
+	box-shadow: inset 0 0 0 5px
+	font-size: 14px
+	+museo_300
+	color: $dark
+	.title
+		color: $dark 
+	ul
+		margin-bottom: 25px
+	.price
+		padding-top: 10px
+		color: $red
+		font-size: 36px
+		+bold
+		border-top: 1px solid #d8dde7  

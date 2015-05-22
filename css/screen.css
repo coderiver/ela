@@ -106,7 +106,7 @@ a { text-decoration: none; }
 
 [class*="icon-"] { display: inline-block; vertical-align: middle; }
 
-.header { position: relative; z-index: 5; margin-top: 50px; overflow: hidden; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+.header { position: relative; z-index: 5; margin-top: 50px; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-attachment: fixed; }
 .header:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; background: rgba(8, 39, 91, 0.9); }
 @media only screen and (max-width: 1599px) { .header { margin-top: 23px; } }
 @media only screen and (max-width: 1023px) { .header { margin-top: 15px; overflow: visible; } }
@@ -241,6 +241,11 @@ a { text-decoration: none; }
 @media only screen and (max-width: 1279px) { .subtitle { margin-bottom: 18px; } }
 @media only screen and (max-width: 767px) { .subtitle { font-size: 10px; margin-bottom: 10px; } }
 .subtitle_dark { opacity: 1; }
+
+.title { font-size: 24px; font-family: "DidotBold", Arial, sans-serif; color: #122e5c; line-height: 1.25; }
+@media only screen and (max-width: 1279px) { .title { font-size: 20px; } }
+@media only screen and (max-width: 1023px) { .title { font-size: 16px; } }
+@media only screen and (max-width: 767px) { .title { font-size: 12px; } }
 
 .title-h1 { margin-bottom: 20px; font-size: 36px; font-family: "DidotBold", Arial, sans-serif; line-height: 42px; color: #000; letter-spacing: 0.6px; text-transform: uppercase; }
 @media only screen and (max-width: 1279px) { .title-h1 { font-size: 30px; } }
@@ -510,15 +515,33 @@ a { text-decoration: none; }
 @media only screen and (max-width: 1599px) { .slider_big { max-width: 100%; } }
 .slider_auto { max-width: 100%; }
 
-.field { margin-bottom: 27px; }
-.field__title { margin-bottom: 12px; font-size: 12px; font-family: "museosanscyrl-300", Arial, sans-serif; color: #122e5c; color: rgba(18, 46, 92, 0.5); }
-.field__body { position: relative; *zoom: 1; font-size: 0; }
-.field__body:after { content: " "; display: table; clear: both; }
+.field { margin-bottom: 27px; display: block; }
+@media only screen and (max-width: 767px) { .field { margin-bottom: 15px; } }
+.field__title { display: block; position: relative; margin-bottom: 12px; font-size: 12px; font-family: "museosanscyrl-300", Arial, sans-serif; color: #122e5c; color: rgba(18, 46, 92, 0.5); }
+@media only screen and (max-width: 767px) { .field__title { margin-bottom: 5px; } }
+.field__body { position: relative; display: block; z-index: 2; font-size: 0; }
 .field__col { display: inline-block; vertical-align: middle; width: 50%; }
 .field__col:last-child { padding-left: 23px; }
 .field__text { font-size: 18px; line-height: 1.2; font-family: "DidotItalic", Arial, sans-serif; }
 @media only screen and (max-width: 767px) { .field__text { font-size: 16px; } }
 .field__text span { color: #da3e3e; }
+.field__shadow { position: absolute; top: 0; right: 0; left: 0; bottom: 0; }
+.field__shadow:before { content: ""; position: absolute; top: 100%; left: 2px; right: -2px; height: 2px; background: #d6dbe5; }
+.field__shadow:after { content: ""; position: absolute; top: 2px; bottom: -2px; right: -2px; width: 2px; background: #d6dbe5; }
+
+.field_inline { position: relative; padding-left: 83px; }
+@media only screen and (max-width: 767px) { .field_inline { padding-left: 0; } }
+.field_inline .field__title { position: absolute; left: 0; top: 0; padding-right: 5px; height: 43px; width: 82px; line-height: 43px; }
+@media only screen and (max-width: 767px) { .field_inline .field__title { position: static; height: auto; line-height: 1.2; width: 100%; } }
+.field_inline .field__title span { position: relative; display: inline-block; vertical-align: middle; line-height: 1.2; }
+.field_inline .field__title span sup { position: absolute; left: -5px; top: 0; font-size: 12px; }
+
+.input { display: block; position: relative; z-index: 2; border: 2px solid #d6dbe5; padding: 0 18px; width: 100%; height: 43px; background: #fff; font-family: "museosanscyrl-300", Arial, sans-serif; font-size: 14px; color: #122e5c; }
+@media only screen and (max-width: 767px) { .input { height: 30px; padding: 0 15px; font-size: 12px; } }
+.input_textarea { height: 73px; padding: 15px 18px; resize: none; }
+.input.has-error { background: #fde8e8; border-color: #fde8e8; color: #da3e3e; }
+.input.has-error + .has-error + .field__shadow:before, .input.has-error + .has-error + .field__shadow:after { background: #ffc5c5; }
+.input.valid { background: #eef1f6; border-color: #eef1f6; }
 
 .select { position: relative; font-family: "museosanscyrl-300", Arial, sans-serif; font-size: 14px; color: #122e5c; }
 .select:before { content: ""; position: absolute; top: 100%; left: 2px; right: -2px; height: 2px; background: #d6dbe5; }
@@ -530,16 +553,14 @@ a { text-decoration: none; }
 .select select { position: absolute; opacity: 0; z-index: 2; left: 0; top: 0; height: 45px; width: 100%; }
 
 .number { position: relative; display: inline-block; vertical-align: middle; width: 117px; }
-.number .input { text-align: center; }
 .number__plus, .number__minus { position: absolute; top: -2px; width: 25px; height: 38px; background: #eef1f6; font-family: "museosanscyrl-300", Arial, sans-serif; font-size: 20px; color: #122e5c; -moz-transition: background 0.3s; -o-transition: background 0.3s; -webkit-transition: background 0.3s; transition: background 0.3s; }
 .number__plus:hover, .number__minus:hover { background: #dde3ed; }
 .number__minus { left: 0; }
 .number__plus { right: 0; }
+.number__input { display: block; border: 1px solid #d6dbe5; padding: 0 28px; height: 38px; width: 100%; font-size: 28px; font-family: "museosanscyrl-300", Arial, sans-serif; color: #122e5c; text-align: center; }
 
 .has-shadow:before { content: ""; position: absolute; top: 100%; left: 2px; right: -2px; height: 2px; background: #d6dbe5; }
 .has-shadow:after { content: ""; position: absolute; top: 2px; bottom: -2px; right: -2px; width: 2px; background: #d6dbe5; }
-
-.input { display: block; border: 1px solid #d6dbe5; padding: 0 16px; height: 38px; width: 100%; font-size: 28px; font-family: "museosanscyrl-300", Arial, sans-serif; color: #122e5c; }
 
 .btn-action { display: block; background: #122e5c; height: 43px; line-height: 43px; font-size: 13px; color: #fff; font-family: "museosanscyrl-300", Arial, sans-serif; text-align: center; text-transform: uppercase; -moz-transition: background 0.3s; -o-transition: background 0.3s; -webkit-transition: background 0.3s; transition: background 0.3s; }
 .btn-action:hover { background: #0c1f3e; }
@@ -710,7 +731,7 @@ a { text-decoration: none; }
 .box__subtitle { margin-top: 12px; opacity: 0.7; font-family: "DidotItalic", Arial, sans-serif; font-size: 18px; }
 .box .link { position: absolute; right: 28px; bottom: 40px; }
 
-.box-wrap { position: absolute; top: 0; left: 0; }
+.box-wrap { position: absolute; top: 0; left: 0; z-index: 2; }
 @media only screen and (max-width: 1023px) { .box-wrap { position: static; width: 317px; margin: 0 auto 20px; } }
 @media only screen and (max-width: 1023px) and (max-width: 767px) { .box-wrap { width: 100%; } }
 
@@ -812,6 +833,85 @@ a { text-decoration: none; }
 @media only screen and (max-width: 767px) { .infobox__list li span { font-size: 14px; } }
 .infobox .close { position: absolute; right: 21px; top: 18px; }
 @media only screen and (max-width: 767px) { .infobox .close { top: 10px; right: 10px; } }
+
+.btn_cart { position: fixed; right: 0; bottom: 0; z-index: 5; text-transform: none; width: 540px; box-shadow: 0 -5px 5px rgba(18, 46, 92, 0.1); }
+@media only screen and (max-width: 1279px) { .btn_cart { width: 300px; } }
+@media only screen and (max-width: 1023px) { .btn_cart { width: 200px; } }
+@media only screen and (max-width: 767px) { .btn_cart { width: 290px; left: 50%; margin-left: -145px; right: auto; height: 40px; padding: 0; min-width: 290px; line-height: 40px; } }
+.btn_cart:hover { box-shadow: none; }
+.btn_cart .icon-cart { vertical-align: baseline; margin-right: 20px; }
+
+.cart { position: fixed; right: 0; top: 0; bottom: 0; z-index: 10; width: 540px; background: #fff; -moz-transition: -moz-transform 0.3s; -o-transition: -o-transform 0.3s; -webkit-transition: -webkit-transform 0.3s; transition: transform 0.3s; -moz-transform: translateY(100%); -ms-transform: translateY(100%); -webkit-transform: translateY(100%); transform: translateY(100%); }
+@media only screen and (max-width: 767px) { .cart { width: 290px; left: 50%; margin-left: -145px; } }
+.cart.is-visible-in { -moz-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0); }
+.cart.is-visible-out { -moz-transform: translateY(100%); -ms-transform: translateY(100%); -webkit-transform: translateY(100%); transform: translateY(100%); }
+.cart:before { content: ""; position: absolute; z-index: -1; top: 20px; bottom: 0; left: 0; width: 1px; box-shadow: 0 0 50px 5px #000; }
+@media only screen and (max-width: 767px) { .cart:before { display: none; } }
+.cart__in { position: absolute; top: 0; left: 0; right: 0; z-index: 2; background: #fff; height: 100%; }
+.cart__scroll { padding: 50px 50px 100px 80px; max-height: 100%; overflow-y: auto; overflow-x: hidden; }
+@media only screen and (max-width: 1279px) { .cart__scroll { padding: 30px 30px 60px 30px; } }
+@media only screen and (max-width: 767px) { .cart__scroll { padding: 20px 20px 60px 20px; } }
+.cart__scroll::-webkit-scrollbar { width: 4px; height: 4px; }
+.cart__scroll::-webkit-scrollbar-thumb { background: #d8dde7; }
+.cart .close { position: absolute; right: 50px; top: 50px; }
+@media only screen and (max-width: 1279px) { .cart .close { top: 30px; right: 30px; } }
+@media only screen and (max-width: 767px) { .cart .close { top: 10px; right: 10px; } }
+.cart__title { margin-bottom: 40px; font-size: 24px; font-family: "DidotBold", Arial, sans-serif; color: #122e5c; }
+.cart .field { padding-right: 70px; }
+.cart .btn { position: absolute; left: 0; bottom: 0; width: 100%; }
+@media only screen and (max-width: 767px) { .cart .btn { height: 40px; line-height: 40px; padding: 0; } }
+
+.cart_vertical .cart__in { text-align: center; font-size: 0; }
+.cart_vertical .cart__in:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
+.cart_vertical .success { display: inline-block; vertical-align: middle; padding: 0 70px 100px; font-size: 31px; font-family: "DidotItalic", Arial, sans-serif; color: #000; }
+.cart_vertical .success__title { font-size: 46px; font-family: "DidotBold", Arial, sans-serif; }
+
+.steps { font-family: "museosanscyrl-300", Arial, sans-serif; margin-bottom: 50px; }
+.steps li { display: inline-block; position: relative; vertical-align: top; width: 114px; padding-left: 80px; }
+@media only screen and (max-width: 767px) { .steps li { padding-left: 35px; width: 69px; } }
+.steps li:first-child { padding-left: 0; width: 33px; }
+.steps li:first-child:before { display: none; }
+.steps li:before { content: ""; position: absolute; top: 17px; left: -4px; width: 85px; height: 1px; background: #dfdfdf; }
+@media only screen and (max-width: 767px) { .steps li:before { width: 39px; } }
+.steps li.is-active { color: #da3e3e; }
+.steps li.is-active:before { background: #da3e3e; }
+.steps li.is-active i { background: #da3e3e; color: #fff; border-color: #da3e3e; }
+.steps li.is-active span { color: #da3e3e; }
+.steps li i { display: block; margin-bottom: 7px; width: 33px; height: 33px; text-align: center; line-height: 33px; font-size: 18px; color: #fff; border: 1px solid #dfdfdf; border-radius: 50%; font-style: normal; color: #dfdfdf; }
+.steps li span { display: block; font-size: 12px; }
+
+.form-info { position: relative; margin: 46px 0 0; border-top: 1px solid #eef1f6; padding: 22px 0 0; color: #152033; font-size: 14px; font-family: "museosanscyrl-300", Arial, sans-serif; }
+@media only screen and (max-width: 767px) { .form-info { margin-top: 20px; padding-top: 10px; } }
+.form-info__in { position: relative; }
+.form-info__in sup { position: absolute; left: -7px; top: 0; font-size: 14px; }
+
+.cart-item { *zoom: 1; margin-bottom: 40px; border-bottom: 1px solid #eef1f6; padding-bottom: 45px; font-size: 14px; color: #152033; font-family: "museosanscyrl-300", Arial, sans-serif; line-height: 1.7; }
+.cart-item:after { content: " "; display: table; clear: both; }
+@media only screen and (max-width: 1279px) { .cart-item { padding-bottom: 20px; margin-bottom: 20px; } }
+@media only screen and (max-width: 767px) { .cart-item { font-size: 12px; } }
+.cart-item__left { float: left; width: 233px; }
+.cart-item__right { float: right; }
+.cart-item .title { margin-bottom: 14px; }
+.cart-item + .total-price { margin-top: -40px; }
+@media only screen and (max-width: 1279px) { .cart-item + .total-price { margin-top: -20px; } }
+
+.total-price { border-top: 3px solid; padding: 32px 0 0; font-size: 62px; color: #152033; font-family: "DidotBold", Arial, sans-serif; line-height: 1; }
+@media only screen and (max-width: 1279px) { .total-price { font-size: 40px; padding-top: 10px; } }
+@media only screen and (max-width: 1023px) { .total-price { font-size: 24px; } }
+
+.btn-remove { font-size: 14px; font-family: "museosanscyrl-300", Arial, sans-serif; color: #da3e3e; background: none; }
+.btn-remove:hover { color: #cd2727; }
+
+.payment { position: relative; margin-bottom: 3px; padding-left: 50px; height: 60px; background: #eef1f6; line-height: 60px; cursor: pointer; }
+.payment:before { content: ""; position: absolute; top: 50%; left: 22px; margin-top: -5px; width: 10px; height: 10px; border: 1px solid #122e5c; border-radius: 50%; }
+.payment.is-active:before { background: #da3e3e; border-color: #da3e3e; }
+.payment__main { display: inline-block; vertical-align: middle; }
+.payment__main img { display: block; }
+
+.cart-info { padding: 40px; margin: 50px 0 0; box-shadow: inset 0 0 0 5px; font-size: 14px; font-family: "museosanscyrl-300", Arial, sans-serif; color: #152033; }
+.cart-info .title { color: #152033; }
+.cart-info ul { margin-bottom: 25px; }
+.cart-info .price { padding-top: 10px; color: #da3e3e; font-size: 36px; font-family: "DidotBold", Arial, sans-serif; border-top: 1px solid #d8dde7; }
 
 .icon-fb { background: url('../img/icons-s2c128449c0.png') 0 -138px no-repeat; background-position: 0 -69px; width: 22px; height: 22px; -moz-background-size: 25px 185px; -webkit-background-size: 25px 185px; background-size: 25px 185px; }
 

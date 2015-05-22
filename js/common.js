@@ -2,12 +2,13 @@ head.ready(function() {
 
 	$(document).on("click", function(){
 		$(".js-menu").removeClass("is-active");
-		$("body").removeClass("no-scroll");
-		$(".desktop body").css({
-			marginRight: 0
-		});
+		
 		$(".js-popup").addClass("is-visible-out");
 		setTimeout(function() {
+			$("body").removeClass("no-scroll");
+			$(".desktop body").css({
+				marginRight: 0
+			});
 			$(".js-popup").removeClass("is-visible-out is-visible-in");
 		},400);
 	});
@@ -205,6 +206,51 @@ head.ready(function() {
 			
 		validate();
 
+		$(".js-btn-submit").on("click", function(){
+			var form = $(this).parents(".js-validate");
+			var steps = $('.js-popup');
+			var step = $('.js-popup[data-step="'+$(this).attr("data-step")+'"]');
+			if (form.valid()) {
+				steps.removeClass("is-visible-in");
+				step.addClass("is-visible-in");
+			}
+			else {
+				return false;
+			}
+		});
+
+		$(".js-next-step").on("click", function(){
+			var steps = $('.js-popup');
+			var step = $('.js-popup[data-step="'+$(this).attr("data-step")+'"]');
+			steps.removeClass("is-visible-in");
+			step.addClass("is-visible-in");
+			return false;
+		});
+		$(".js-btn-remove").on("click", function(){
+			$(this).parents(".js-parent").remove();
+			return false;
+		});
+
+		$(".js-close-cart").on("click", function(){
+			$(".js-popup").removeClass("is-visible-in");
+			$("body").removeClass("no-scroll");
+			return false;
+		});
+
+		$(".js-payment").on("click", function(){
+			$(".js-payment").removeClass("is-active");
+			$(this).addClass("is-active");
+			if ($(this).hasClass(".js-payment-cash")) {
+				$(this).parents(".js-popup").find(".js-step-link").hide();
+				$(this).parents(".js-popup").find(".js-next-step").show();
+			}
+			else {
+				$(this).parents(".js-popup").find(".js-step-link").show();
+				$(this).parents(".js-popup").find(".js-next-step").hide();
+			}
+			return false;
+		});
+
 		function number() { 
 	        var number = $(".js-number");
 	        number.each(function(){
@@ -268,4 +314,7 @@ head.ready(function() {
 	    $(window).resize(function(){
 	    	fixBox();
 	    });
+
+
+
 });
