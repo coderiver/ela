@@ -45,7 +45,8 @@
 			left: 216px
 			margin-top: -6px
 		+r(767)
-			display: none
+			left: 86px
+			margin-top: -5px
 	&.is-animated
 		&:after
 			height: 110px
@@ -53,17 +54,23 @@
 				height: 64px
 			+r(1023)
 				height: 82px
+			+r(767)
+				height: 48px
 		.academy__img
 			&:before
 				width: 90px
 				+r(1279)
 					width: 100px
+				+r(767)
+					width: 38px
 			&:after
 				width: 378px
 				+r(1279)
 					width: 314px
 				+r(1023)
 					width: 238px
+				+r(767)
+					width: 106px
 			span
 				&:first-child
 					&:before
@@ -72,6 +79,8 @@
 							width: 105px
 						+r(1023)
 							width: 50px
+						+r(767)
+							width: 20px
 					&:after
 						width: 100px
 				&:last-child
@@ -79,12 +88,16 @@
 						width: 100px
 						+r(1279)
 							width: 79px
+						+r(767)
+							width: 75px
 					&:after
 						width: 263px
 						+r(1279)
 							width: 257px
 						+r(1023)
 							width: 180px
+						+r(767)
+							width: 20px
 		.academy__in
 			&:before
 				left: 0
@@ -105,8 +118,6 @@
 			height: 1px
 			background: #fff  
 			+tr(width .3s)
-			+r(767)
-				display: none
 		&:before
 			left: 0
 			bottom: 0
@@ -134,8 +145,6 @@
 				background: #fff  
 				width: 0
 				+tr(width .3s)
-				+r(767)
-					display: none
 			&:before
 				right: 100% 
 			&:first-child
@@ -150,6 +159,7 @@
 					margin-bottom: -5px
 				+r(767)
 					left: 20px
+					margin-bottom: -4px
 				&:before
 					bottom: 7px
 					+r(1279)
@@ -157,14 +167,14 @@
 					+r(1023)
 						bottom: 4px
 					+r(767)
-						display: none
+						bottom: 3px
 				&:after
 					bottom: 7px
 					margin-left: 37px
 					left: 100%
 					+r(1279)
 						margin-left: 13px
-					+r(1023)
+					+r(767)
 						display: none
 			&:last-child
 				right: 300px
@@ -183,7 +193,7 @@
 					+r(1023)
 						bottom: 4px
 					+r(767)
-						display: none
+						bottom: 3px
 				&:after
 					bottom: 7px
 					margin-left: 37px
@@ -193,8 +203,6 @@
 					+r(1023)
 						bottom: 4px
 						margin-left: 6px
-					+r(767)
-						display: none
 	&__in
 		position: relative
 		padding: 0 88px 
@@ -212,8 +220,7 @@
 			background: #fff
 			height: 0
 			+tr(height .3s)  
-			+r(767)
-				display: none
+			
 		img
 			display: block
 			width: 100%

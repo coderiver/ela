@@ -218,7 +218,7 @@ a
 	+r(767)
 		float: none
 		width: 100%	
-		order: 1
+		+order(1)
 	.l-cols__inner
 		padding-left: 10px
 		+r(767)
@@ -237,7 +237,7 @@ a
 	z-index: 5
 	margin-top: 50px
 	+cover
-	background-attachment: fixed 
+	+gpu
 	&:before
 		content: ""
 		position: absolute
@@ -278,6 +278,8 @@ a
 	a
 		color: #fff 
 	.l-inner
+		+r(1599)
+			margin: 0 40px 
 		+r(1023)
 			margin: 0 50px 
 		+r(767)
@@ -320,6 +322,7 @@ a
 		width: 170px
 	+r(767)
 		display: none
+	+gpu
 	a
 		display: block
 		+tr_bgc
@@ -476,7 +479,7 @@ a
 				font-size: 14px
 				line-height: 1
 		ul
-			background: $blue
+			background: #213d6c
 			padding-left: 0
 			+r(1023)
 				width: 170px
@@ -493,6 +496,9 @@ a
 	+it
 	letter-spacing: 0.5px 
 	font-size: 14px
+	+tr_c
+	&:hover
+		color: rgba(#fff,.7) 
 	span
 		display: inline-block
 		vertical-align: middle
@@ -526,7 +532,7 @@ a
 			height: 1px
 			width: 100%
 			background: #fff 
-			+transform(translate3d(-100%,0,0))
+			+transform(translate3d(-110%,0,0))
 			+transition(transform 0s cubic-bezier(1,0,0,1),opacity 0s cubic-bezier(.19,1,.22,1)) 
 		&:hover
 			&:after
@@ -543,7 +549,7 @@ a
 	position: absolute
 	right: 0
 	top: 10px
-	+svg(glass,24,25)
+	+sr(glass)
 
 .soc
 	margin-left: -26px
@@ -697,7 +703,7 @@ a
 	a
 		display: inline-block
 		position: relative
-		padding: 12px 0
+		padding: 12px 25px 12px 0
 		&[data-nav]
 			&:after
 				content: ""
@@ -705,10 +711,8 @@ a
 				right: 0
 				bottom: 20px
 				+arr(6,6,#fff,r)
-	&_main
+	&_root
 		font-size: 20px
-		a
-			padding-right: 25px
 		+r(767)
 			display: block
 	&__back
@@ -864,7 +868,7 @@ a
 		+r(1023)
 			padding: 45px 10px	
 		+r(767)
-			order: 1
+			+order(1)
 			display: block
 			padding: 0
 		&:first-child
@@ -872,7 +876,7 @@ a
 			+r(1023)
 				padding-left: 30px
 			+r(767)
-				order: 2
+				+order(2)
 				padding: 0
 				text-align: center
 		&:last-child
@@ -880,7 +884,7 @@ a
 			+r(1023)
 				padding-right: 30px
 			+r(767)
-				order: 3
+				+order(3)
 				margin-top: 5px
 				padding: 0
 				text-align: center
@@ -902,17 +906,20 @@ a
 
 .btn
 	display: inline-block
+	position: relative
 	padding: 32px 20px 31px
 	line-height: 1 
 	min-width: 457px
 	color: #fff
 	font-size: 13px
+	z-index: 2
 	+museo_300
 	background: $red
 	text-align: center
 	text-transform: uppercase
 	+tr(background .3s)
 	letter-spacing: 1.5px
+	overflow: hidden
 	+r(1279)
 		padding: 28px 20px 27px	
 		min-width: 415px
@@ -921,12 +928,24 @@ a
 		min-width: 330px
 	+r(767)
 		min-width: 100%
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		width: 100%
+		z-index: -1
+		+transform(translate3d(-100%,0,0)) 
+		+transition(transform .3s)
+		background: $blue
 	&:hover
-		background: $red_h
 		.icon-arr
 			+transform(translateX(10px))
 		.icon-arr-l
 			+transform(translateX(-10px))
+		&:before
+			+transform(translate3d(0,0,0)) 
 	&:active
 		background: $red_a
 	strong
@@ -996,11 +1015,11 @@ a
 		top: 498px
 		width: 0
 		+r(1599)
-			left: 550px
+			left: 582px
 		+r(1279)
 			left: 400px
 		&.is-animated
-			width: 583px
+			width: 683px
 			+r(1599)
 				width: 550px
 .line-v
@@ -1008,23 +1027,21 @@ a
 	width: 1px
 	background: $blue 
 	+tr(height .6s)
-	+r(1023)
+	+r(1279)
 		display: none
 .line-h
 	position: absolute
 	height: 1px
 	background: $blue 
 	+tr(width .6s)
-	+r(1023)
+	+r(1279)
 		display: none
 .section_mod
 	padding-bottom: 0
 .section_white
-	padding: 80px 0 50px
+	padding: 50px 0
 	+ .footer
 		margin-top: 142px
-	+r(1279)
-		padding-top: 75px
 	+r(767)
 		padding: 25px 0
 	&:before
@@ -1226,10 +1243,26 @@ a
 		+tr(height .15s linear .25s)
 .banner
 	display: block
+	position: relative
 	padding: 48px 0 63px 
 	background: $blue 
 	text-align: center
 	color: #fff 
+	overflow: hidden
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		width: 100%
+		background: $red 
+		z-index: 0
+		+transform(translate3d(-100%,0,0)) 
+		+transition(transform .3s)
+	&:hover
+		&:before
+			+transform(translate3d(0,0,0))
 	&__text
 		display: block
 		font-size: 40px
@@ -1251,6 +1284,7 @@ a
 			height: 3px
 			background: #fff
 	img
+		position: relative
 		margin-bottom: 36px
 	.line-title
 		margin: 0 20px 
@@ -1307,14 +1341,13 @@ a
 		margin-right: 43px
 		+r(1279)
 			margin-left: 0
+			margin-bottom: 30px
+			float: none
 		+r(1023)
 			margin-top: 30px
 		+r(767)
-			margin: 0
-			float: none
-		+ .wrapper
-			+r(1023)
-				display: none
+			margin-top: 0
+		
 	.post-link
 		max-width: 72%
 	.line-h
@@ -1326,16 +1359,16 @@ a
 		+r(1279)
 			left: 950px
 		&.is-animated
-			width: 483px
+			width: 583px
 			+r(1599)
 				width: 515px
 			+r(1279)
 				left: 490px
-				width: 463px
+				width: 461px
 				top: 498px
 	.line-v
-		top: -55px
-		left: 1232px
+		top: -25px
+		left: 1332px
 		height: 0
 		+r(1599)
 			left: 1132px
@@ -1343,20 +1376,23 @@ a
 			left: 950px
 			top: 24px
 		&.is-animated
-			height: 644px
+			height: 613px
 			+r(1279)
 				height: 475px
 		
 .post
 	position: relative
+	display: block
 	max-width: 446px
 	padding: 0 20px 30px 0
 	+r(1279)
 		max-width: 395px
 	&:hover
 		.img
-			&:before
-				background: rgba(16, 0, 255, 0.66)
+			opacity: 0.5
+		.link
+			color: $red
+			border-color: transparent  
 	&:before
 		content: ""
 		position: absolute
@@ -1388,27 +1424,16 @@ a
 .img
 	position: relative
 	overflow: hidden
-	&:before
-		content: ""
-		position: absolute
-		top: 0
-		right: 0
-		bottom: 0 
-		left: 0
-		background: #c90000
-		+tr(background .3s)
+	+tr_o
 	img
 		display: block
 		width: 100%
-		+filter(grayscale(1) opacity(0.5) brightness(1.5) contrast(1.5))
-.img_blue
-	&:before
-		background: rgba(16, 0, 255, 0.66)
 .date
 	font-size: 14px
 	line-height: 1.2
 	letter-spacing: .6px 
 	+it
+	color: $dark 
 	span
 		display: block
 		+reg
@@ -1423,9 +1448,13 @@ a
 
 .post-link
 	margin-bottom: 33px
+	display: block
 	.meta
 		margin-top: 10px
-
+	&:hover
+		.link
+			color: $red
+			border-color: transparent  
 
 .popup
 	opacity: 0
@@ -1470,6 +1499,12 @@ a
 		overflow-y: auto
 		+r(767)
 			padding: 15px 0 
+	.close
+		right: 30px
+		top: 30px
+		+r(1279)
+			right: 10px
+			top: 10px
 	.desktop &
 		.popup__in
 			+scrollbar
@@ -1636,6 +1671,13 @@ a
 .slider
 	max-width: 548px
 	padding-bottom: 55px
+	> div
+		+tr(opacity .3s)
+		opacity: 0
+		visibility: hidden
+		&.is-ready
+			visibility: visible
+			opacity: 1
 	+r(1279)
 		max-width: 438px
 	+r(1023)

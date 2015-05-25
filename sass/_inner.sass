@@ -195,11 +195,15 @@
 			color: $red
 			&:before
 				opacity: 0
+				+transform(translateX(12px))
 			&:after
 				opacity: 1
+				+transform(translateX(12px))
 		.link
 			color: $red
-	
+			border-color: transparent 
+		.price
+			color: $red 
 	&__in
 		padding: 35px 33px 
 	&__left
@@ -226,7 +230,7 @@
 			position: absolute
 			right: -38px
 			bottom: 7px
-			+tr_o
+			+transition(opacity .3s, transform, .3s)
 		&:before
 			+svg(arr-blue,20,13)
 		&:after
@@ -295,7 +299,7 @@
 	color: rgba($red, .5)
 	font-size: 18px
 	+it
-
+	+tr_c
 .article
 	margin: 0 auto 
 	max-width: 895px
@@ -329,6 +333,7 @@
 		margin: 65px 0 35px 
 		color: $blue
 		+bold
+		line-height: 1.25
 		font-size: 24px 
 		+r(1279)
 			margin: 45px 0 15px 
@@ -453,6 +458,7 @@
 		font-size: 16px
 	+r(767)
 		padding: 15px 0px 10px 50px
+		font-size: 13px
 	&_small
 		.review__bg
 			width: 510px
@@ -855,3 +861,38 @@
 		font-size: 36px
 		+bold
 		border-top: 1px solid #d8dde7  
+		
+.list-icon
+	margin: 0 0 60px
+	font-size: 0
+	+r(1279)
+		margin-bottom: 40px
+	+r(1023)
+		margin-bottom: 30px
+	&__item
+		display: inline-block
+		vertical-align: middle
+		width: 33.3%
+		font-size: 18px
+		line-height: 1.2
+		+it
+		color: $red 
+		+r(767)
+			width: 100%
+			margin-bottom: 10px
+	&__table
+		display: table
+		width: 100%
+		table-layout: fixed
+		div
+			display: table-cell
+			vertical-align: middle
+			&:first-child
+				padding-right: 5px
+				width: 80px
+				img
+					max-width: 100%
+		span
+			display: block
+			max-width: 75%
+			

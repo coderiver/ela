@@ -163,7 +163,7 @@
 						</div>
 					</div>
 					<div class="l-col-right">
-						<figure class="img img_blue">
+						<figure class="img">
 							<img src="img/slide2.jpg" alt="">
 						</figure>
 					</div>
@@ -210,24 +210,52 @@
 			<img src="img/svg/logo.svg" alt="ELA group">
 			English Language Academy
 		</a>
-		<ul class="touch-nav touch-nav_main js-nav-main">
+		<ul class="touch-nav touch-nav_root js-nav-root">
 			<li><a href="#">Home</a></li>
 			<li><a href="#" data-nav="js-nav-1">English <span>course</span></a></li>
 			<li><a href="#" data-nav="js-nav-2">Exam centre</a></li>
 			<li><a href="#" data-nav="js-nav-3">Other services</a></li>
 		</ul>
 		<div class="touch-nav js-nav js-nav-1">
-			<button class="touch-nav__back js-nav-back" type="button">
-				<span>back</span>
-			</button>
-			<ul>
-				<li><a href="#">Intensive General English courses</a></li>
-				<li><a href="#">Individual or Business English</a></li>
-				<li><a href="#">IELTS Preparation courses</a></li>
-				<li><a href="#">Pearson Preparation courses</a></li>
-				<li><a href="#">TOEFL Preparation courses</a></li>
-				<li><a href="#">Cambridge Preparation courses</a></li>
-			</ul>
+			<div class="js-nav-main">
+				<button class="touch-nav__back js-nav-back" type="button">
+					<span>back</span>
+				</button>
+				<ul>
+					<li><a href="#" data-nav="js-subnav-1">English language courses</a></li>
+					<li><a href="#" data-nav="js-subnav-2">University preparation</a></li>
+					<li><a href="#">Bespoke courses</a></li>
+					<li><a href="#">eacher training courses</a></li>
+					<li><a href="#">School Groups</a></li>
+					<li><a href="#">Exam centre</a></li>
+				</ul>
+			</div>
+			<div class="touch-nav js-subnav js-subnav-1">
+				<button class="touch-nav__back js-subnav-back" type="button">
+					<span>back</span>
+				</button>
+				<ul>
+					<li><a href="#">Intensive General English courses</a></li>
+					<li><a href="#">Individual or Business English</a></li>
+					<li><a href="#">IELTS Preparation courses</a></li>
+					<li><a href="#">Pearson Preparation courses</a></li>
+					<li><a href="#">TOEFL Preparation courses</a></li>
+					<li><a href="#">Cambridge Preparation courses</a></li>
+				</ul>
+			</div>
+			<div class="touch-nav js-subnav js-subnav-2">
+				<button class="touch-nav__back js-subnav-back" type="button">
+					<span>back</span>
+				</button>
+				<ul>
+					<li><a href="#">Intensive General English courses</a></li>
+					<li><a href="#">Individual or Business English</a></li>
+					<li><a href="#">IELTS Preparation courses</a></li>
+					<li><a href="#">Pearson Preparation courses</a></li>
+					<li><a href="#">TOEFL Preparation courses</a></li>
+					<li><a href="#">Cambridge Preparation courses</a></li>
+				</ul>
+			</div>
 		</div>
 		<button class="btn-search js-toggle-popup" data-popup="js-popup-search" type="button"></button>
 		<button class="close js-close-menu" type="button"><i></i></button>
@@ -252,6 +280,7 @@
 	</div>
 </div>
 <div class="popup js-popup js-popup-search">
+	<button class="close js-close-popup" type="button"><i></i></button>
 	<div class="popup__in">
 		<div class="search">
 			<form class="js-form js-validate">

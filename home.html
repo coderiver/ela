@@ -21,7 +21,7 @@
 							English Language Academy
 						</a>
 						<ul class="nav" data-sr="wait 2.1s">
-							<li class="is-active">
+							<li class="is-active" data-sr="wait 3s">
 								<a href="#"><span>Home</span></a>
 							</li>
 							<li class="has-nav-drop">
@@ -228,9 +228,9 @@
 				<div class="news-cols__right">
 					<div class="subtitle subtitle_dark">Fresh and sweet</div>
 					<div class="title-h1">News & offers</div>
-					<div class="post">
+					<a class="post" href="#">
 						<div class="img">
-							<a href="#"><img src="img/post.jpg" alt=""></a>
+							<img src="img/post.jpg" alt="">
 						</div>
 						<div class="post__body">
 							<div class="date">
@@ -238,23 +238,23 @@
 								October
 							</div>
 							<div class="post__main">
-								<a href="#" class="link">How to study when you have hardly any free time?</a>
+								<div class="link">How to study when you have hardly any free time?</div>
 							</div>
 						</div>
-					</div>
+					</a>
 					<div class="wrapper">
-						<div class="post-link">
-							<a href="#" class="link">Mysterious Rosslyn Chapel</a>
+						<a href="#" class="post-link">
+							<div class="link">Mysterious Rosslyn Chapel</div>
 							<div class="meta">October 23, 2015</div>
-						</div>
-						<div class="post-link">
-							<a href="#" class="link">If you do the crime, you will do the time.</a>
+						</a>
+						<a href="#" class="post-link">
+							<div class="link">If you do the crime, you will do the time.</div>
 							<div class="meta">October 23, 2015</div>
-						</div>
-						<div class="post-link">
-							<a href="#" class="link">PET, Reading practice</a>
+						</a>
+						<a href="#" class="post-link">
+							<div class="link">PET, Reading practice</div>
 							<div class="meta">October 23, 2015</div>
-						</div>
+						</a>
 					</div>
 				</div>	
 
@@ -302,24 +302,52 @@
 			<img src="img/svg/logo.svg" alt="ELA group">
 			English Language Academy
 		</a>
-		<ul class="touch-nav touch-nav_main js-nav-main">
+		<ul class="touch-nav touch-nav_root js-nav-root">
 			<li><a href="#">Home</a></li>
 			<li><a href="#" data-nav="js-nav-1">English <span>course</span></a></li>
 			<li><a href="#" data-nav="js-nav-2">Exam centre</a></li>
 			<li><a href="#" data-nav="js-nav-3">Other services</a></li>
 		</ul>
 		<div class="touch-nav js-nav js-nav-1">
-			<button class="touch-nav__back js-nav-back" type="button">
-				<span>back</span>
-			</button>
-			<ul>
-				<li><a href="#">Intensive General English courses</a></li>
-				<li><a href="#">Individual or Business English</a></li>
-				<li><a href="#">IELTS Preparation courses</a></li>
-				<li><a href="#">Pearson Preparation courses</a></li>
-				<li><a href="#">TOEFL Preparation courses</a></li>
-				<li><a href="#">Cambridge Preparation courses</a></li>
-			</ul>
+			<div class="js-nav-main">
+				<button class="touch-nav__back js-nav-back" type="button">
+					<span>back</span>
+				</button>
+				<ul>
+					<li><a href="#" data-nav="js-subnav-1">English language courses</a></li>
+					<li><a href="#" data-nav="js-subnav-2">University preparation</a></li>
+					<li><a href="#">Bespoke courses</a></li>
+					<li><a href="#">eacher training courses</a></li>
+					<li><a href="#">School Groups</a></li>
+					<li><a href="#">Exam centre</a></li>
+				</ul>
+			</div>
+			<div class="touch-nav js-subnav js-subnav-1">
+				<button class="touch-nav__back js-subnav-back" type="button">
+					<span>back</span>
+				</button>
+				<ul>
+					<li><a href="#">Intensive General English courses</a></li>
+					<li><a href="#">Individual or Business English</a></li>
+					<li><a href="#">IELTS Preparation courses</a></li>
+					<li><a href="#">Pearson Preparation courses</a></li>
+					<li><a href="#">TOEFL Preparation courses</a></li>
+					<li><a href="#">Cambridge Preparation courses</a></li>
+				</ul>
+			</div>
+			<div class="touch-nav js-subnav js-subnav-2">
+				<button class="touch-nav__back js-subnav-back" type="button">
+					<span>back</span>
+				</button>
+				<ul>
+					<li><a href="#">Intensive General English courses</a></li>
+					<li><a href="#">Individual or Business English</a></li>
+					<li><a href="#">IELTS Preparation courses</a></li>
+					<li><a href="#">Pearson Preparation courses</a></li>
+					<li><a href="#">TOEFL Preparation courses</a></li>
+					<li><a href="#">Cambridge Preparation courses</a></li>
+				</ul>
+			</div>
 		</div>
 		<button class="btn-search js-toggle-popup" data-popup="js-popup-search" type="button"></button>
 		<button class="close js-close-menu" type="button"><i></i></button>
@@ -344,6 +372,7 @@
 	</div>
 </div>
 <div class="popup js-popup js-popup-search">
+	<button class="close js-close-popup" type="button"><i></i></button>
 	<div class="popup__in">
 		<div class="search">
 			<form class="js-form js-validate">

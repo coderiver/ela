@@ -77,46 +77,78 @@
 	position: absolute
 	top: 57px
 	+hide-text
-	
+	width: 17px
+	height: 32px
+	background: none
+	&:before,
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0 
+		+tr_o
+	&:before
+		opacity: 0
+	&:hover
+		&:before
+			opacity: 1
+		&:after
+			opacity: 0
 .slick-prev
 	left: -24px
-	+svg(prev,17,32)
+	&:before
+		+svg(prev-red,17,32)
+	&:after
+		+svg(prev,17,32)
 .slick-next
 	right: -24px
-	+svg(next,17,32)
+	&:before
+		+svg(next-red,17,32)
+	&:after
+		+svg(next,17,32)
 .slick-dots
 	text-align: center
 	position: absolute
 	margin: 0
-	bottom: -55px
+	bottom: -62px
 	left: 0
 	right: 0
 	font-size: 0
 	+r(1023)
-		bottom: -50px
+		bottom: -52px
 	+r(767)
-		bottom: -35px
+		bottom: -42px
 	li
 		position: relative
 		display: inline-block
-		margin-left: 15px
+		cursor: pointer
 		&:first-child
 			margin-left: 0
 		&.slick-active
 			button
-				box-shadow: inset 0 0 0 8px $red
+				&:before
+					box-shadow: inset 0 0 0 8px $red
 				&:hover
-					opacity: 1
+					&:before
+						opacity: 1
 	button
 		display: block
-		width: 12px
-		height: 12px
 		background: none
-		box-shadow: inset 0 0 0 1px $blue
+		width: 26px
+		height: 26px
 		cursor: pointer
 		+hide-text
 		border-radius: 50% 
-		+transition(opacity, box-shadow, .5s)
 		&:hover
-			opacity: 0.7
+			&:before
+				opacity: .7
+		&:before
+			content: "" 
+			display: inline-block
+			vertical-align: middle
+			width: 12px
+			height: 12px
+			box-shadow: inset 0 0 0 1px $blue
+			border-radius: 50% 
+			+transition(opacity, box-shadow, .5s)
 	
