@@ -185,7 +185,7 @@
 											</div>
 										</div>
 									</div>
-									<a href="#" class="btn-action has-shadow"><i class="icon-cart"></i>Add to cart</a>
+									<a href="#" class="btn-action has-shadow js-show-btn"><i class="icon-cart"></i>Add to cart</a>
 									<div class="info-text">12 500 GBP for this course</div>		
 								</div>
 							</div>
@@ -518,6 +518,176 @@
 		</div>
 	</div>
 	<button class="close js-close-popup" type="button"><i></i></button>
+</div>
+<button class="btn btn_cart js-btn-cart js-toggle-popup" data-popup="js-cart-window" type="button"><i class="icon-cart"></i>1 Course, 12 500 GBP</button>
+<div class="cart js-cart-window js-cart js-popup" data-step="js-step-1">
+	<div class="cart__in">
+		<div class="cart__scroll">
+			<ul class="steps">
+				<li class="is-active">
+					<i>1</i>
+					<span>Cart</span>
+				</li>
+				<li>
+					<i>2</i>
+					<span>Personal information</span>
+				</li>
+				<li>
+					<i>3</i>
+					<span>Payment</span>
+				</li>
+			</ul>
+			<div class="cart-item js-parent">
+				<div class="cart-item__left">
+					<div class="title">Intensive General English Courses</div>
+					<p>XIntensive 25hrs, 250 GBP per week, 50 weeks, 12 500 GBP</p>
+					<button class="btn-remove js-btn-remove" type="button">Remove</button>
+				</div>
+				<div class="cart-item__right">
+					<div class="number js-number" data-max-number="100">
+					   <button class="number__minus has-shadow js-minus-number" type="button">-</button>
+					  <input type="text" class="number__input" value="1">
+					  <button class="number__plus has-shadow js-plus-number" type="button">+</button>
+					</div>
+				</div>
+			</div>
+			<div class="cart-item js-parent">
+				<div class="cart-item__left">
+					<div class="title">Intensive General English Courses</div>
+					<p>XIntensive 25hrs, 250 GBP per week, 50 weeks, 12 500 GBP</p>
+					<button class="btn-remove js-btn-remove" type="button">Remove</button>
+				</div>
+				<div class="cart-item__right">
+					<div class="number js-number" data-max-number="100">
+					   <button class="number__minus has-shadow js-minus-number" type="button">-</button>
+					  <input type="text" class="number__input" value="1">
+					  <button class="number__plus has-shadow js-plus-number" type="button">+</button>
+					</div>
+				</div>
+			</div>
+			<div class="total-price">
+				25 155 GBP
+			</div>
+			<button class="btn js-next-step" data-step="js-step-2" type="button">Check Out <i class="icon-arr"></i></button>
+			<button class="close close_dark js-close-cart" type="button"><i></i></button>
+		</div>
+	</div>
+</div>
+<div class="cart js-cart js-popup" data-step="js-step-2">
+	<div class="cart__in">
+		<div class="cart__scroll">
+			<ul class="steps">
+				<li class="is-active">
+					<i>1</i>
+					<span>Cart</span>
+				</li>
+				<li class="is-active">
+					<i>2</i>
+					<span>Personal information</span>
+				</li>
+				<li>
+					<i>3</i>
+					<span>Payment</span>
+				</li>
+			</ul>
+			<div class="cart__title">Personal information</div>
+			
+			<form class="js-validate">
+				<label class="field field_inline">
+					<span class="field__title"><span><sup>*</sup>First name, last name</span></span>
+					<span class="field__body">
+						<input type="text" name="user" class="input" required>
+						<i class="field__shadow"></i>
+					</span>
+				</label>
+				<label class="field field_inline">
+					<span class="field__title"><span><sup>*</sup>E-mail</span></span>
+					<span class="field__body">
+						<input type="email" name="email" class="input" required>
+						<i class="field__shadow"></i>
+					</span>
+				</label>
+				<label class="field field_inline">
+					<span class="field__title"><span><sup>*</sup>Telephone</span></span>
+					<span class="field__body">
+						<input type="tel" name="tel" class="input" required>
+						<i class="field__shadow"></i>
+					</span>
+				</label>
+				<label class="field field_inline">
+					<span class="field__title"><span>Message</span></span>
+					<span class="field__body">
+						<textarea class="input input_textarea"></textarea>
+						<i class="field__shadow"></i>
+					</span>
+				</label>
+				<button class="btn js-btn-submit" data-step="js-step-3" type="submit">continue <i class="icon-arr"></i></button>
+			</form>
+			<div class="form-info">
+				<div class="form-info__in">
+					<sup>*</sup> Required Fields
+				</div>
+			</div>
+			<button class="close close_dark js-close-cart" type="button"><i></i></button>
+		</div>
+	</div>
+</div>
+<div class="cart js-cart js-popup" data-step="js-step-3">
+	<div class="cart__in">
+		<div class="cart__scroll">
+			<ul class="steps">
+				<li class="is-active">
+					<i>1</i>
+					<span>Cart</span>
+				</li>
+				<li class="is-active">
+					<i>2</i>
+					<span>Personal information</span>
+				</li>
+				<li class="is-active">
+					<i>3</i>
+					<span>Payment</span>
+				</li>
+			</ul>
+			<div class="cart__title">Payment Method:</div>
+			<div class="payment js-payment is-active js-payment-cash">
+				<div class="payment__main">Cash</div>
+			</div>
+			<div class="payment js-payment">
+				<div class="payment__main"><img src="img/paypal.png" alt=""></div>
+			</div>
+			<div class="payment js-payment">
+				<div class="payment__main"><img src="img/cards.png" alt=""></div>
+			</div>
+			<div class="cart-info">
+				<div class="title">Klimava Natallia</div>
+				<ul>
+					<li>naftasya@tut.by</li>
+					<li>+375 29 361 55 87</li>
+				</ul>
+				<ul>
+					<li><em>Intensive General English Courses  x 2</em></li>
+					<li><em>Intensive General English Courses  x 1</em></li>
+				</ul>
+				<div class="price">
+					25 155 GBP
+				</div>
+			</div>
+		</div>
+		<button class="btn js-next-step" data-step="js-step-4" type="button">continue <i class="icon-arr"></i></button>
+		<a class="btn js-step-link" href="#" style="display: none;">continue <i class="icon-arr"></i></a>
+		<button class="close close_dark js-close-cart" type="button"><i></i></button>
+	</div>
+</div>
+<div class="cart cart_vertical js-cart js-popup" data-step="js-step-4">
+	<div class="cart__in">
+		<div class="success">
+			<div class="success__title">Thank you</div>
+			In the near future , our manager will contact you via telephone 
+		</div>
+		<button class="btn js-close-cart" type="button">close</button>
+		<button class="close close_dark js-close-cart" type="button"><i></i></button>
+	</div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js"></script>

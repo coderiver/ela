@@ -5,10 +5,10 @@ head.ready(function() {
 		
 		$(".js-popup").addClass("is-visible-out");
 		setTimeout(function() {
-			$("body").removeClass("no-scroll");
-			$(".desktop body").css({
-				marginRight: 0
-			});
+			//$("body").removeClass("no-scroll");
+			//$(".desktop body").css({
+			//	marginRight: 0
+			//});
 			$(".js-popup").removeClass("is-visible-out is-visible-in");
 		},400);
 		$(".js-overlay").fadeOut(500);
@@ -135,10 +135,10 @@ head.ready(function() {
 			popup.find("input").focus();
 		}
 		
-		$("body").toggleClass("no-scroll");
-		$(".desktop body").css({
-			marginRight: scrollWidth
-		});
+		// $("body").toggleClass("no-scroll");
+		// $(".desktop body").css({
+		// 	marginRight: scrollWidth
+		// });
 		event.stopPropagation();
 		return false;
 	});
@@ -148,12 +148,15 @@ head.ready(function() {
     $(".js-popup .popup__vertical").on("click", function(event){
         event.stopPropagation();
     });
+    $(".js-cart").on("click", function(event){
+        event.stopPropagation();
+    });
 
     $(".js-close-popup").on("click", function(event){
-		$("body").removeClass("no-scroll");
-		$(".desktop body").css({
-			marginRight: scrollWidth
-		});
+		//$("body").removeClass("no-scroll");
+		// $(".desktop body").css({
+		// 	marginRight: scrollWidth
+		// });
 		$(".js-overlay").fadeOut(500);
 		$(".js-popup").addClass("is-visible-out");
 		setTimeout(function() {
@@ -368,4 +371,8 @@ head.ready(function() {
 	        $(this).parents(".js-select").find(".js-select-text").text(val);
 	    });
 
+	$(".js-show-btn").on("click", function(){
+		$(".js-btn-cart").addClass("is-visible");
+		return false;
+	});
 });

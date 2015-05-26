@@ -5,7 +5,7 @@
 	text-align: center
 	+it
 	font-size: 18px
-	+r(1279)	
+	+r(1230)	
 		font-size: 16px
 	+r(1023)
 		position: static
@@ -15,7 +15,7 @@
 		line-height: 105px
 		width: 305px
 		color: #fff 
-		+r(1279)
+		+r(1230)
 			height: 80px
 			line-height: 80px
 		+r(1023)
@@ -27,7 +27,7 @@
 		display: table
 		width: 100%
 		table-layout: fixed
-		+r(1279)	
+		+r(1230)	
 			table-layout: auto
 		+r(767)
 			display: block
@@ -45,7 +45,7 @@
 			+tr_bgc
 			height: 105px
 			line-height: 105px
-			+r(1279)
+			+r(1230)
 				height: 80px
 				line-height: 80px
 			+r(767)
@@ -94,7 +94,7 @@
 	top: 0
 	text-align: center
 	color: #fff 
-	+r(1279)
+	+r(1230)
 		margin-top: 20px
 	+r(1023)
 		margin-top: 10px
@@ -105,7 +105,7 @@
 		margin-bottom: -25px
 		font-size: 34px
 		+it
-		+r(1279)
+		+r(1230)
 			font-size: 30px
 			margin-bottom: -10px
 		+r(1023)
@@ -117,7 +117,7 @@
 		text-transform: uppercase
 		font-size: 100px
 		letter-spacing: 5px 
-		+r(1279)
+		+r(1230)
 			font-size: 80px
 		+r(1023)
 			font-size: 50px
@@ -315,7 +315,7 @@
 		font-size: 12px
 	+ .btn
 		margin: 100px 0 60px
-		+r(1279)
+		+r(1230)
 			margin: 60px 0 30px
 		+r(1023)
 			margin: 30px 0 15px
@@ -337,7 +337,7 @@
 		+bold
 		line-height: 1.25
 		font-size: 24px 
-		+r(1279)
+		+r(1230)
 			margin: 45px 0 15px 
 			font-size: 20px
 		+r(1023)
@@ -376,7 +376,7 @@
 		color: #fff
 		+it
 		line-height: 1.3 
-		+r(1279)
+		+r(1230)
 			margin-bottom: 50px
 			padding: 20px 40px
 			font-size: 20px
@@ -390,7 +390,7 @@
 		float: right
 		max-width: 450px
 		margin: 0 40px 85px 0
-		+r(1279)
+		+r(1230)
 			margin: 0 20px 40px 0
 		+r(1023)
 			float: none
@@ -400,9 +400,9 @@
 	> .img_blue
 		float: left
 		margin-left: -196px
-		+r(1599)	
+		+r(1550)	
 			margin-left: -100px
-		+r(1279)
+		+r(1230)
 			margin-left: 0
 		+r(1023)
 			float: none
@@ -414,13 +414,13 @@
 		.slick-dots
 			left: 196px
 			text-align: left
-			+r(1599)
+			+r(1550)
 				left: 0
 				text-align: center
-		+r(1599)	
+		+r(1550)	
 			margin-left: -100px
 			
-		+r(1279)
+		+r(1230)
 			margin-left: 0
 .reviews-slider
 	margin-bottom: 55px
@@ -433,7 +433,7 @@
 	&_small
 		margin: 0 24px 0 0
 		width: 617px
-		+r(1279)
+		+r(1230)
 			width: 100%
 			padding-left: 35px
 		+r(1023)
@@ -465,7 +465,7 @@
 		.review__bg
 			width: 510px
 			height: 150px
-			+r(1279)
+			+r(1230)
 				display: none
 			&:before
 				+arr(32,537,#eef1f6,bl) 
@@ -537,7 +537,7 @@
 	color: $dark 
 	line-height: 1.7
 	box-shadow: inset 0 0 0 5px $red  
-	+r(1279)
+	+r(1230)
 		padding: 40px 
 	+r(767)
 		padding: 20px 
@@ -591,7 +591,11 @@
 	text-transform: none
 	width: 540px
 	box-shadow: 0 -5px 5px rgba($blue, .1)
-	+r(1279)
+	+transform(translate3d(0,150px,0))
+	+tr(transform .3s)
+	&.is-visible
+		+transform(translate3d(0,0,0))
+	+r(1230)
 		width: 300px
 	+r(1023)
 		width: 200px
@@ -619,7 +623,7 @@
 	width: 540px
 	background: #fff 
 	+tr(transform .3s)
-	+transform(translateY(100%))
+	+transform(translateY(120%))
 	+r(767)
 		width: 290px
 		left: 50%
@@ -652,7 +656,7 @@
 		max-height: 100%
 		overflow-y: auto
 		overflow-x: hidden
-		+r(1279)
+		+r(1230)
 			padding: 30px 30px 60px 30px
 		+r(767)
 			padding: 20px 20px 60px 20px
@@ -665,7 +669,7 @@
 		position: absolute
 		right: 50px
 		top: 50px
-		+r(1279)
+		+r(1230)
 			top: 30px
 			right: 30px
 		+r(767)
@@ -782,7 +786,7 @@
 	color: $dark
 	+museo_300
 	line-height: 1.7 
-	+r(1279)
+	+r(1230)
 		padding-bottom: 20px
 		margin-bottom: 20px
 	+r(767)
@@ -796,7 +800,7 @@
 		margin-bottom: 14px
 	+ .total-price
 		margin-top: -40px
-		+r(1279)
+		+r(1230)
 			margin-top: -20px
 .total-price
 	border-top: 3px solid 
@@ -805,7 +809,7 @@
 	color: $dark
 	+bold
 	line-height: 1
-	+r(1279)
+	+r(1230)
 		font-size: 40px
 		padding-top: 10px
 	+r(1023)
@@ -867,7 +871,7 @@
 .list-icon
 	margin: 0 0 60px
 	font-size: 0
-	+r(1279)
+	+r(1230)
 		margin-bottom: 40px
 	+r(1023)
 		margin-bottom: 30px
