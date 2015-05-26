@@ -75,17 +75,19 @@
 .slick-prev,
 .slick-next
 	position: absolute
-	top: 57px
+	top: 40px
 	+hide-text
-	width: 17px
-	height: 32px
+	width: 34px
+	height: 64px
 	background: none
 	&:before,
 	&:after
 		content: ""
 		position: absolute
-		top: 0
-		left: 0 
+		top: 50%
+		left: 50% 
+		margin-top: -16px
+		margin-left: -8px
 		+tr_o
 	&:before
 		opacity: 0
@@ -95,13 +97,13 @@
 		&:after
 			opacity: 0
 .slick-prev
-	left: -24px
+	left: -32px
 	&:before
 		+svg(prev-red,17,32)
 	&:after
 		+svg(prev,17,32)
 .slick-next
-	right: -24px
+	right: -32px
 	&:before
 		+svg(next-red,17,32)
 	&:after

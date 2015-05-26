@@ -11,6 +11,7 @@ head.ready(function() {
 			});
 			$(".js-popup").removeClass("is-visible-out is-visible-in");
 		},400);
+		$(".js-overlay").fadeOut(500);
 	});
 
 	var config = {
@@ -130,6 +131,7 @@ head.ready(function() {
 	$(".js-toggle-popup").on("click", function(event){
 		var popup = $("." + $(this).attr("data-popup"));
 		popup.toggleClass("is-visible-in");
+		$(".js-overlay").fadeToggle(500);
 		$("body").toggleClass("no-scroll");
 		$(".desktop body").css({
 			marginRight: scrollWidth
@@ -146,6 +148,7 @@ head.ready(function() {
 		$(".desktop body").css({
 			marginRight: scrollWidth
 		});
+		$(".js-overlay").fadeOut(500);
 		$(".js-popup").addClass("is-visible-out");
 		setTimeout(function() {
 			$(".js-popup").removeClass("is-visible-out is-visible-in");
