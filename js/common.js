@@ -21,7 +21,7 @@ head.ready(function() {
 	    vFactor: 0.60,
 	    //enter:    'bottom',
 	    move:     '0',
-	    //over:     '0.6s',
+	    over:     '0.3s',
 	    //wait:     '0s',
 	    //easing:   'ease',
 	    //scale:    { direction: 'up', power: '0' }
@@ -108,9 +108,6 @@ head.ready(function() {
 	};
 	$(".js-slider-arrows").slick(sliderArrows);
 
-	$(".js-popup").on("click", function(event){
-		event.stopPropagation();
-	});
 
 
 //  scroll width
@@ -131,7 +128,13 @@ head.ready(function() {
 	$(".js-toggle-popup").on("click", function(event){
 		var popup = $("." + $(this).attr("data-popup"));
 		popup.toggleClass("is-visible-in");
-		$(".js-overlay").fadeToggle(500);
+		if (!$(this).hasClass("btn_cart")) {
+			$(".js-overlay").fadeToggle(500);
+		}
+		if ($(this).hasClass("btn-search")) {
+			popup.find("input").focus();
+		}
+		
 		$("body").toggleClass("no-scroll");
 		$(".desktop body").css({
 			marginRight: scrollWidth
@@ -139,7 +142,10 @@ head.ready(function() {
 		event.stopPropagation();
 		return false;
 	});
-    $(".js-popup").on("click", function(event){
+    $(".js-popup .popup__in").on("click", function(event){
+        event.stopPropagation();
+    });
+    $(".js-popup .popup__vertical").on("click", function(event){
         event.stopPropagation();
     });
 
@@ -357,6 +363,9 @@ head.ready(function() {
 	    	fixBox();
 	    });
 
-
+	   $(".js-select select").on("change", function(){
+	        var val = $(this).val();
+	        $(this).parents(".js-select").find(".js-select-text").text(val);
+	    });
 
 });

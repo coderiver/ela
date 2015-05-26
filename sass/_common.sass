@@ -1229,26 +1229,26 @@ a
 		left: 0
 		width: 5px
 		height: 0
-		+tr(height .15s linear .1s)
+		+tr(height .1s linear)
 	&:after
 		left: 0
 		top: 0
 		height: 5px
 		width: 0
-		+tr(width .15s linear .1s)
+		+tr(width .1s linear)
 .part-right
 	&:before
 		bottom: 0
 		left: 0
 		height: 5px
 		width: 0
-		+tr(width .15s linear .25s)
+		+tr(width .1s linear .1s)
 	&:after
 		right: 0
 		top: 0
 		width: 5px
 		height: 0
-		+tr(height .15s linear .25s)
+		+tr(height .1s linear .1s)
 .banner
 	display: block
 	position: relative
@@ -1477,7 +1477,6 @@ a
 	opacity: 0
 	visibility: hidden
 	position: fixed
-	padding: 82px 0
 	top: 50px
 	left: 50%
 	bottom: 50px
@@ -1543,15 +1542,19 @@ a
 		margin: 0 auto	
 		padding: 0 30px 
 		width: 775px
-		max-height: 100%
-		overflow-y: auto
 		+transform(translate3d(0,-200px,0))
 		+transition(transform .4s cubic-bezier(0.7,0,0.3,1) .2s)
 		+r(1279)
 			width: 100%
 			padding: 0 50px 
 		+r(767)
-			padding: 0 30px 
+			padding: 0 30px
+	&__scroll
+		padding: 82px 0
+		max-height: 100%
+		overflow-y: auto
+		+r(1279)
+			padding: 40px 0 
 .close
 	position: absolute
 	width: 27px
@@ -1628,6 +1631,7 @@ a
 		margin-bottom: 30px
 	.close
 		left: -27px
+		top: auto
 		bottom: 31px
 		display: none
 		+r(1279)
