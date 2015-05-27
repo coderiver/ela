@@ -18,7 +18,7 @@ head.ready(function() {
 	    easing: 'hustle',
 	    reset:  false,
 	    delay:  'onload',
-	    vFactor: 0.60,
+	    vFactor: 0.20,
 	    //enter:    'bottom',
 	    move:     '0',
 	    over:     '0.3s',
@@ -263,6 +263,8 @@ head.ready(function() {
 			if (form.valid()) {
 				steps.removeClass("is-visible-in");
 				step.addClass("is-visible-in");
+				// server answer
+				return false;
 			}
 			else {
 				return false;
@@ -344,7 +346,7 @@ head.ready(function() {
 
 	    function fixBox() {
 	    	if ($(".js-fixed-box").length) {
-	    		var top = $(".js-fixed-box").offset().top;
+	    		var top = $(".js-section").offset().top;
 	    		var left = $(".js-fixed-box").offset().left;
 	    	}
 	    	

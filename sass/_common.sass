@@ -209,7 +209,7 @@ a
 	+r(767)
 		float: none
 		width: 100%
-		order: 2
+		+order(2)
 	.l-cols__inner
 		padding-right: 10px
 		+r(767)
@@ -909,6 +909,7 @@ a
 			+r(767)
 				+order(2)
 				padding: 0
+				margin-bottom: 10px
 				text-align: center
 		&:last-child
 			text-align: right
@@ -1082,6 +1083,13 @@ a
 	padding: 50px 0
 	+ .footer
 		margin-top: 142px
+		+r(1230)
+			margin-top: 90px
+		+r(1023)
+			margin-top: 50px
+		+r(767)
+			margin-top: 30px
+
 	+r(767)
 		padding: 25px 0
 	&:before
@@ -1380,9 +1388,10 @@ a
 		+r(1230)
 			margin-left: 0
 			margin-bottom: 30px
-			float: none
+			
 		+r(1023)
 			margin-top: 30px
+			float: none
 		+r(767)
 			margin-top: 0
 		
@@ -2132,6 +2141,7 @@ a
 		+r(1023)
 			height: 40px
 			line-height: 40px
+		+r(767)
 			font-size: 0
 		span
 			+museo_700

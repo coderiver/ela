@@ -231,9 +231,14 @@
 		padding: 16px 28px 16px 0 
 		text-align: right
 		+r(1023)
-			float: none
+			position: absolute
+			top: 15px
+			right: 0
 			padding: 0 15px 
 			width: 100%
+			text-align: right
+		+r(767)
+			position: static
 			text-align: left
 	&__title
 		position: relative
@@ -292,7 +297,7 @@
 			width: 100%
 	&.is-fixed
 		position: fixed
-		top: 0
+		top: 64px
 		width: 317px
 		z-index: 5
 		+r(1023)
@@ -352,12 +357,13 @@
 	+clr
 	+r(767)
 		font-size: 12px
-	+ .btn
-		margin: 100px 0 60px
-		+r(1230)
-			margin: 60px 0 30px
-		+r(1023)
-			margin: 30px 0 15px
+	+ .to-center
+		.btn
+			margin: 100px 0 60px
+			+r(1230)
+				margin: 60px 0 30px
+			+r(1023)
+				margin: 30px 0 15px
 	> h2
 		&:first-child
 			margin-top: 0
