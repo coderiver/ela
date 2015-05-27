@@ -44,13 +44,15 @@ head.ready(function() {
 
 	$(".js-toggle-menu").on("click", function(event){
 		$(".js-menu").toggleClass("is-active");
-		$("body").toggleClass("no-scroll");
+		//$("body").toggleClass("no-scroll");
+		$(".js-overlay").fadeToggle(500);
 		event.stopPropagation();
 		return false;
 	});
 	$(".js-close-menu").on("click", function(event){
 		$(".js-menu").removeClass("is-active");
-		$("body").removeClass("no-scroll");
+		$(".js-overlay").fadeOut(500);
+		//$("body").removeClass("no-scroll");
 		event.stopPropagation();
 		return false;
 	});

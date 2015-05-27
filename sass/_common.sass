@@ -257,14 +257,15 @@ a
 		margin-top: 15px
 		overflow: visible
 	&__in
-		height: 450px
+		min-height: 450px
 		position: relative
 		z-index: 2
-		
 		+r(1023)
-			height: 400px
+			min-height: 400px
 		+r(767)
-			height: 268px
+			min-height: 285px
+			padding-bottom: 20px
+			height: auto
 
 		
 	&__left
@@ -326,7 +327,6 @@ a
 		width: 170px
 	+r(767)
 		display: none
-	+gpu
 	a
 		display: block
 		+tr_bgc
@@ -488,7 +488,7 @@ a
 				font-size: 14px
 				line-height: 1
 		ul
-			background: #213d6c
+			background: #122e5c
 			padding-left: 0
 			+r(1023)
 				width: 170px
@@ -622,7 +622,7 @@ a
 	bottom: 0
 	left: 50%
 	width: 369px
-	z-index: 10 
+	z-index: 15
 	+tr(transform .3s)
 	+transform(translateX(200%))
 	+r(1023)
@@ -1545,6 +1545,7 @@ a
 		text-align: left
 		+r(767)
 			width: 260px
+			padding: 30px 0 
 			margin: 0 auto 
 	&__in
 		margin: 0 auto	
