@@ -160,6 +160,20 @@ a
 .l-inner_width
 	+r(767)
 		margin: 0
+.l-inner_news
+	position: relative
+	width: 1045px
+	margin: 0 auto
+	+r(1260)
+		width: 100%
+	+r(1230)
+		padding: 0 15px 
+	.l-col-left
+		width: 50%
+	.l-col-right
+		width: 50%
+		.post
+			float: right
 .l-cols
 	+clr
 	
@@ -1040,6 +1054,14 @@ a
 			width: 683px
 			+r(1550)
 				width: 550px
+.section_news
+	margin-bottom: 165px
+	+r(1230)
+		margin-bottom: 80px
+	+r(1023)
+		margin-bottom: 40px
+	&:before
+		bottom: 0
 .line-v
 	position: absolute
 	width: 1px
@@ -1395,12 +1417,30 @@ a
 			height: 613px
 			+r(1230)
 				height: 475px
-		
+.post-wrap
+	position: relative
+	padding: 40px 0 0 
+	font-size: 0
+	+r(1023)
+		padding-top: 0
+	&:before
+		content: "" 
+		position: absolute
+		top: 49px
+		bottom: -50px
+		left: 523px
+		width: 1px
+		background: #c2d2ed 
+		+r(1230)
+			left: 472px
+		+r(1023)
+			display: none
 .post
 	position: relative
 	display: block
 	max-width: 446px
 	padding: 0 20px 30px 0
+
 	+r(1230)
 		max-width: 395px
 	&:hover
@@ -1424,6 +1464,59 @@ a
 			margin: 20px 0 50px
 		+r(1023)
 			margin: 20px 0 30px
+	&_block
+		float: none
+		display: inline-block
+		margin-bottom: 100px
+		vertical-align: top
+		+r(1230)
+			max-width: 446px
+		+r(1023)
+			display: block
+			margin: 0 auto 57px
+		&:nth-child(2n+1)
+			margin: -95px 150px 0 0
+			+r(1230)
+				margin-right: 54px
+			+r(1023)
+				margin: 0 auto 57px
+			.post__line
+				left: auto
+				right: -72px
+				width: 72px
+				+r(1230)
+					width: 21px
+					right: -21px
+				&:before
+					left: auto
+					right: -11px
+		.post__line
+			content: ""
+			position: absolute
+			top: 100px
+			left: -72px
+			width: 72px
+			height: 1px
+			background: #c2d2ed
+			+r(1650)
+				width: 67px
+				left: -67px
+			+r(1230)
+				left: -22px
+				width: 22px
+			+r(1023)
+				display: none
+			&:before
+				content: "" 
+				position: absolute
+				left: -11px
+				top: -5px
+				width: 11px
+				height: 11px
+				border: 2px solid #c2d2ed
+				border-radius: 50% 
+				background: #dbe6f9 
+
 	&__body
 		padding-top: 30px
 		+clr
@@ -1454,8 +1547,12 @@ a
 		display: block
 		+reg
 		font-size: 48px
+		+r(1023)
+			font-size: 36px
 		&:first-letter
 			font-size: 30px
+			+r(1023)
+				font-size: 24px
 			
 .meta
 	font-size: 14px
@@ -1998,3 +2095,67 @@ a
 		background: darken(#e3e7f0, 10%) 
 	.icon-wtf
 		margin-right: 5px
+		
+.pager
+	position: absolute
+	bottom: -67px
+	left: 0
+	width: 100%
+	background: $red 
+	text-align: center
+	+clr
+	+r(1023)
+		bottom: -25px
+	&__link
+		display: inline-block
+		vertical-align: middle
+		padding: 0 8px 
+		height: 77px
+		line-height: 77px
+		color: rgba(#fff, .5)
+		font-size: 16px
+		+reg
+		+tr_c
+		+r(1023)
+			height: 40px
+			line-height: 40px
+		&:hover
+			color: #fff
+		&.is-active
+			color: #fff 
+	&__prev,
+	&__next
+		font-size: 13px
+		padding: 0 92px 
+		text-transform: uppercase
+		color: #fff
+		height: 77px
+		line-height: 77px
+		+museo_300
+		+r(1023)
+			height: 40px
+			line-height: 40px
+			font-size: 0
+		span
+			+museo_700
+	&__prev
+		float: left
+		+r(1023)
+			padding: 0 10px 0 20px
+		&:hover
+			.icon-arr-l
+				+transform(translateX(-15px))
+		.icon-arr-l
+			margin-right: 20px
+			+tr(transform .3s)
+	&__next
+		float: right
+		+r(1023)
+			padding: 0 20px 0 10px
+		&:hover
+			.icon-arr
+				+transform(translateX(15px))
+		.icon-arr
+			margin-left: 20px
+			+tr(transform .3s)
+			
