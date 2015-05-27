@@ -483,14 +483,13 @@ a { text-decoration: none; }
 .post_block { float: none; display: inline-block; margin-bottom: 100px; vertical-align: top; }
 @media only screen and (max-width: 1230px) { .post_block { max-width: 446px; } }
 @media only screen and (max-width: 1023px) { .post_block { display: block; margin: 0 auto 57px; } }
-.post_block:nth-child(2n+1) { margin: -95px 150px 0 0; }
+.post_block:nth-child(2n+1) { margin: -95px 153px 0 0; }
 @media only screen and (max-width: 1230px) { .post_block:nth-child(2n+1) { margin-right: 54px; } }
 @media only screen and (max-width: 1023px) { .post_block:nth-child(2n+1) { margin: 0 auto 57px; } }
 .post_block:nth-child(2n+1) .post__line { left: auto; right: -72px; width: 72px; }
 @media only screen and (max-width: 1230px) { .post_block:nth-child(2n+1) .post__line { width: 21px; right: -21px; } }
 .post_block:nth-child(2n+1) .post__line:before { left: auto; right: -11px; }
-.post_block .post__line { content: ""; position: absolute; top: 100px; left: -72px; width: 72px; height: 1px; background: #c2d2ed; }
-@media only screen and (max-width: 1650px) { .post_block .post__line { width: 67px; left: -67px; } }
+.post_block .post__line { content: ""; position: absolute; top: 100px; left: -70px; width: 70px; height: 1px; background: #c2d2ed; }
 @media only screen and (max-width: 1230px) { .post_block .post__line { left: -22px; width: 22px; } }
 @media only screen and (max-width: 1023px) { .post_block .post__line { display: none; } }
 .post_block .post__line:before { content: ""; position: absolute; left: -11px; top: -5px; width: 11px; height: 11px; border: 2px solid #c2d2ed; border-radius: 50%; background: #dbe6f9; }
