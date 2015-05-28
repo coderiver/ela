@@ -505,7 +505,7 @@ a
 			background: #122e5c
 			padding-left: 0
 			+r(1023)
-				width: 170px
+				width: 155px
 			a
 				color: #fff
 				padding-right: 45px
@@ -649,10 +649,11 @@ a
 		+tr(opacity .3s)
 		+transform(translateX(0))
 	&.is-active
-		+transform(translateX(0))
+		+transform(translateX(-50%))
 		+r(767)
 			opacity: 1
 			visibility: visible
+			+transform(translateX(0))
 	&:before
 		content: ""
 		position: absolute
@@ -824,7 +825,7 @@ a
 			color: $red 
 .footer
 	position: relative
-	margin: 0 0 60px 
+	margin: 0 15px 60px 
 	padding: 90px 0 0 
 	background: #fff
 	text-align: center 
@@ -2105,8 +2106,8 @@ a
 .pager
 	position: absolute
 	bottom: -67px
-	left: 0
-	width: 100%
+	left: 15px
+	right: 15px
 	background: $red 
 	text-align: center
 	+clr
