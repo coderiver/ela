@@ -1,24 +1,25 @@
 head.ready(function() {
 
 	$(document).on("click", function(){
-		$(".js-menu").removeClass("is-active");
+
+		if ($(".js-menu").hasClass("is-actvie")) {
+			$(".js-menu").removeClass("is-active");
+		}
+		if ($(".js-popup").hasClass("is-visible-in")) {
+			$(".js-popup").addClass("is-visible-out");
+			setTimeout(function() {
+				$(".js-popup").removeClass("is-visible-out is-visible-in");
+			},400);
+			$(".js-overlay").fadeOut(500);
+		}
 		
-		$(".js-popup").addClass("is-visible-out");
-		setTimeout(function() {
-			//$("body").removeClass("no-scroll");
-			//$(".desktop body").css({
-			//	marginRight: 0
-			//});
-			$(".js-popup").removeClass("is-visible-out is-visible-in");
-		},400);
-		$(".js-overlay").fadeOut(500);
 	});
 
 	var config = {
 	    easing: 'hustle',
 	    reset:  false,
 	    delay:  'onload',
-	    vFactor: 0.20,
+	    vFactor: 0.10,
 	    //enter:    'bottom',
 	    move:     '0',
 	    over:     '0.3s',

@@ -9,20 +9,8 @@
 		font-size: 16px
 	+r(1023)
 		position: static
-	&__title
-		float: left
-		height: 105px
-		line-height: 105px
-		width: 305px
-		color: #fff 
-		+r(1230)
-			height: 80px
-			line-height: 80px
-		+r(1023)
-			display: none
 	&__main
 		overflow: hidden
-		background: #fff 
 	&__list
 		display: table
 		width: 100%
@@ -39,10 +27,17 @@
 				display: block
 				height: auto
 				line-height: 1.2
+			&.is-active
+				a
+					background: none
+					color: #fff
+					span
+						border: none 
 		a
 			display: block
 			color: #122e5d 
 			+tr_bgc
+			background: #fff 
 			height: 105px
 			line-height: 105px
 			+r(1230)
@@ -649,10 +644,10 @@
 		left: 50%
 		margin-left: -145px
 		right: auto 
-		height: 40px
+		height: 45px
 		padding: 0
 		min-width: 290px
-		line-height: 40px
+		line-height: 45px
 	&:hover
 		box-shadow: none 
 	.icon-cart

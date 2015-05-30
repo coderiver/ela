@@ -346,19 +346,17 @@ a
 		+tr_bgc
 	> li
 		&.is-active
-			&.is-animated
-				> a
-					position: relative
-					&:before
-						width: 275px
-						+r(1550)
-							width: 292px
-						+r(1230)
-							width: 215px
-					span
-						&:before
-							+r(1023)
-								display: block
+			i.is-animated
+				&:before
+					width: 275px
+					+r(1550)
+						width: 292px
+					+r(1230)
+						width: 215px
+			span
+				&:before
+					+r(1023)
+						display: block
 		&.has-nav-drop
 			> a
 				> span
@@ -377,62 +375,66 @@ a
 							opacity: 1
 		&:first-child
 			&.is-active
-				&.is-animated
-					> a
-						&:after
-							height: 293px
-							+r(1230)
-								height: 251px
+				i.is-animated
+					&:after
+						height: 293px
+						+r(1230)
+							height: 251px
 		&:nth-child(2)
 			&.is-active
-				&.is-animated
-					> a
-						&:after
-							height: 134px
+				i.is-animated
+					&:after
+						height: 134px
 		&:nth-child(3)
 			&.is-active
-				&.is-animated
-					> a
-						&:after
-							height: 134px
+				i.is-animated
+					&:after
+						height: 134px
 		&:nth-child(4)
 			&.is-active
-				&.is-animated
-					> a
-						&:after
-							height: 134px
+				i.is-animated
+					&:after
+						height: 134px
 		&:hover
 			> a
 				background: #fff 
 				color: #1f3b6b 
 		> a
 			padding: 11px 10px 10px 30px
-			&:before
-				content: ""
+			position: relative
+			i
 				position: absolute
-				left: 20px
-				top: 26px
-				width: 0
-				height: 1px
-				background: #fff 
-				+tr(width .2s)
-				+r(1023)
-					display: none
-			&:after
-				content: ""
-				position: absolute
-				left: 294px
-				top: 26px
-				width: 1px
-				height: 0
-				background: #fff 
-				+tr(height .2s linear .2s)
-				+r(1550)
-					left: 311px
-				+r(1230)
-					left: 234px
-				+r(1023)
-					display: none
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				&:before
+					content: ""
+					position: absolute
+					left: 20px
+					top: 26px
+					width: 0
+					height: 1px
+					background: #fff 
+					+tr(width .2s)
+					+r(1023)
+						display: none
+				&:after
+					content: ""
+					position: absolute
+					left: 294px
+					top: 26px
+					width: 1px
+					height: 0
+					background: #fff 
+					+tr(height .2s linear .2s)
+					+r(1550)
+						left: 311px
+					+r(1230)
+						left: 234px
+					+r(1023)
+						display: none
+				
 			> span
 				padding: 0 26px 0 0 
 				position: relative
@@ -829,14 +831,18 @@ a
 	padding: 90px 0 0 
 	background: #fff
 	text-align: center 
+	&.is-animated
+		&:before
+			height: 92px
 	&:before
 		content: ""
 		position: absolute
 		top: -50px
 		left: 50% 
 		width: 1px
-		height: 92px
+		height: 0
 		background: $blue 
+		+tr(height .3s)
 		+r(1230)
 			top: -55px
 		+r(767)
@@ -1049,18 +1055,18 @@ a
 		top: 498px
 		width: 0
 		+r(1550)
-			left: 582px
+			left: 550px
 		+r(1230)
 			left: 400px
 		&.is-animated
 			width: 683px
 			+r(1550)
-				width: 550px
+				width: 583px
 .section_news
 	margin-bottom: 165px
 	+r(1230)
 		margin-bottom: 80px
-	+r(1023)
+	+r(767)
 		margin-bottom: 40px
 	&:before
 		bottom: 0
@@ -1931,6 +1937,7 @@ a
 	+museo_300
 	font-size: 14px
 	color: $blue 
+	border-radius: 0 
 	+r(767)
 		height: 30px
 		padding: 0 15px 
@@ -2111,7 +2118,7 @@ a
 	background: $red 
 	text-align: center
 	+clr
-	+r(1023)
+	+r(767)
 		bottom: -25px
 	&__link
 		display: inline-block
@@ -2123,7 +2130,7 @@ a
 		font-size: 16px
 		+reg
 		+tr_c
-		+r(1023)
+		+r(767)
 			height: 40px
 			line-height: 40px
 		&:hover
@@ -2139,10 +2146,9 @@ a
 		height: 77px
 		line-height: 77px
 		+museo_300
-		+r(1023)
+		+r(767)
 			height: 40px
 			line-height: 40px
-		+r(767)
 			font-size: 0
 		span
 			+museo_700
