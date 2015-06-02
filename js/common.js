@@ -153,6 +153,7 @@ head.ready(function() {
 		// 	marginRight: scrollWidth
 		// });
 		$(".js-overlay").fadeOut(500);
+		$(".js-cart-overlay").hide();
 		$(".js-popup").addClass("is-visible-out");
 		setTimeout(function() {
 			$(".js-popup").removeClass("is-visible-out is-visible-in");
@@ -290,6 +291,7 @@ head.ready(function() {
 		$(".js-close-cart").on("click", function(){
 			$(".js-popup").removeClass("is-visible-in");
 			$("body").removeClass("no-scroll");
+			$(".js-cart-overlay").hide();
 			return false;
 		});
 
