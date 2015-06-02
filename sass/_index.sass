@@ -8,6 +8,27 @@
 				height: 475px
 			+r(767)
 				height: 268px
+	.footer
+		&:before
+			display: none
+	.news-cols
+		z-index: 2
+		.line-h
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				width: 1px
+				height: 0
+				background: $blue 
+				+tr(height .3s linear .6s)
+				+r(767)
+					display: none
+			&.is-animated
+				&:before
+					height: 92px
+					
 .academy
 	position: absolute
 	left: 50%
@@ -171,13 +192,7 @@
 					+r(767)
 						bottom: 3px
 				&:after
-					bottom: 7px
-					margin-left: 37px
-					left: 100%
-					+r(1230)
-						margin-left: 14px
-					+r(1023)
-						display: none
+					display: none
 			&:last-child
 				right: 300px
 				bottom: -7px

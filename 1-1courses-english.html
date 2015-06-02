@@ -10,7 +10,7 @@
 </head>
 <body>
 <!-- BEGIN  out-->
-<div class="out">
+<div class="out" id="out">
 	<div class="l-center">
 		<div class="header" style="background-image: url(./img/bg3.jpg);">
 			<div class="header__in">
@@ -22,10 +22,10 @@
 						</a>
 						<ul class="nav" data-sr="wait .5s">
 							<li>
-								<a href="#"><span>Home</span></a>
+								<a href="#"><span>Home</span> <i data-sr="wait .9s"></i></a>
 							</li>
 							<li class="has-nav-drop is-active" data-sr="wait 0.9s">
-								<a href="#"><span>English <span>course</span></span></a>
+								<a href="#"><span>English <span>course</span></span><i data-sr="wait .9s"></i></a>
 								<ul>
 									<li>
 										<a href="#"><span>English language courses</span></a>
@@ -46,7 +46,7 @@
 								</ul>
 							</li>
 							<li class="has-nav-drop">
-								<a href="#"><span>Exam centre</span></a>
+								<a href="#"><span>Exam centre</span><i data-sr="wait .9s"></i></a>
 								<ul>
 									<li>
 										<a href="#"><span>English language courses</span></a>
@@ -67,7 +67,7 @@
 								</ul>
 							</li>
 							<li class="has-nav-drop">
-								<a href="#"><span>Other services</span></a>
+								<a href="#"><span>Other services</span><i data-sr="wait .9s"></i></a>
 								<ul>
 									<li>
 										<a href="#"><span>English language courses</span></a>
@@ -335,11 +335,12 @@
 			English Language Academy
 		</a>
 		<ul class="touch-nav touch-nav_root js-nav-root">
-			<li><a href="#">Home</a></li>
-			<li><a href="#" data-nav="js-nav-1">English <span>course</span></a></li>
-			<li><a href="#" data-nav="js-nav-2">Exam centre</a></li>
-			<li><a href="#" data-nav="js-nav-3">Other services</a></li>
+			<li class="is-active"><a href="#"><span>Home</span></a></li>
+			<li><a href="#" data-nav="js-nav-1"><span>English course</span></a></li>
+			<li><a href="#" data-nav="js-nav-2"><span>Exam centre</span></a></li>
+			<li><a href="#" data-nav="js-nav-3"><span>Other services</span></a></li>
 		</ul>
+		
 		<div class="touch-nav js-nav js-nav-1">
 			<div class="js-nav-main">
 				<button class="touch-nav__back js-nav-back" type="button">
@@ -381,6 +382,7 @@
 				</ul>
 			</div>
 		</div>
+
 		<button class="btn-search js-toggle-popup" data-popup="js-popup-search" type="button"></button>
 		<button class="close js-close-menu" type="button"><i></i></button>
 		<a href="#" class="doc">
