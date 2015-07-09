@@ -352,8 +352,11 @@ head.ready(function() {
 
 	    function fixBox() {
 	    	if ($(".js-fixed-box").length) {
-	    		var top = $(".js-section").offset().top;
-	    		var left = $(".js-fixed-box").offset().left;
+	    		var top = + $(".js-section").offset().top;
+	    		var left = + $(".js-fixed-box").offset().left;
+	    		var bottom = + $(".js-section-trigger").position().top;
+	    		var boxHeight = + $(".box-wrap").outerHeight()-60;
+	    		var winHeight = + $(window).height();
 	    	}
 	    	
 	    	var scroll = $(document).scrollTop();
@@ -375,6 +378,9 @@ head.ready(function() {
 	    $(window).resize(function(){
 	    	fixBox();
 	    });
+
+		
+
 
 	   $(".js-select select").on("change", function(){
 	        var val = $(this).val();

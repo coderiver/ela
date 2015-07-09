@@ -284,22 +284,24 @@
 	top: 0
 	left: 0
 	z-index: 2
+	width: 317px
 	+r(1023)
 		position: static
-		width: 317px
 		margin: 0 auto 20px
-		+r(767)
-			width: 100%
+	+r(767)
+		width: 100%
 	&.is-fixed
 		position: fixed
 		top: 64px
-		width: 317px
 		z-index: 5
 		+r(1023)
 			position: static
 		+r(767)
 			width: 100%
-
+		&.is-abs
+			position: absolute
+			top: auto
+			z-index: 5
 
 .box_border
 	box-shadow: inset 0 0 0 5px $red 
