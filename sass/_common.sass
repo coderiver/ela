@@ -424,6 +424,7 @@ a
 				left: 20px
 				top: 26px
 				width: 0
+				z-index: -1
 				height: 1px
 				background: #fff 
 				+tr(width .2s)
@@ -432,6 +433,7 @@ a
 				&:before
 					content: ""
 					position: absolute
+					
 					right: -1px
 					height: 1px
 					background: #fff  
@@ -442,6 +444,7 @@ a
 					position: absolute
 					left: 275px
 					top: 0
+					z-index: -1
 					width: 1px
 					height: 0
 					background: #fff 
@@ -472,19 +475,17 @@ a
 		&:hover
 			> ul
 				+transform(translate3d(0,0,0))
-				opacity: 1
-				visibility: visible 
+				display: block
 	ul
 		position: absolute
+		display: none
 		left: 100%
 		top: 0
 		padding: 20px 0 20px 20px 
 		width: 256px
 		background: #fff 
-		opacity: 0
-		visibility: hidden
 		+transform(translate3d(-5px,0,0))
-		+transition(opacity, transform, .3s)
+		
 		+r(1023)
 			font-size: 14px
 			width: 188px

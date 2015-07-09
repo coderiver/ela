@@ -163,18 +163,18 @@ a { text-decoration: none; }
 .nav > li:nth-child(4).is-active i.is-animated:before:before { display: none; }
 .nav > li:hover > a { background: #fff; color: #1f3b6b; }
 .nav > li > a { padding: 11px 10px 10px 30px; position: relative; }
-.nav > li > a i { position: absolute; left: 20px; top: 26px; width: 0; height: 1px; background: #fff; -moz-transition: width 0.2s; -o-transition: width 0.2s; -webkit-transition: width 0.2s; transition: width 0.2s; }
+.nav > li > a i { position: absolute; left: 20px; top: 26px; width: 0; z-index: -1; height: 1px; background: #fff; -moz-transition: width 0.2s; -o-transition: width 0.2s; -webkit-transition: width 0.2s; transition: width 0.2s; }
 @media only screen and (max-width: 1023px) { .nav > li > a i { display: none; } }
 .nav > li > a i:before { content: ""; position: absolute; right: -1px; height: 1px; background: #fff; width: 0; -moz-transition: width 0.3s; -o-transition: width 0.3s; -webkit-transition: width 0.3s; transition: width 0.3s; }
-.nav > li > a i:after { content: ""; position: absolute; left: 275px; top: 0; width: 1px; height: 0; background: #fff; -moz-transition: height 0.2s linear 0.2s; -o-transition: height 0.2s linear 0.2s; -webkit-transition: height 0.2s linear; -webkit-transition-delay: 0.2s; transition: height 0.2s linear 0.2s; }
+.nav > li > a i:after { content: ""; position: absolute; left: 275px; top: 0; z-index: -1; width: 1px; height: 0; background: #fff; -moz-transition: height 0.2s linear 0.2s; -o-transition: height 0.2s linear 0.2s; -webkit-transition: height 0.2s linear; -webkit-transition-delay: 0.2s; transition: height 0.2s linear 0.2s; }
 @media only screen and (max-width: 1550px) { .nav > li > a i:after { left: 292px; } }
 @media only screen and (max-width: 1230px) { .nav > li > a i:after { left: 215px; } }
 @media only screen and (max-width: 1023px) { .nav > li > a i:after { display: none; } }
 .nav > li > a > span { padding: 0 26px 0 0; position: relative; }
 @media only screen and (max-width: 1023px) { .nav > li > a > span { padding-right: 13px; } }
 @media only screen and (max-width: 1023px) { .nav > li > a > span:before { content: ""; display: none; position: absolute; top: 50%; left: -12px; right: -12px; height: 1px; background: #fff; } }
-.nav li:hover > ul { -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); opacity: 1; visibility: visible; }
-.nav ul { position: absolute; left: 100%; top: 0; padding: 20px 0 20px 20px; width: 256px; background: #fff; opacity: 0; visibility: hidden; -moz-transform: translate3d(-5px, 0, 0); -ms-transform: translate3d(-5px, 0, 0); -webkit-transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0); -moz-transition: opacity, -moz-transform, 0.3s; -o-transition: opacity, -o-transform, 0.3s; -webkit-transition: opacity, -webkit-transform, 0.3s; transition: opacity, transform, 0.3s; }
+.nav li:hover > ul { -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); display: block; }
+.nav ul { position: absolute; display: none; left: 100%; top: 0; padding: 20px 0 20px 20px; width: 256px; background: #fff; -moz-transform: translate3d(-5px, 0, 0); -ms-transform: translate3d(-5px, 0, 0); -webkit-transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0); }
 @media only screen and (max-width: 1023px) { .nav ul { font-size: 14px; width: 188px; } }
 .nav ul > li:hover a { background: #122e5c; color: #fff; }
 .nav ul > li:hover a span:after { border-color: transparent transparent transparent #fff; }
@@ -983,7 +983,7 @@ a { text-decoration: none; }
 .cart:before { content: ""; position: absolute; z-index: -1; top: 20px; bottom: 0; left: 0; width: 1px; box-shadow: 0 0 50px 5px #000; }
 @media only screen and (max-width: 767px) { .cart:before { display: none; } }
 .cart__in { position: absolute; top: 0; left: 0; right: 0; z-index: 2; background: #fff; height: 100%; }
-.cart__scroll { padding: 50px 50px 100px 80px; max-height: 100%; overflow-y: auto; overflow-x: hidden; }
+.cart__scroll { padding: 50px 50px 0 80px; max-height: 100%; overflow-y: auto; overflow-x: hidden; }
 @media only screen and (max-width: 1230px) { .cart__scroll { padding: 30px 30px 60px 30px; } }
 @media only screen and (max-width: 767px) { .cart__scroll { padding: 20px 20px 60px 20px; } }
 .cart__scroll::-webkit-scrollbar { width: 4px; height: 4px; }
@@ -1020,6 +1020,8 @@ a { text-decoration: none; }
 @media only screen and (max-width: 767px) { .form-info { margin-top: 20px; padding-top: 10px; } }
 .form-info__in { position: relative; }
 .form-info__in sup { position: absolute; left: -7px; top: 0; font-size: 14px; }
+
+.cart-item-wrap { margin-bottom: 100px; }
 
 .cart-item { *zoom: 1; margin-bottom: 40px; border-bottom: 1px solid #eef1f6; padding-bottom: 45px; font-size: 14px; color: #152033; font-family: "museosanscyrl-300", Arial, sans-serif; line-height: 1.7; }
 .cart-item:after { content: " "; display: table; clear: both; }
