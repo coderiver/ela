@@ -355,21 +355,35 @@ head.ready(function() {
 	    		var top = + $(".js-section").offset().top;
 	    		var left = + $(".js-fixed-box").offset().left;
 	    		var bottom = + $(".js-section-trigger").position().top;
-	    		var boxHeight = + $(".box-wrap").outerHeight()-60;
-	    		var winHeight = + $(window).height();
+	    		var boxHeight = + $(".box-wrap").outerHeight()+80;
+	    		var boxTop = 64;
 	    	}
 	    	
 	    	var scroll = $(document).scrollTop();
-	    	if (scroll >= top) {
-	    		$(".js-fixed-box .box-wrap").addClass("is-fixed").css({
-	    			left: left
+	    	console.log(bottom-boxHeight);
+	    	if (bottom-boxHeight <= 0) {
+	    		$(".js-fixed-box .box-wrap").css({
+	    			left: left,
+	    			top: bottom-boxHeight+boxTop
 	    		});
 	    	}
-	    	else {
-	    		$(".js-fixed-box .box-wrap").removeClass("is-fixed").css({
-	    			left: 0
-	    		});
+
+	    	if (bottom-boxHeight > 0) {
+	    		if (scroll >= top) {
+	    			$(".js-fixed-box .box-wrap").addClass("is-fixed").css({
+	    				left: left,
+	    				top: boxTop
+	    			});
+	    		}
+	    		else {
+	    			$(".js-fixed-box .box-wrap").removeClass("is-fixed is-abs").css({
+	    				left: 0,
+	    				top: 0
+	    			});
+	    		}
 	    	}
+	    		    	
+	    	
 	    }
 	    fixBox();
 	    $(".out").scroll(function(){
